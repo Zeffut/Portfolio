@@ -111,7 +111,7 @@ div.text {
 h1.name {
     font-size: 40px;
     margin-bottom: 0px;
-    animation: pulse 3s infinite;
+    /* animation: pulse 3s infinite; */
 }
 
 @keyframes pulse {
@@ -163,12 +163,13 @@ div.contact_button_2 {
     align-items: center;
     margin-top: 75px;
     margin-bottom: 75px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 div.contact_button_2:hover {
     background-color: #C9C9C9;
     color: black;
+    transform: scale(1.1);
 }
 
 
@@ -227,6 +228,7 @@ section.project {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px;
     margin-bottom: 150px;
 }
 
@@ -243,7 +245,7 @@ h1.project {
 }
 
 div.card {
-    width: 500px;
+    width: auto;
     text-align: center;
     height: auto;
     background-color: white;
@@ -268,10 +270,12 @@ a.card {
     color: white;
     font-size: 25px;
     margin: 0px;
+    transition: transform 0.3s ease;
 }
 
 a.card:hover {
     text-decoration: underline;
+    /* transform: scale(1.1); */
 }
 
 p.card {
