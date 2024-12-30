@@ -243,7 +243,7 @@ h1.project {
 /* Individual card */
 div.card {
     border: 2px solid whitesmoke;
-    background-color: white;
+    background-color: #C9C9C9;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
