@@ -58,6 +58,7 @@ a.mail {
     margin-left: auto;
 }
 
+
 div.contact_button {
     background-color: rgb(255, 255, 255);
     justify-content: center;
@@ -110,7 +111,7 @@ div.text {
 h1.name {
     font-size: 40px;
     margin-bottom: 0px;
-    animation: pulse 3s infinite;
+    /* animation: pulse 3s infinite; */
 }
 
 @keyframes pulse {
@@ -160,14 +161,17 @@ div.contact_button_2 {
     text-align: center;
     display: flex;
     align-items: center;
-    margin: 75px auto; /* Change margin-top and margin-bottom to margin */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 div.contact_button_2:hover {
     background-color: #C9C9C9;
     color: black;
+    transform: scale(1.1);
 }
+
 
 /* About Section */
 
@@ -217,7 +221,6 @@ p.experience {
     margin-top: 50px;
     text-align: center;
 }
-
 /* Projects Section */
 
 section.project {
@@ -225,11 +228,12 @@ section.project {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px;
+    margin-bottom: 150px;
 }
 
 section.card {
     display: flex;
-    flex-direction: column;
     margin: 75px;
 }
 
@@ -240,185 +244,65 @@ h1.project {
     margin-top: 75px;
 }
 
-/* Individual card */
 div.card {
-    background-color: #C9C9C9;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    margin: 15px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    max-width: 900px;
-}
-
-div.card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-div.card:hover a.card {
-    color: wheat;
-}
-
-a.card {
-    color: black;
-    text-decoration: none;
-    margin: 0px;
-}
-
-/* Card image */
-.card img {
-    width: 100%;
+    width: auto;
+    text-align: center;
     height: auto;
-    object-fit: contain;
-}
-
-.card-content h1 {
-    margin: 0 0 5px;
-    color: #333;
-    font-size: 45px;
-}
-
-/* Réduire la marge entre le titre et le paragraphe */
-.card-content p {
-    margin: 5px 0 20px; /* Modifier la marge supérieure à 5px */
-    color: #666;
-    font-size: 1em;
-    line-height: 1.5;
+    background-color: white;
+    border-radius: 8px;
 }
 
 img.logos {
-    width: 5%;
-    height: 5%;
-    margin: 10px 20px;
-    margin-right: 50px;
+    margin: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 div.description {
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
     justify-content: center;
 }
+
+a.card {
+    color: white;
+    font-size: 25px;
+    margin: 0px;
+    transition: transform 0.3s ease;
+}
+
+a.card:hover {
+    text-decoration: underline;
+    /* transform: scale(1.1); */
+}
+
+p.card {
+    margin: 0px;
+    color: #878787;
+}
+
+
+
 
 /* Credits */
 
 section.credits {
     color: white;
-    display: block; /* Change from flex to block */
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin-bottom: 25px;
-    padding: 0 20px; /* Add padding to ensure it doesn't touch the edges */
+    text-align: center;
 }
 
 img.icon {
     height: 15px;
     margin: 5px;
-    vertical-align: middle; /* Adjust vertical alignment */
 }
 
 a.link {
-    color: rgb(170, 170, 170);
-    text-decoration: none;
-    margin-left: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-a.link:hover {
     color: white;
-    transform: scale(1.02);
-}
-
-@media (max-width: 768px) {
-    body {
-        min-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .noise {
-        width: 100%;
-        height: auto;
-    }
-
-    div.navbar {
-        display: none;
-    }
-
-    div.presentation {
-        padding: 20px;
-    }
-
-    .sphere {
-        width: 250px;
-        height: 250px;
-        margin-top: 50px;
-    }
-
-    h1.name {
-        font-size: 30px;
-    }
-
-    h2.subtitle {
-        font-size: 18px;
-    }
-
-    p.intro {
-        font-size: medium;
-    }
-
-    div.contact_button_2 {
-        width: 80%;
-        margin: 20px auto;
-        padding: 0 20px;
-    }
-
-    section.about, section.experience, section.project {
-        padding: 20px;
-    }
-
-    h1.about, h1.experience, h1.project {
-        font-size: 35px;
-    }
-
-    p.about, p.experience {
-        font-size: medium;
-        text-align: center;
-    }
-
-    section.card {
-        margin: 20px;
-    }
-
-    div.card {
-        flex-direction: column; /* Change to column for mobile */
-        margin: 10px 0;
-        align-items: center; /* Center align items */
-    }
-
-    img.logos {
-        margin: 20px;
-        width: 15%; /* Reduce width for mobile */
-        height: auto;
-    }
-
-    div.description {
-        margin: 20px;
-        text-align: center; /* Center align text */
-    }
-
-    div.description h3 {
-        margin-top: 0; /* Remove top margin */
-    }
-
-    div.description p {
-        text-align: center; /* Center align paragraph */
-    }
-
-    section.credits {
-        padding: 10px;
-        text-align: center; /* Ensure text is centered on mobile */
-    }
+    text-decoration: underline;
+    margin-left: 5px;
 }
