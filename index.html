@@ -7,30 +7,23 @@
     <title>Thomas's Portfolio</title>
 </head>
 <body>
+    <div class="language-switcher">
+        <img src="ressources/france.svg" alt="Français" id="fr-flag" class="hidden">
+        <img src="ressources/uk.svg" alt="English" id="en-flag">
+    </div>
     <img src="ressources/noise.png" alt="" class="noise">
     <section class="top-page">
-        <header class="header">
-            <div class="navbar">
-                <a href="index.html">
-                <div class="logo">
-                    <h3 class="logo">Thomas</h1>
-                    <h6 class="logo">DE SOUSA</h3>
-                </div></a>
-                <a href="mailto:tom77ds@gmail.com" class="mail">
-                    <div class="contact_button">
-                        <p>Contact</p>
-                    </div>
-                </a>
-            </div>
-        </header>
         <div class="presentation">
             <div class="sphere">
                 <img src="ressources/bitmoji.png" alt="bitmoji" class="bitmoji">
             </div>
             <div class="text">
-                <h1 class="name">Thomas De Sousa</h1>
-                <h2 class="subtitle">Je Code & <span class="gradient_text">Chill</span>🍿</h2>
-                <p class="intro">Développeur autodidacte et passionné, principalement par Python.</p>
+                <h1 class="name" data-lang="fr">Thomas De Sousa</h1>
+                <h1 class="name" data-lang="en" style="display: none;">Thomas De Sousa</h1>
+                <h2 class="subtitle" data-lang="fr">Je <span class="gradient_text">Code</span>💻</h2>
+                <h2 class="subtitle" data-lang="en" style="display: none;">I <span class="gradient_text">Code</span>💻</h2>
+                <p class="intro" data-lang="fr">Développeur autodidacte et passionné, principalement par Python.</p>
+                <p class="intro" data-lang="en" style="display: none;">Self-taught and passionate developer, mainly focused on Python.</p>
             </div>
             <a href="mailto:tom77ds@gmail.com">
                 <div class="contact_button_2">
@@ -41,61 +34,181 @@
 
     </section>
     <section class="about">
-        <h1 class="about">A PROPOS DE MOI</h1>
-        <span class="gradient_text">ME DECOUVRIR</span>
-        <p class="about">En tant que développeur passionné et étudiant en école d’ingénieur, je m’épanouis dans l’acquisition de nouvelles compétences en développement.
+        <h1 class="about" data-lang="fr">A PROPOS DE MOI</h1>
+        <h1 class="about" data-lang="en" style="display: none;">ABOUT ME</h1>
+        <span class="gradient_text" data-lang="fr">ME DECOUVRIR</span>
+        <span class="gradient_text" data-lang="en" style="display: none;">DISCOVER ME</span>
+        <p class="about" data-lang="fr">En tant que développeur passionné et étudiant en école d’ingénieur, je m’épanouis dans l’acquisition de nouvelles compétences en développement.
 
         Avec une passion pour la création de solutions élégantes, je navigue dans le paysage en constante évolution du développement logiciel. Mon parcours consiste à traduire des concepts en code, à créer des expériences utilisateur fluides et à repousser sans cesse les limites de ce qui est possible.</p>
+        <p class="about" data-lang="en" style="display: none;">As a passionate developer and engineering student, I thrive on acquiring new development skills.
+
+        With a passion for creating elegant solutions, I navigate the ever-evolving landscape of software development. My journey involves translating concepts into code, creating seamless user experiences, and constantly pushing the boundaries of what is possible.</p>
     </section>
     <section class="experience">
-        <h1 class="experience">EXPERIENCE</h1>
-        <span class="gradient_text">MES SKILLS</span>
-        <p class="experience">Grace a mes année d'expériences et ma passion je maitrise aujourd'huis plusieurs compétences et connaissances me permettant de créer a peut près tout ce que j'imagine</p>
+        <h1 class="experience" data-lang="fr">EXPERIENCE</h1>
+        <h1 class="experience" data-lang="en" style="display: none;">EXPERIENCE</h1>
+        <span class="gradient_text" data-lang="fr">MES SKILLS</span>
+        <span class="gradient_text" data-lang="en" style="display: none;">MY SKILLS</span>
+        <div class="skills-slider">
+            <div class="skills-slider-track">
+                <div class="skill">
+                    <img src="ressources/skills/html.webp" alt="HTML5">
+                    <p>HTML5</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/css.png" alt="CSS3">
+                    <p>CSS3</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/javascript.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/python.png" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/git.png" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/docker.webp" alt="Docker">
+                    <p>Docker</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/notion.png" alt="Notion">
+                    <p>Notion</p>
+                </div>
+
+                <div class="skill">
+                    <img src="ressources/skills/html.webp" alt="HTML5">
+                    <p>HTML5</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/css.png" alt="CSS3">
+                    <p>CSS3</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/javascript.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/python.png" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/git.png" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/docker.webp" alt="Docker">
+                    <p>Docker</p>
+                </div>
+                <div class="skill">
+                    <img src="ressources/skills/notion.png" alt="Notion">
+                    <p>Notion</p>
+                </div>
+            </div>
+        </div>
+        <p class="experience" data-lang="fr">Grace a mes année d'expériences et ma passion je maitrise aujourd'huis plusieurs compétences et connaissances me permettant de créer a peut près tout ce que j'imagine</p>
+        <p class="experience" data-lang="en" style="display: none;">Thanks to my years of experience and passion, I now master several skills and knowledge that allow me to create almost anything I imagine.</p>
     </section>
     <section class="project">
-        <h1 class="project">PROJETS</h1>
-        <span class="gradient_text">DEMONSTRATION</span>
+        <h1 class="project" data-lang="fr">PROJETS</h1>
+        <h1 class="project" data-lang="en" style="display: none;">PROJECTS</h1>
+        <span class="gradient_text" data-lang="fr">DEMONSTRATION</span>
+        <span class="gradient_text" data-lang="en" style="display: none;">DEMONSTRATION</span>
         <section class="card">
-            <div class="project-item">
+            <a href="https://github.com/Zeffut/BeeHappy" class="project-item">
                 <div class="card">
                     <img src="ressources/beehappy.png" alt="" class="logos">
                 </div>
                 <div class="description">
-                    <a href="https://github.com/Zeffut/BeeHappy" class="card">BeeHappy</a>
-                    <p class="card">J'ai créé une interface utilisateur moderne pour un site web de ruche connectée, avec un code source optimisé pour la gestion des ruches.</p>
+                    <p class="card_title" data-lang="fr">BeeHappy</p>
+                    <p class="card_title" data-lang="en" style="display: none;">BeeHappy</p>
+                    <p class="card" data-lang="fr">J'ai créé une interface utilisateur moderne pour un site web de ruche connectée, avec un code source optimisé pour la gestion des ruches.</p>
+                    <p class="card" data-lang="en" style="display: none;">I created a modern user interface for a connected beehive website, with optimized source code for hive management.</p>
                 </div>
-            </div>
-            <div class="project-item">
+            </a>
+            <a href="https://github.com/Zeffut/tiktok_ia_generator" class="project-item">
                 <div class="card">
                     <img src="ressources/tiktok.png" alt="" class="logos">
                 </div>
                 <div class="description">
-                    <a href="https://github.com/Zeffut/tiktok_ia_generator" class="card">TikTok AI Generator</a>
-                    <p class="card">J'ai développé un script Python pour générer automatiquement des vidéos TikTok et gérer un compte, permettant de monétiser facilement le contenu.</p>
+                    <p class="card_title" data-lang="fr">TikTok AI</p>
+                    <p class="card_title" data-lang="en" style="display: none;">TikTok AI</p>
+                    <p class="card" data-lang="fr">J'ai développé un script Python pour générer automatiquement des vidéos TikTok et gérer un compte, permettant de monétiser facilement le contenu.</p>
+                    <p class="card" data-lang="en" style="display: none;">I developed a Python script to automatically generate TikTok videos and manage an account, making it easy to monetize content.</p>
                 </div>
-            </div>
-            <div class="project-item">
+            </a>
+            <a href="https://github.com/Zeffut/Esiee-Paris-Salles" class="project-item">
                 <div class="card">
                     <img src="ressources/esiee_salles.png" alt="" class="logos">
                 </div>
                 <div class="description">
-                    <a href="https://github.com/Zeffut/Esiee-Paris-Salles" class="card">Salles ESIEE Paris</a>
-                    <p class="card">J'ai développé une application pour la gestion des salles à l'ESIEE Paris, facilitant la réservation et l'organisation des espaces de travail.</p>
+                    <p class="card_title" data-lang="fr">Salles ESIEE</p>
+                    <p class="card_title" data-lang="en" style="display: none;">ESIEE Rooms</p>
+                    <p class="card" data-lang="fr">J'ai développé une application pour la gestion des salles à l'ESIEE Paris, facilitant la réservation et l'organisation des espaces de travail.</p>
+                    <p class="card" data-lang="en" style="display: none;">I developed an application for managing rooms at ESIEE Paris, making it easier to book and organize workspaces.</p>
                 </div>
-            </div>
-            <div class="project-item">
+            </a>
+            <a href="https://github.com/Zeffut/VintedScraper" class="project-item">
                 <div class="card">
                     <img src="ressources/vinted.png" alt="" class="logos">
                 </div>
                 <div class="description">
-                    <a href="https://github.com/Zeffut/VintedScraper" class="card">VintedScraper</a>
-                    <p class="card">J'ai développé un script Python pour extraire des données de Vinted, permettant de suivre les prix et les disponibilités des articles en temps réel.</p>
+                    <p class="card_title" data-lang="fr">VintedScraper</p>
+                    <p class="card_title" data-lang="en" style="display: none;">VintedScraper</p>
+                    <p class="card" data-lang="fr">J'ai développé un script Python pour extraire des données de Vinted, permettant de suivre les prix et les disponibilités des articles en temps réel.</p>
+                    <p class="card" data-lang="en" style="display: none;">I developed a Python script to extract data from Vinted, allowing real-time tracking of prices and item availability.</p>
                 </div>
-            </div>
+            </a>
+            <a href="https://github.com/Zeffut/" class="project-item">
+                <div class="card">
+                    <img src="ressources/github.svg" alt="" class="logos">
+                </div>
+                <div class="description">
+                    <p class="card_title" data-lang="fr">Autres Projets</p>
+                    <p class="card_title" data-lang="en" style="display: none;">Other Projects</p>
+                    <p class="card" data-lang="fr">Découvrez plus de projets sur mon GitHub, où je partage divers scripts et applications que j'ai développés.</p>
+                    <p class="card" data-lang="en" style="display: none;">Discover more projects on my GitHub, where I share various scripts and applications I have developed.</p>
+                </div>
+            </a>
         </section>
     </section>
     <section class="credits">
         Designed in  <img src="ressources/figma.png" alt="" class="icon">  Figma & inspired by <a href="https://www.figma.com/@ibrahimmemon" class="link">Ibrahim Memon</a>
     </section>
+    <script>
+        document.getElementById('fr-flag').addEventListener('click', function() {
+            switchLanguage('fr');
+        });
+
+        document.getElementById('en-flag').addEventListener('click', function() {
+            switchLanguage('en');
+        });
+
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(function(element) {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+
+            if (lang === 'fr') {
+                document.getElementById('fr-flag').classList.add('hidden');
+                document.getElementById('en-flag').classList.remove('hidden');
+            } else {
+                document.getElementById('fr-flag').classList.remove('hidden');
+                document.getElementById('en-flag').classList.add('hidden');
+            }
+        }
+
+        // Initial language setup
+        switchLanguage('fr');
+    </script>
 </body>
 </html>
