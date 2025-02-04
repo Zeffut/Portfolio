@@ -220,8 +220,9 @@ section.project {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 50px auto; /* Ajouté auto pour centrer horizontalement */
     margin-bottom: 150px;
+    max-width: 800px; /* Ajouté pour correspondre aux autres sections */
 }
 
 section.card {
