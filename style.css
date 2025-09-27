@@ -2,19 +2,22 @@
 
 * {
     font-family: Poppins;
+    box-sizing: border-box;
 }
 
 body {
     background-color: black;
     margin: 0%;
     align-items: center;
-    min-width: 500px;
+    min-width: 320px;
+    max-width: 100vw;
+    overflow-x: hidden;
     z-index: 1;
 }
 
 .noise {
     position: absolute;
-    width: 60%;
+    width: 100%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -293,6 +296,87 @@ p.card_title {
     color: white;
     margin: 0px;
     font-weight: 600;
+}
+
+/* Media queries pour mobile */
+@media (max-width: 768px) {
+    section.project {
+        margin: 30px 15px;
+        margin-bottom: 100px;
+    }
+
+    section.card {
+        margin: 0;
+        gap: 20px;
+    }
+
+    a.project-item {
+        flex-direction: column;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    a.project-item:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    div.card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    img.logos {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: none;
+        border-radius: 6px;
+    }
+
+    div.description {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    p.card_title {
+        font-size: 18px;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    p.card {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #cccccc;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    h1.project {
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
 }
 
 /* Credits */

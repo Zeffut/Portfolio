@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="language-switcher">
-        <img src="ressources/france.svg" alt="Français" id="fr-flag" class="hidden">
-        <img src="ressources/uk.svg" alt="English" id="en-flag">
+        <img src="ressources/france.svg" alt="Français" id="fr-flag">
+        <img src="ressources/uk.svg" alt="English" id="en-flag" class="hidden">
     </div>
     <iframe src="https://my.spline.design/worldplanet-EIqzJpBAVlkmbGBPEyTG6tHM/" frameborder="0" width="100%" height="500px" class="noise"></iframe>
     <section class="top-page">
@@ -131,17 +131,6 @@
                     <p class="card" data-lang="en" style="display: none;">A webapp allowing students to find free rooms in the ESIEE PARIS school.</p>
                 </div>
             </a>
-            <a href="https://github.com/Zeffut/VintedScraper" class="project-item">
-                <div class="card">
-                    <img src="ressources/vinted.png" alt="" class="logos">
-                </div>
-                <div class="description">
-                    <p class="card_title" data-lang="fr">VintedScraper</p>
-                    <p class="card_title" data-lang="en" style="display: none;">VintedScraper</p>
-                    <p class="card" data-lang="fr">J'ai développé un script Python pour extraire des données de Vinted, permettant de suivre les prix et les disponibilités des articles en temps réel.</p>
-                    <p class="card" data-lang="en" style="display: none;">I developed a Python script to extract data from Vinted, allowing real-time tracking of prices and item availability.</p>
-                </div>
-            </a>
             <a href="https://github.com/Zeffut/NoteGenius" class="project-item">
                 <div class="card">
                     <img src="ressources/favicon.ico" alt="" class="logos">
@@ -153,26 +142,26 @@
                     <p class="card" data-lang="en" style="display: none;">NoteGenius is an intuitive web application that allows users to transform their PDF files into interactive flashcards. Designed to simplify learning, NoteGenius combines power and simplicity with Flask as the backend and a clean, efficient user interface.</p>
                 </div>
             </a>
-            <a href="https://github.com/Zeffut/BeeHappy" class="project-item">
-                <div class="card">
-                    <img src="ressources/beehappy.png" alt="" class="logos">
-                </div>
-                <div class="description">
-                    <p class="card_title" data-lang="fr">BeeHappy</p>
-                    <p class="card_title" data-lang="en" style="display: none;">BeeHappy</p>
-                    <p class="card" data-lang="fr">Pour mon projet de fin d'année de terminale STI2D, mes camarades et moi avons automatisé la ruche de notre lycée en y ajoutant divers capteurs et un site web pour visualiser les données.</p>
-                    <p class="card" data-lang="en" style="display: none;">For my final year STI2D project, my classmates and I automated our high school beehive by adding various sensors and a website to visualize the data.</p>
-                </div>
-            </a>
             <a href="https://github.com/Zeffut/ChessBot" class="project-item">
                 <div class="card">
                     <img src="ressources/chess.png" alt="" class="logos">
                 </div>
                 <div class="description">
                     <p class="card_title" data-lang="fr">ChessBot</p>
-                    <p class="card_title" data-lang="en" style="display: none;">BeeHappy</p>
+                    <p class="card_title" data-lang="en" style="display: none;">ChessBot</p>
                     <p class="card" data-lang="fr">ChessBot est un projet Python qui automatise des mouvements sur le site chess.com en utilisant la vision par ordinateur et Stockfish pour le calcul des meilleurs coups.</p>
                     <p class="card" data-lang="en" style="display: none;">Chessbot is a Python project that automates movements on the Chess.com site using computer vision and Stockfish for calculating the best shots.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Zeffut" class="project-item">
+                <div class="card">
+                    <img src="ressources/github.svg" alt="" class="logos">
+                </div>
+                <div class="description">
+                    <p class="card_title" data-lang="fr">Mon GitHub</p>
+                    <p class="card_title" data-lang="en" style="display: none;">My GitHub</p>
+                    <p class="card" data-lang="fr">Découvrez tous mes projets et contributions sur mon profil GitHub.</p>
+                    <p class="card" data-lang="en" style="display: none;">Discover all my projects and contributions on my GitHub profile.</p>
                 </div>
             </a>
         </section>
@@ -180,36 +169,7 @@
     <section class="credits">
         Designed in  <img src="ressources/figma.png" alt="" class="icon">  Figma & inspired by <a href="https://www.figma.com/@ibrahimmemon" class="link">Ibrahim Memon</a>
     </section>
-    <script>
-        document.getElementById('fr-flag').addEventListener('click', function() {
-            switchLanguage('fr');
-        });
-
-        document.getElementById('en-flag').addEventListener('click', function() {
-            switchLanguage('en');
-        });
-
-        function switchLanguage(lang) {
-            document.querySelectorAll('[data-lang]').forEach(function(element) {
-                if (element.getAttribute('data-lang') === lang) {
-                    element.style.display = '';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-
-            if (lang === 'fr') {
-                document.getElementById('fr-flag').classList.add('hidden');
-                document.getElementById('en-flag').classList.remove('hidden');
-            } else {
-                document.getElementById('fr-flag').classList.remove('hidden');
-                document.getElementById('en-flag').classList.add('hidden');
-            }
-        }
-
-        // Initial language setup
-        switchLanguage('fr');
-    </script>
+    <script src="script.js"></script>
     <script src="https://srv814883.hstgr.cloud/api/script.js" data-site-id="2" defer></script>
 </body>
 </html>
