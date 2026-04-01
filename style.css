@@ -160,7 +160,7 @@ div.contact_button:hover {
 }
 
 p {
-    font-size: 13.19px;
+    font-size: 16px;
     color: rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0);
 }
@@ -178,21 +178,20 @@ div.text {
 }
 
 h1.name {
-    font-size: 40px;
+    font-size: 65px;
     margin-bottom: 0px;
-    /* animation: pulse 3s infinite; */
+    background: linear-gradient(270deg, #9C83FF, #FF9051, #9C83FF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+@keyframes gradient-shift {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
 }
 
 h2.subtitle {
@@ -219,8 +218,10 @@ p.intro {
 }
 
 div.contact_button_2 {
-    background-color: black;
-    border: 1px solid #C9C9C9;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 30px;
     justify-content: center;
     color: white;
@@ -230,15 +231,13 @@ div.contact_button_2 {
     text-align: center;
     display: flex;
     align-items: center;
-    margin-top: 75px;
-    margin-bottom: 75px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 div.contact_button_2:hover {
-    background-color: #C9C9C9;
-    color: black;
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
 }
 
 .buttons-row {
@@ -263,6 +262,22 @@ div.contact_button_2:hover {
 }
 
 
+/* Hero entrance */
+.top-page {
+    animation: hero-entrance 0.8s ease-out;
+}
+
+@keyframes hero-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* About Section */
 
 section.about {
@@ -272,9 +287,9 @@ section.about {
     align-items: center;
 }
 
-h1.about {
+h1.about, h1.experience, h1.project {
     color: white;
-    font-size: 45px;
+    font-size: 50px;
     margin: 0px;
     margin-top: 75px;
 }
@@ -296,12 +311,6 @@ section.experience {
     align-items: center;
 }
 
-h1.experience {
-    color: white;
-    font-size: 45px;
-    margin: 0px;
-    margin-top: 75px;
-}
 
 p.experience {
     margin-left: 15px;
@@ -343,12 +352,6 @@ a.project-item:hover {
     cursor: pointer;
 }
 
-h1.project {
-    color: white;
-    font-size: 45px;
-    margin: 0px;
-    margin-top: 75px;
-}
 
 div.card {
     width: auto;
