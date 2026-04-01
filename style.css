@@ -302,6 +302,12 @@ p.about {
     margin-top: 50px;
 }
 
+.about-card {
+    padding: 30px 40px;
+    margin-top: 30px;
+    max-width: 600px;
+}
+
 /* Projects experience */
 
 section.experience {
