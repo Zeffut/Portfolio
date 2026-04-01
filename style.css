@@ -377,153 +377,96 @@ section.project {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px auto; /* Ajouté auto pour centrer horizontalement */
+    margin: 50px auto;
     margin-bottom: 150px;
-    max-width: 800px; /* Ajouté pour correspondre aux autres sections */
+    max-width: 800px;
 }
 
-section.card {
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 750px;
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.project-card {
     display: flex;
     flex-direction: column;
-    margin: 75px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-a.project-item {
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(156, 131, 255, 0.2), 0 0 50px rgba(255, 144, 81, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-img-wrapper {
+    width: 100%;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
-    transition: background-color 0.6s ease, transform 0.6s ease;
-    text-decoration: none;
-}
-
-a.project-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.005);
-    cursor: pointer;
-}
-
-
-div.card {
-    width: auto;
-    text-align: center;
-    height: auto;
-    background-color: white;
-    border-radius: 8px;
-}
-
-img.logos {
-    margin: 50px;
-    width: 50px;
-    height: 50px;
-    transform: scale(1.5);
-    border-radius: 8px;
-}
-
-div.description {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
     justify-content: center;
+    border-radius: 16px 16px 0 0;
 }
 
-a.card {
+.project-img-wrapper img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info .card_title {
+    font-size: 20px;
     color: white;
-    font-size: 25px;
-    margin: 0px;
-    transition: transform 0.3s ease;
-}
-
-p.card {
-    margin: 0px;
-    color: #878787;
-}
-
-p.card_title {
-    font-size: 25px;
-    color: white;
-    margin: 0px;
+    margin: 0 0 8px 0;
     font-weight: 600;
 }
 
-/* Media queries pour mobile */
+.project-info .card_desc {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* GitHub CTA */
+.github-cta {
+    text-decoration: none;
+    margin-top: 40px;
+}
+
+.github-cta .contact_button_2 {
+    gap: 10px;
+}
+
+.github-cta-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
 @media (max-width: 768px) {
-    section.project {
-        margin: 30px 15px;
-        margin-bottom: 100px;
-    }
-
-    section.card {
-        margin: 0;
-        gap: 20px;
-    }
-
-    a.project-item {
-        flex-direction: column;
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        padding: 20px;
-        margin-bottom: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-    }
-
-    a.project-item:hover {
-        transform: translateY(-5px);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
-        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
-    }
-
-    div.card {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 12px;
-        padding: 15px;
-        margin-bottom: 15px;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-self: center;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    img.logos {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: none;
-        border-radius: 6px;
-    }
-
-    div.description {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    p.card_title {
-        font-size: 18px;
-        margin-bottom: 8px;
-        font-weight: 700;
-        color: #ffffff;
-    }
-
-    p.card {
-        font-size: 13px;
-        line-height: 1.5;
-        color: #cccccc;
-        margin: 0;
-        padding: 0 10px;
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
     h1.project {
         font-size: 32px;
         margin-top: 40px;
-        margin-bottom: 10px;
     }
 }
 
