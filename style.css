@@ -124,40 +124,6 @@ a {
     color: white;
 }
 
-h3.logo {
-    font-size: 22.21px;
-    margin: 0px;
-    font-weight: 600;
-}
-
-h6.logo {
-    font-size: 9.18px;
-    letter-spacing: 4px;
-    margin: 0px;
-    margin-left: 20px;
-    font-weight: 200;
-}
-
-a.mail {
-    margin-left: auto;
-}
-
-
-div.contact_button {
-    background-color: rgb(255, 255, 255);
-    justify-content: center;
-    height: 35.19px;
-    width: 101.55px;
-    text-align: center;
-    border-radius: 8.8px;
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-div.contact_button:hover {
-    transform: scale(1.1);
-}
 
 p {
     font-size: 16px;
