@@ -287,7 +287,7 @@ section.about {
     align-items: center;
 }
 
-h1.about, h1.experience, h1.project {
+h1.about, h1.experience, h1.project, h1.services {
     color: white;
     font-size: 50px;
     margin: 0px;
@@ -531,13 +531,6 @@ section.services {
     max-width: 800px;
 }
 
-h1.services {
-    color: white;
-    font-size: 45px;
-    margin: 0px;
-    margin-top: 75px;
-}
-
 section.services-list {
     display: flex;
     flex-direction: column;
@@ -550,17 +543,14 @@ a.service-item {
     align-items: center;
     margin-bottom: 20px;
     padding: 20px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     text-decoration: none;
 }
 
 a.service-item:hover {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     transform: translateX(10px);
     border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(156, 131, 255, 0.15);
 }
 
 .service-icon {
