@@ -318,14 +318,58 @@ section.experience {
 }
 
 
-p.experience {
-    margin-left: 15px;
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
     max-width: 600px;
-    color: white;
-    font-size: large;
-    margin-top: 50px;
-    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+    box-shadow: 0 0 20px rgba(156, 131, 255, 0.3), 0 0 40px rgba(255, 144, 81, 0.15);
+    transform: translateY(-4px);
+}
+
+.skill-card img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.stagger-children.visible .fade-in-child:nth-child(1) { transition-delay: 0s; }
+.stagger-children.visible .fade-in-child:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children.visible .fade-in-child:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children.visible .fade-in-child:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children.visible .fade-in-child:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children.visible .fade-in-child:nth-child(6) { transition-delay: 0.5s; }
+.stagger-children.visible .fade-in-child:nth-child(7) { transition-delay: 0.6s; }
+
 /* Projects Section */
 
 section.project {
