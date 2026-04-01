@@ -473,11 +473,20 @@ section.project {
 /* Credits */
 
 section.credits {
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+    align-items: center;
+    margin: 0 auto 25px auto;
     text-align: center;
+    font-size: 12px;
+    padding: 12px 24px;
+    max-width: fit-content;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
 }
 
 img.icon {
