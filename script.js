@@ -6,7 +6,10 @@ document.getElementById('en-flag').addEventListener('click', function() {
     switchLanguage('fr');
 });
 
+let currentLang = 'fr';
+
 function switchLanguage(lang) {
+    currentLang = lang;
     document.querySelectorAll('[data-lang]').forEach(function(element) {
         if (element.getAttribute('data-lang') === lang) {
             element.style.display = '';
@@ -22,6 +25,22 @@ function switchLanguage(lang) {
         document.getElementById('fr-flag').classList.add('hidden');
         document.getElementById('en-flag').classList.remove('hidden');
     }
+
+    // Update skill tooltips
+    document.querySelectorAll('.skill-card[data-tooltip-fr]').forEach(function(card) {
+        var tooltip = card.querySelector('.skill-tooltip');
+        if (tooltip) {
+            tooltip.textContent = card.getAttribute('data-tooltip-' + lang);
+        }
+    });
+
+    // Update project tooltips
+    document.querySelectorAll('.project-chip[data-tooltip-fr]').forEach(function(card) {
+        var tooltip = card.querySelector('.project-tooltip');
+        if (tooltip) {
+            tooltip.textContent = card.getAttribute('data-tooltip-' + lang);
+        }
+    });
 }
 
 // Initial language setup

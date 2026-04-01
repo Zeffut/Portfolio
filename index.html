@@ -43,10 +43,8 @@
         <h1 class="about" data-lang="en" style="display: none;">ABOUT ME</h1>
         <span class="gradient_text" data-lang="fr">MON PARCOURS</span>
         <span class="gradient_text" data-lang="en" style="display: none;">MY JOURNEY</span>
-        <div class="glass-card about-card">
-            <p class="about" data-lang="fr">Étudiant en école d’ingénieur et développeur autodidacte, je construis des outils concrets — du scraping d’offres d’emploi à la transcription vocale locale. Je gère aussi ma propre infrastructure : déploiement, monitoring, automatisation, le tout self-hosted.</p>
-            <p class="about" data-lang="en" style="display: none;">Engineering student and self-taught developer, I build practical tools — from job scraping to local voice transcription. I also manage my own infrastructure: deployment, monitoring, automation, all self-hosted.</p>
-        </div>
+        <p class="about" data-lang="fr">Étudiant en école d’ingénieur et développeur autodidacte, je construis des outils concrets — du scraping d’offres d’emploi à la transcription vocale locale. Je gère aussi ma propre infrastructure : déploiement, monitoring, automatisation, le tout self-hosted.</p>
+        <p class="about" data-lang="en" style="display: none;">Engineering student and self-taught developer, I build practical tools — from job scraping to local voice transcription. I also manage my own infrastructure: deployment, monitoring, automation, all self-hosted.</p>
     </section>
     <section class="experience fade-in-section">
         <h1 class="experience" data-lang="fr">EXPERIENCE</h1>
@@ -54,33 +52,65 @@
         <span class="gradient_text" data-lang="fr">CE QUE J'UTILISE</span>
         <span class="gradient_text" data-lang="en" style="display: none;">MY TOOLKIT</span>
         <div class="skills-grid stagger-children">
-            <div class="skill-card glass-card fade-in-child">
-                <img src="ressources/skills/html.webp" alt="HTML5">
-                <p>HTML5</p>
-            </div>
-            <div class="skill-card glass-card fade-in-child">
-                <img src="ressources/skills/css.png" alt="CSS3">
-                <p>CSS3</p>
-            </div>
-            <div class="skill-card glass-card fade-in-child">
-                <img src="ressources/skills/javascript.png" alt="JavaScript">
-                <p>JavaScript</p>
-            </div>
-            <div class="skill-card glass-card fade-in-child">
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Scripting, scraping, bots, IA — mon langage principal" data-tooltip-en="Scripting, scraping, bots, AI — my main language">
                 <img src="ressources/skills/python.png" alt="Python">
                 <p>Python</p>
+                <span class="skill-tooltip"></span>
             </div>
-            <div class="skill-card glass-card fade-in-child">
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Plugins Minecraft, projets académiques" data-tooltip-en="Minecraft plugins, academic projects">
+                <img src="ressources/skills/java.png" alt="Java">
+                <p>Java</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Programmation bas niveau, algorithmes" data-tooltip-en="Low-level programming, algorithms">
+                <img src="ressources/skills/c.svg" alt="C">
+                <p>C</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Interfaces web interactives, logique front-end" data-tooltip-en="Interactive web interfaces, front-end logic">
+                <img src="ressources/skills/javascript.png" alt="JavaScript">
+                <p>JavaScript</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Structure et sémantique des pages web" data-tooltip-en="Web page structure and semantics">
+                <img src="ressources/skills/html.webp" alt="HTML5">
+                <p>HTML5</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Design responsive, animations, layouts" data-tooltip-en="Responsive design, animations, layouts">
+                <img src="ressources/skills/css.png" alt="CSS3">
+                <p>CSS3</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="APIs REST et backends web en Python" data-tooltip-en="REST APIs and Python web backends">
+                <img src="ressources/skills/flask.svg" alt="Flask">
+                <p>Flask</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Automatisation web et scraping de données" data-tooltip-en="Web automation and data scraping">
+                <img src="ressources/skills/selenium.svg" alt="Selenium">
+                <p>Selenium</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Versioning et collaboration sur le code" data-tooltip-en="Code versioning and collaboration">
                 <img src="ressources/skills/git.png" alt="Git">
                 <p>Git</p>
+                <span class="skill-tooltip"></span>
             </div>
-            <div class="skill-card glass-card fade-in-child">
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Conteneurisation et déploiement d'apps" data-tooltip-en="App containerization and deployment">
                 <img src="ressources/skills/docker.webp" alt="Docker">
                 <p>Docker</p>
+                <span class="skill-tooltip"></span>
             </div>
-            <div class="skill-card glass-card fade-in-child">
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Automatisation de workflows et intégrations" data-tooltip-en="Workflow automation and integrations">
+                <img src="ressources/skills/n8n.svg" alt="n8n">
+                <p>n8n</p>
+                <span class="skill-tooltip"></span>
+            </div>
+            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Organisation, documentation et gestion de projets" data-tooltip-en="Organization, documentation and project management">
                 <img src="ressources/skills/notion.png" alt="Notion">
                 <p>Notion</p>
+                <span class="skill-tooltip"></span>
             </div>
         </div>
     </section>
@@ -90,38 +120,85 @@
         <span class="gradient_text" data-lang="fr">DÉMONSTRATION</span>
         <span class="gradient_text" data-lang="en" style="display: none;">DEMONSTRATION</span>
         <div class="projects-grid stagger-children">
-            <a href="https://github.com/Zeffut/Esiee-Paris-Salles" class="project-card glass-card fade-in-child" target="_blank">
-                <div class="project-img-wrapper">
-                    <img src="ressources/esiee_salles.png" alt="Esiee-Paris-Salles">
-                </div>
-                <div class="project-info">
-                    <p class="card_title" data-lang="fr">Esiee-Paris-Salles</p>
-                    <p class="card_title" data-lang="en" style="display: none;">Esiee-Paris-Salles</p>
-                    <p class="card_desc" data-lang="fr">Une webapp permettant aux étudiants de trouver des salles libres dans l'école ESIEE PARIS.</p>
-                    <p class="card_desc" data-lang="en" style="display: none;">A webapp allowing students to find free rooms in the ESIEE PARIS school.</p>
-                </div>
+            <a href="https://github.com/Zeffut/BetterFasterWhisper" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="App macOS de transcription vocale locale via WhisperKit et CoreML" data-tooltip-en="macOS local voice transcription app using WhisperKit and CoreML">
+                <img src="ressources/superwhisper_logo.jpg" alt="BetterFasterWhisper">
+                <p>BFWhisper</p>
+                <span class="project-tooltip"></span>
             </a>
-            <a href="https://github.com/Zeffut/BetterFasterWhisper" class="project-card glass-card fade-in-child" target="_blank">
-                <div class="project-img-wrapper">
-                    <img src="ressources/superwhisper_logo.jpg" alt="BetterFasterWhisper">
-                </div>
-                <div class="project-info">
-                    <p class="card_title" data-lang="fr">BetterFasterWhisper</p>
-                    <p class="card_title" data-lang="en" style="display: none;">BetterFasterWhisper</p>
-                    <p class="card_desc" data-lang="fr">Une application macOS gratuite et open-source de transcription vocale. Alternative à SuperWhisper, elle fonctionne entièrement en local grâce à WhisperKit et CoreML, sans abonnement ni collecte de données.</p>
-                    <p class="card_desc" data-lang="en" style="display: none;">A free, open-source macOS voice-to-text transcription app. An alternative to SuperWhisper, it runs entirely locally using WhisperKit and CoreML, with no subscriptions or data collection.</p>
-                </div>
+            <a href="https://github.com/Zeffut/JobScraper" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Agrégateur d'offres d'emploi multi-plateformes avec export JSON/CSV" data-tooltip-en="Multi-platform job aggregator with JSON/CSV export">
+                <img src="ressources/linkedin_ico.png" alt="JobScraper">
+                <p>JobScraper</p>
+                <span class="project-tooltip"></span>
             </a>
-            <a href="https://github.com/Zeffut/JobScraper" class="project-card glass-card fade-in-child" target="_blank">
-                <div class="project-img-wrapper">
-                    <img src="ressources/linkedin_ico.png" alt="JobScraper">
-                </div>
-                <div class="project-info">
-                    <p class="card_title" data-lang="fr">JobScraper</p>
-                    <p class="card_title" data-lang="en" style="display: none;">JobScraper</p>
-                    <p class="card_desc" data-lang="fr">Un outil d'agrégation d'offres d'emploi qui recherche simultanément sur LinkedIn, HelloWork, France Travail, Welcome to the Jungle et Adzuna. Filtrage par localisation, type de contrat et export en JSON/CSV.</p>
-                    <p class="card_desc" data-lang="en" style="display: none;">A job aggregation tool that searches LinkedIn, HelloWork, France Travail, Welcome to the Jungle and Adzuna simultaneously. Filter by location, contract type and export to JSON/CSV.</p>
-                </div>
+            <a href="https://github.com/Zeffut/Esiee-Paris-Salles" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Webapp pour trouver des salles libres à ESIEE Paris" data-tooltip-en="Webapp to find free rooms at ESIEE Paris">
+                <img src="ressources/esiee_salles.png" alt="Esiee-Paris-Salles">
+                <p>ESIEE Salles</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/ClipGenius" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Génération automatique de clips courts avec IA locale et smart cropping" data-tooltip-en="Automatic short clip generation with local AI and smart cropping">
+                <img src="ressources/tiktok.png" alt="ClipGenius">
+                <p>ClipGenius</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/VintedScraper" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Bot de scraping Vinted avec alertes Telegram et sync Notion" data-tooltip-en="Vinted scraping bot with Telegram alerts and Notion sync">
+                <img src="ressources/vinted.png" alt="VintedScraper">
+                <p>Vinted Bot</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/ChessBot" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Bot d'échecs avec OpenCV et Stockfish" data-tooltip-en="Chess bot using OpenCV and Stockfish">
+                <img src="ressources/chess.png" alt="ChessBot">
+                <p>ChessBot</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/NoteGenius" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="App de prise de notes avec Flask et base de données" data-tooltip-en="Note-taking app with Flask and database">
+                <img src="ressources/skills/flask.svg" alt="NoteGenius">
+                <p>NoteGenius</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/BrawlStar-Bot" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Bot automatisé pour Brawl Stars avec OCR et Telegram" data-tooltip-en="Automated Brawl Stars bot with OCR and Telegram">
+                <img src="ressources/beehappy.png" alt="BrawlStar-Bot">
+                <p>Brawl Bot</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/n8n-nodes-plaud" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Nodes n8n custom pour l'API Plaud" data-tooltip-en="Custom n8n nodes for the Plaud API">
+                <img src="ressources/skills/n8n.svg" alt="n8n-nodes-plaud">
+                <p>n8n Plaud</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/tiktok_ia_generator" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Génération 100% automatique de TikToks à partir de vidéos YouTube" data-tooltip-en="Fully automated TikTok generation from YouTube videos">
+                <img src="ressources/tiktok.png" alt="tiktok_ia_generator">
+                <p>TikTok IA</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a href="https://github.com/Zeffut/UltraFastPregen" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Plugin Minecraft Paper de prégénération de monde ultra rapide" data-tooltip-en="Ultra fast Minecraft Paper world pregeneration plugin">
+                <img src="ressources/project_minecraft.svg" alt="UltraFastPregen">
+                <p>FastPregen</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="SaaS Factory — système de création rapide de SaaS avec Claude Code" data-tooltip-en="SaaS Factory — rapid SaaS creation system with Claude Code">
+                <img src="ressources/project_saas.svg" alt="Saas">
+                <p>SaaS Factory</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="Outil d'observation et de monitoring" data-tooltip-en="Observation and monitoring tool">
+                <img src="ressources/project_observer.svg" alt="Observer">
+                <p>Observer</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="Serveur Minecraft SMP personnalisé" data-tooltip-en="Custom Minecraft SMP server">
+                <img src="ressources/project_minecraft.svg" alt="Zeffut-SMP">
+                <p>Zeffut SMP</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="App de prise de notes intelligente" data-tooltip-en="Smart note-taking app">
+                <img src="ressources/project_neuranote.svg" alt="NeuraNote">
+                <p>NeuraNote</p>
+                <span class="project-tooltip"></span>
+            </a>
+            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="Génération d'articles de journalisme assistée par IA" data-tooltip-en="AI-assisted journalism article generation">
+                <img src="ressources/project_journaliste.svg" alt="JournalisteIA">
+                <p>JournalisteIA</p>
+                <span class="project-tooltip"></span>
             </a>
         </div>
         <a href="https://github.com/Zeffut" class="github-cta" target="_blank">
