@@ -3,218 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Thomas's Portfolio</title>
+    <title>Thomas De Sousa — Développeur Full-Stack</title>
+    <meta name="description" content="Portfolio de Thomas De Sousa — développeur full-stack. Projets IA, automatisation, scraping et web.">
+    <meta name="author" content="Thomas De Sousa">
+    <meta name="theme-color" content="#08080c">
+    <link rel="icon" href="ressources/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thomas De Sousa — Développeur Full-Stack">
+    <meta property="og:description" content="Projets IA, automatisation, scraping et web. De l'idée à la prod.">
+    <meta property="og:locale" content="fr_FR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
-<div class="blob-container">
+
+<div class="bg-fx" aria-hidden="true">
+    <div class="grid"></div>
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
+    <div class="noise"></div>
 </div>
-    <div class="language-switcher">
-        <img src="ressources/france.svg" alt="Français" id="fr-flag">
-        <img src="ressources/uk.svg" alt="English" id="en-flag" class="hidden">
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+    <a href="#top" class="brand">
+        <span class="mark-text">Thomas&nbsp;De&nbsp;Sousa</span>
+    </a>
+    <div class="nav-links">
+        <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+        <a href="#stack" data-fr="Stack" data-en="Stack">Stack</a>
+        <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
     </div>
-    <section class="top-page">
-        <div class="presentation">
-            <div class="text">
-                <h1 class="name" data-lang="fr">Thomas De Sousa</h1>
-                <h1 class="name" data-lang="en" style="display: none;">Thomas De Sousa</h1>
-                <h2 class="subtitle" data-lang="fr">Développeur Full-Stack & Passionné d'<span class="gradient_text">Infrastructure</span></h2>
-                <h2 class="subtitle" data-lang="en" style="display: none;">Full-Stack Developer & <span class="gradient_text">Infrastructure</span> Enthusiast</h2>
-                <p class="intro" data-lang="fr">Je construis des outils concrets et je gère ma propre infrastructure, le tout self-hosted.</p>
-                <p class="intro" data-lang="en" style="display: none;">I build practical tools and manage my own infrastructure, all self-hosted.</p>
+    <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+            <img src="ressources/france.svg" alt="Français" id="lang-fr" class="active">
+            <img src="ressources/uk.svg" alt="English" id="lang-en">
+        </div>
+        <a href="mailto:tom77ds@gmail.com" class="btn btn-primary btn-sm" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+</nav>
+
+<main class="container" id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero snap-section" id="hero">
+        <div class="hero-inner">
+            <span class="status-pill reveal">
+                <span class="status-dot"></span>
+                <span data-fr="Ouvert aux projets & collaborations" data-en="Open to projects & collaborations">Ouvert aux projets & collaborations</span>
+            </span>
+
+            <h1 class="reveal">
+                <span data-fr="Salut, je suis" data-en="Hi, I'm">Salut, je suis</span><br>
+                <span class="gradient-text">Thomas De Sousa</span>
+            </h1>
+
+            <p class="role reveal" data-fr="Développeur Full-Stack — je conçois, je code, je déploie."
+               data-en="Full-Stack developer — I design it, build it, ship it.">
+                Développeur Full-Stack — je conçois, je code, je déploie.
+            </p>
+
+            <p class="lead reveal"
+               data-fr="Développeur full-stack autodidacte, je construis des outils concrets — IA locale, automatisation, scraping, web — de l'idée jusqu'à la mise en production."
+               data-en="Self-taught full-stack developer, I build practical tools — local AI, automation, scraping, web — from idea to production.">
+                Développeur full-stack autodidacte, je construis des outils concrets — IA locale, automatisation, scraping, web — de l'idée jusqu'à la mise en production.
+            </p>
+
+            <div class="hero-actions reveal">
+                <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View my work">Voir mes projets</a>
+                <a href="https://github.com/Zeffut" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <img src="ressources/github.svg" alt="" class="invert"> GitHub
+                </a>
             </div>
-            <div class="buttons-row">
-                <a href="mailto:tom77ds@gmail.com">
-                    <div class="contact_button_2" data-lang="fr">
-                        Me Contacter
-                    </div>
-                    <div class="contact_button_2" data-lang="en" style="display: none;">
-                        Contact Me
-                    </div>
+
+            <div class="hero-meta reveal">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    <span data-fr="Chessy, France" data-en="Chessy, France">Chessy, France</span>
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+                    <span data-fr="16+ projets open-source" data-en="16+ open-source projects">16+ projets open-source</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="snap-section" id="about">
+        <div class="section-head reveal">
+            <span class="eyebrow" data-fr="À propos" data-en="About">À propos</span>
+            <h2 class="section-title" data-fr="Du premier commit à la mise en prod." data-en="From first commit to production.">Du premier commit à la mise en prod.</h2>
+        </div>
+
+        <div class="about-wrap">
+            <div class="about-card reveal">
+                <p class="lead-line"
+                   data-fr="Je construis des produits qui marchent vraiment, du premier prototype jusqu'au déploiement en production."
+                   data-en="I build products that actually ship — from first prototype to production deployment.">
+                    Je construis des produits qui marchent vraiment, du premier prototype jusqu'au déploiement en production.
+                </p>
+                <p data-fr="Développeur full-stack autodidacte, je passe mon temps à créer des outils concrets : de la transcription vocale locale au scraping d'offres d'emploi, en passant par la génération de contenu assistée par IA."
+                   data-en="Self-taught full-stack developer, I spend my time building practical tools: from local voice transcription to job scraping and AI-assisted content generation.">
+                    Développeur full-stack autodidacte, je passe mon temps à créer des outils concrets : de la transcription vocale locale au scraping d'offres d'emploi, en passant par la génération de contenu assistée par IA.
+                </p>
+                <p data-fr="Ce qui m'anime, c'est de boucler une idée de bout en bout : penser le produit, écrire le code et le livrer fonctionnel. Le full-stack, pour moi, va du design de l'interface jusqu'à la logique back-end et la mise en production."
+                   data-en="What drives me is taking an idea full circle: shaping the product, writing the code and shipping it working. Full-stack, to me, runs from interface design down to back-end logic and production.">
+                    Ce qui m'anime, c'est de boucler une idée de bout en bout : penser le produit, écrire le code et le livrer fonctionnel. Le full-stack, pour moi, va du design de l'interface jusqu'à la logique back-end et la mise en production.
+                </p>
+            </div>
+
+            <div class="stats reveal-stagger">
+                <div class="stat">
+                    <div class="num gradient-text">16+</div>
+                    <div class="label" data-fr="Projets publics" data-en="Public projects">Projets publics</div>
+                </div>
+                <div class="stat">
+                    <div class="num gradient-text">4</div>
+                    <div class="label" data-fr="Domaines : IA, web, auto, bots" data-en="Fields: AI, web, auto, bots">Domaines : IA, web, auto, bots</div>
+                </div>
+                <div class="stat">
+                    <div class="num gradient-text">12+</div>
+                    <div class="label" data-fr="Technos maîtrisées" data-en="Technologies">Technos maîtrisées</div>
+                </div>
+                <div class="stat">
+                    <div class="num gradient-text">100%</div>
+                    <div class="label" data-fr="Autodidacte" data-en="Self-taught">Autodidacte</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== STACK ===================== -->
+    <section class="snap-section" id="stack">
+        <div class="section-head reveal">
+            <span class="eyebrow" data-fr="Stack technique" data-en="Tech stack">Stack technique</span>
+            <h2 class="section-title" data-fr="Ce que j'utilise au quotidien" data-en="What I work with">Ce que j'utilise au quotidien</h2>
+        </div>
+
+        <div class="stack-groups reveal-stagger">
+            <div class="stack-group">
+                <h3 data-fr="Langages" data-en="Languages">Langages</h3>
+                <div class="chips">
+                    <span class="chip" data-tip-fr="Scripting, scraping, bots, IA — mon langage principal" data-tip-en="Scripting, scraping, bots, AI — my main language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7a2 2 0 0 0-2 2v2"/><path d="M15 17v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h6a2 2 0 0 0 2-2V9"/></svg>Python</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 11v4.2a1.3 1.3 0 0 1-2.6 0M12.6 15.4c0 .9.8 1.4 1.8 1.4s1.9-.5 1.9-1.5-1-1.3-1.9-1.6-1.7-.7-1.7-1.6.8-1.5 1.7-1.5 1.6.5 1.7 1.2"/></svg>JavaScript</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>TypeScript</span>
+                    <span class="chip" data-tip-fr="Plugins Minecraft, projets académiques" data-tip-en="Minecraft plugins, academic projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z"/><path d="M16 11h2a2 2 0 0 1 0 4h-2"/><path d="M9 3c1 1-1 2 0 3M12 3c1 1-1 2 0 3"/></svg>Java</span>
+                    <span class="chip" data-tip-fr="App macOS BetterFasterWhisper" data-tip-en="macOS app BetterFasterWhisper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 5s-3 9-11 12c0 0 5 1 8-2 0 0-4 .2-6-2 0 0 6-1 9-8Z"/></svg>Swift</span>
+                    <span class="chip" data-tip-fr="Programmation bas niveau, algorithmes" data-tip-en="Low-level programming, algorithms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.5a4 4 0 1 0 0 5"/></svg>C</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>SQL</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>Bash</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <h3 data-fr="Frontend &amp; Web" data-en="Frontend &amp; Web">Frontend &amp; Web</h3>
+                <div class="chips">
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l1.4 16L12 21l5.6-2L19 3Z"/><path d="M8 7.5h8l-.5 4.5H9.2l.3 3 2.5.8 2.5-.8.2-2"/></svg>HTML5</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4 7.5 20M16.5 4l-2 16M4 9.5h15M3.5 14.5h15"/></svg>CSS3</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="11" rx="2"/><path d="M2 18h14"/><rect x="17" y="9" width="5" height="11" rx="1"/></svg>Responsive design</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>APIs REST</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H7.5A1.5 1.5 0 0 0 6 5.5V9a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3.5A1.5 1.5 0 0 0 7.5 20H9M15 4h1.5A1.5 1.5 0 0 1 18 5.5V9a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3.5a1.5 1.5 0 0 1-1.5 1.5H15"/></svg>JSON</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <h3 data-fr="Backend &amp; Data" data-en="Backend &amp; Data">Backend &amp; Data</h3>
+                <div class="chips">
+                    <span class="chip" data-tip-fr="APIs REST et backends web en Python" data-tip-en="REST APIs and Python web backends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg>Flask</span>
+                    <span class="chip" data-tip-fr="Automatisation web et scraping de données" data-tip-en="Web automation and data scraping"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 16 2.2-6.8L20 11Z"/></svg>Selenium</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.6 5.6l12.8 12.8"/></svg>BeautifulSoup</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>Pandas</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>SQLite</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>Bots Telegram</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <h3 data-fr="IA &amp; Automatisation" data-en="AI &amp; Automation">IA &amp; Automatisation</h3>
+                <div class="chips">
+                    <span class="chip" data-tip-fr="Transcription locale (BetterFasterWhisper)" data-tip-en="Local transcription (BetterFasterWhisper)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/></svg>WhisperKit</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>CoreML</span>
+                    <span class="chip" data-tip-fr="Vision par ordinateur (ChessBot)" data-tip-en="Computer vision (ChessBot)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>OpenCV</span>
+                    <span class="chip" data-tip-fr="Modèles IA locaux" data-tip-en="Local AI models"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5c0 1.5-1 2-1 3.5A3.5 3.5 0 0 0 9.5 15H10v3a2 2 0 0 0 4 0v-3h.5A3.5 3.5 0 0 0 18 11.5c0-1.5-1-2-1-3.5a5 5 0 0 0-5-5Z"/></svg>Ollama</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M4 12h16"/></svg>OCR / Tesseract</span>
+                    <span class="chip" data-tip-fr="Automatisation de workflows et intégrations" data-tip-en="Workflow automation and integrations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="5" r="2.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="17" cy="19" r="2.5"/><path d="M9.2 10.8 14.8 6.4M9.2 13.2l5.6 4.4"/></svg>n8n</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M7 4v16M17 4v16M2.5 12h19M2.5 8h4.5M2.5 16h4.5M17 8h4.5M17 16h4.5"/></svg>FFmpeg</span>
+                </div>
+            </div>
+
+            <div class="stack-group">
+                <h3 data-fr="Outils &amp; Logiciels" data-en="Tools &amp; Software">Outils &amp; Logiciels</h3>
+                <div class="chips">
+                    <span class="chip" data-tip-fr="Conteneurisation et déploiement d'apps" data-tip-en="App containerization and deployment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h17a6 6 0 0 1-6 7H9a6 6 0 0 1-6-6Z"/><rect x="6" y="7.5" width="2.6" height="2.6"/><rect x="10" y="7.5" width="2.6" height="2.6"/><rect x="14" y="7.5" width="2.6" height="2.6"/><rect x="10" y="4" width="2.6" height="2.6"/><path d="M20 9c1-.6 2-.4 2.5 0-.3 1-1.4 1.3-2.3 1"/></svg>Docker</span>
+                    <span class="chip" data-tip-fr="Versioning et collaboration sur le code" data-tip-en="Code versioning and collaboration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="8" r="2.2"/><path d="M6 8.2v7.6M18 10.2c0 4-4 4.3-7 4.3"/></svg>Git</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3-.3 6-1.5 6-6.6a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 1.6 5.5 1.9 5.5 1.9a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 4 8.9c0 5 3 6.3 6 6.6a3.4 3.4 0 0 0-1 2.6V22"/></svg>GitHub</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6M12 19h8"/></svg>Linux</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>VS Code</span>
+                    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8Z"/></svg>Claude Code</span>
+                    <span class="chip" data-tip-fr="Design d'interfaces" data-tip-en="Interface design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H8.5a3.5 3.5 0 1 0 0 7H12Z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12Z"/><path d="M12 9H8.5a3.5 3.5 0 1 0 0 7H12Z"/><circle cx="15.5" cy="12.5" r="3.5"/></svg>Figma</span>
+                    <span class="chip" data-tip-fr="Organisation, documentation et gestion de projets" data-tip-en="Organization, documentation and project management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 17V8l6 9V8"/></svg>Notion</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="snap-section" id="projects">
+        <div class="section-head reveal">
+            <span class="eyebrow" data-fr="Sélection" data-en="Selected work">Sélection</span>
+            <h2 class="section-title" data-fr="Projets" data-en="Projects">Projets</h2>
+            <p class="section-sub" data-fr="Une sélection de ce que je construis — IA locale, automatisation, web et plus. Tout est open-source sur GitHub."
+               data-en="A selection of what I build — local AI, automation, web and more. All open-source on GitHub.">
+                Une sélection de ce que je construis — IA locale, automatisation, web et plus. Tout est open-source sur GitHub.
+            </p>
+        </div>
+
+        <div class="proj-toolbar reveal" id="filters">
+            <button class="filter active" data-filter="all" data-fr="Tout" data-en="All">Tout</button>
+            <button class="filter" data-filter="ia" data-fr="IA" data-en="AI">IA</button>
+            <button class="filter" data-filter="auto" data-fr="Automatisation" data-en="Automation">Automatisation</button>
+            <button class="filter" data-filter="web" data-fr="Web" data-en="Web">Web</button>
+            <button class="filter" data-filter="mc" data-fr="Minecraft" data-en="Minecraft">Minecraft</button>
+        </div>
+
+        <div class="bento" id="bento">
+
+            <!-- Featured -->
+            <a href="https://github.com/Zeffut/BetterFasterWhisper" target="_blank" rel="noopener" class="card proj feat" data-cat="ia">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>BetterFasterWhisper</h3>
+                <p data-fr="App macOS de transcription vocale 100% locale via WhisperKit et CoreML — rapide, privée, hors-ligne."
+                   data-en="100% local macOS voice transcription app using WhisperKit & CoreML — fast, private, offline.">
+                    App macOS de transcription vocale 100% locale via WhisperKit et CoreML — rapide, privée, hors-ligne.</p>
+                <div class="proj-tags"><span class="tag accent">IA</span><span class="tag">Swift</span><span class="tag">CoreML</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/ClipGenius" target="_blank" rel="noopener" class="card proj feat" data-cat="ia">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M7 4v16M17 4v16M2.5 12h19M2.5 8h4.5M2.5 16h4.5M17 8h4.5M17 16h4.5"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>ClipGenius</h3>
+                <p data-fr="Génération automatique de clips courts à partir de longues vidéos — IA locale, recadrage intelligent, sous-titres."
+                   data-en="Automatic short-clip generation from long videos — local AI, smart cropping, subtitles.">
+                    Génération automatique de clips courts à partir de longues vidéos — IA locale, recadrage intelligent, sous-titres.</p>
+                <div class="proj-tags"><span class="tag accent">IA</span><span class="tag">Python</span><span class="tag">Vidéo</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/JobScraper" target="_blank" rel="noopener" class="card proj feat" data-cat="auto">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7.5" width="19" height="12.5" rx="2"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5"/><path d="M2.5 13h19"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>JobScraper</h3>
+                <p data-fr="Agrégateur d'offres d'emploi multi-plateformes (LinkedIn, Indeed…) avec export JSON / CSV et filtres."
+                   data-en="Multi-platform job aggregator (LinkedIn, Indeed…) with JSON / CSV export and filters.">
+                    Agrégateur d'offres d'emploi multi-plateformes (LinkedIn, Indeed…) avec export JSON / CSV et filtres.</p>
+                <div class="proj-tags"><span class="tag accent">Scraping</span><span class="tag">Python</span><span class="tag">Data</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/Esiee-Paris-Salles" target="_blank" rel="noopener" class="card proj feat" data-cat="web">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 21v-4h6v4"/><path d="M9 7h.01M12 7h.01M15 7h.01M9 11h.01M12 11h.01M15 11h.01"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>ESIEE Salles</h3>
+                <p data-fr="Webapp pour trouver instantanément une salle libre à ESIEE Paris — utilisée par de vrais étudiants."
+                   data-en="Webapp to instantly find a free room at ESIEE Paris — used by real students.">
+                    Webapp pour trouver instantanément une salle libre à ESIEE Paris — utilisée par de vrais étudiants.</p>
+                <div class="proj-tags"><span class="tag accent">Web</span><span class="tag">Flask</span><span class="tag">Live</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/n8n-nodes-plaud" target="_blank" rel="noopener" class="card proj feat" data-cat="auto">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="5" r="2.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="17" cy="19" r="2.5"/><path d="M9.2 10.8 14.8 6.4M9.2 13.2l5.6 4.4"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>n8n-nodes-plaud</h3>
+                <p data-fr="Package de nodes n8n custom pour l'API Plaud — une vraie contribution open-source réutilisable."
+                   data-en="Custom n8n nodes package for the Plaud API — a real, reusable open-source contribution.">
+                    Package de nodes n8n custom pour l'API Plaud — une vraie contribution open-source réutilisable.</p>
+                <div class="proj-tags"><span class="tag accent">Open-source</span><span class="tag">TypeScript</span><span class="tag">n8n</span></div>
+            </a>
+
+            <!-- Small -->
+            <a href="https://github.com/Zeffut/VintedScraper" target="_blank" rel="noopener" class="card proj small" data-cat="auto">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v4.6a2 2 0 0 0 .6 1.4l7.4 7.4a2 2 0 0 0 2.8 0l4.6-4.6a2 2 0 0 0 0-2.8L11 5.6A2 2 0 0 0 9.6 5H5a2 2 0 0 0-2 2Z"/><circle cx="7.5" cy="9.5" r="1.2"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>VintedScraper</h3>
+                <p data-fr="Bot Vinted avec alertes Telegram et sync Notion." data-en="Vinted bot with Telegram alerts and Notion sync.">Bot Vinted avec alertes Telegram et sync Notion.</p>
+                <div class="proj-tags"><span class="tag">Python</span><span class="tag">Bot</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/ChessBot" target="_blank" rel="noopener" class="card proj small" data-cat="ia">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l4.5 3.5L12 5l4.5 6.5L21 8l-1.5 10.5h-15Z"/><path d="M4.5 19.5h15"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>ChessBot</h3>
+                <p data-fr="Bot d'échecs avec vision OpenCV et moteur Stockfish." data-en="Chess bot with OpenCV vision and Stockfish engine.">Bot d'échecs avec vision OpenCV et moteur Stockfish.</p>
+                <div class="proj-tags"><span class="tag">OpenCV</span><span class="tag">Python</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/BrawlStar-Bot" target="_blank" rel="noopener" class="card proj small" data-cat="auto">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11h3M8.5 9.5v3"/><circle cx="15.5" cy="10.5" r=".6"/><circle cx="17.5" cy="12.5" r=".6"/><rect x="2.5" y="6.5" width="19" height="11" rx="4"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>BrawlStar-Bot</h3>
+                <p data-fr="Bot automatisé Brawl Stars avec OCR et Telegram." data-en="Automated Brawl Stars bot with OCR and Telegram.">Bot automatisé Brawl Stars avec OCR et Telegram.</p>
+                <div class="proj-tags"><span class="tag">OCR</span><span class="tag">Python</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/tiktok_ia_generator" target="_blank" rel="noopener" class="card proj small" data-cat="ia">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 9.5 21 6v12l-5.5-3.5"/><rect x="3" y="6" width="12.5" height="12" rx="2"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>TikTok IA Generator</h3>
+                <p data-fr="Génération 100% automatique de TikToks depuis YouTube." data-en="Fully automated TikTok generation from YouTube.">Génération 100% automatique de TikToks depuis YouTube.</p>
+                <div class="proj-tags"><span class="tag">IA</span><span class="tag">Python</span></div>
+            </a>
+
+            <a href="https://github.com/Zeffut/NoteGenius" target="_blank" rel="noopener" class="card proj small" data-cat="web">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18"/><path d="M12.5 8h3.5M12.5 12h3.5"/></svg></span>
+                    <span class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+                </div>
+                <h3>NoteGenius</h3>
+                <p data-fr="App de prise de notes avec Flask et base de données." data-en="Note-taking app with Flask and a database.">App de prise de notes avec Flask et base de données.</p>
+                <div class="proj-tags"><span class="tag">Flask</span><span class="tag">DB</span></div>
+            </a>
+
+            <div class="card proj small" data-cat="auto">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1-2 5-2 5s4-.5 5-2"/><path d="M12.5 16 8 11.5c1-4 4-7.5 9-8 .5 5-3 8-8 9Z"/><circle cx="14.5" cy="9.5" r="1.3"/></svg></span>
+                    <span class="tag accent" data-fr="Privé" data-en="Private">Privé</span>
+                </div>
+                <h3>SaaS Factory</h3>
+                <p data-fr="Système de création rapide de SaaS avec Claude Code." data-en="Rapid SaaS creation system with Claude Code.">Système de création rapide de SaaS avec Claude Code.</p>
+                <div class="proj-tags"><span class="tag">SaaS</span><span class="tag">Claude</span></div>
+            </div>
+
+            <div class="card proj small" data-cat="mc">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5M12 12v9"/></svg></span>
+                    <span class="tag accent" data-fr="Privé" data-en="Private">Privé</span>
+                </div>
+                <h3>Observer</h3>
+                <p data-fr="Outil lié à Minecraft." data-en="Minecraft-related tool.">Outil lié à Minecraft.</p>
+                <div class="proj-tags"><span class="tag">Minecraft</span></div>
+            </div>
+
+            <div class="card proj small" data-cat="web">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8Z"/><path d="M18 15l.9 2.1 2.1.9-2.1.9L18 21l-.9-2.1L15 18l2.1-.9Z"/></svg></span>
+                    <span class="tag accent" data-fr="Privé" data-en="Private">Privé</span>
+                </div>
+                <h3>NeuraNote</h3>
+                <p data-fr="Application de prise de notes intelligente." data-en="Smart note-taking application.">Application de prise de notes intelligente.</p>
+                <div class="proj-tags"><span class="tag">App</span><span class="tag">IA</span></div>
+            </div>
+
+            <div class="card proj small" data-cat="ia">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2Z"/><path d="M17 8h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2"/><path d="M7.5 8h6M7.5 12h6M7.5 16h4"/></svg></span>
+                    <span class="tag accent" data-fr="Privé" data-en="Private">Privé</span>
+                </div>
+                <h3>JournalisteIA</h3>
+                <p data-fr="Génération d'articles de journalisme assistée par IA." data-en="AI-assisted journalism article generation.">Génération d'articles de journalisme assistée par IA.</p>
+                <div class="proj-tags"><span class="tag">IA</span><span class="tag">NLP</span></div>
+            </div>
+
+            <div class="card proj small" data-cat="mc">
+                <div class="proj-top">
+                    <span class="proj-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5M12 12v9"/></svg></span>
+                    <span class="tag accent" data-fr="Privé" data-en="Private">Privé</span>
+                </div>
+                <h3>Zeffut SMP</h3>
+                <p data-fr="Serveur Minecraft SMP personnalisé." data-en="Custom Minecraft SMP server.">Serveur Minecraft SMP personnalisé.</p>
+                <div class="proj-tags"><span class="tag">Minecraft</span></div>
+            </div>
+
+        </div>
+
+        <div class="projects-cta reveal">
+            <a href="https://github.com/Zeffut" target="_blank" rel="noopener" class="btn btn-ghost">
+                <img src="ressources/github.svg" alt="" class="invert">
+                <span data-fr="Tout voir sur GitHub" data-en="See everything on GitHub">Tout voir sur GitHub</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="snap-section snap-contact" id="contact">
+        <div class="contact-band reveal">
+            <span class="eyebrow" data-fr="Contact" data-en="Contact">Contact</span>
+            <h2 data-fr="Construisons quelque chose ensemble." data-en="Let's build something together.">Construisons quelque chose ensemble.</h2>
+            <p data-fr="Toujours partant pour un projet intéressant. Une idée, une collaboration, une question ? Écrivez-moi."
+               data-en="Always up for an interesting project. An idea, a collaboration, a question? Drop me a line.">
+                Toujours partant pour un projet intéressant. Une idée, une collaboration, une question ? Écrivez-moi.</p>
+            <div class="contact-actions">
+                <a href="mailto:tom77ds@gmail.com" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                    tom77ds@gmail.com
+                </a>
+                <a href="https://github.com/Zeffut" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <img src="ressources/github.svg" alt="" class="invert"> GitHub
                 </a>
             </div>
         </div>
+
+        <!-- ===================== FOOTER ===================== -->
+        <footer class="footer">
+            <a href="#top" class="brand"><span class="mark-text">Thomas De Sousa</span></a>
+            <div class="footer-links">
+                <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+                <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="mailto:tom77ds@gmail.com">Email</a>
+                <a href="https://github.com/Zeffut" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="copy">© 2026 Thomas De Sousa — <span data-fr="Conçu &amp; développé from scratch." data-en="Designed &amp; built from scratch.">Conçu &amp; développé from scratch.</span></div>
+        </footer>
     </section>
-    <section class="about fade-in-section">
-        <h1 class="about" data-lang="fr">À PROPOS DE MOI</h1>
-        <h1 class="about" data-lang="en" style="display: none;">ABOUT ME</h1>
-        <span class="gradient_text" data-lang="fr">MON PARCOURS</span>
-        <span class="gradient_text" data-lang="en" style="display: none;">MY JOURNEY</span>
-        <p class="about" data-lang="fr">Étudiant en école d’ingénieur et développeur autodidacte, je construis des outils concrets — du scraping d’offres d’emploi à la transcription vocale locale. Je gère aussi ma propre infrastructure : déploiement, monitoring, automatisation, le tout self-hosted.</p>
-        <p class="about" data-lang="en" style="display: none;">Engineering student and self-taught developer, I build practical tools — from job scraping to local voice transcription. I also manage my own infrastructure: deployment, monitoring, automation, all self-hosted.</p>
-    </section>
-    <section class="experience fade-in-section">
-        <h1 class="experience" data-lang="fr">EXPERIENCE</h1>
-        <h1 class="experience" data-lang="en" style="display: none;">EXPERIENCE</h1>
-        <span class="gradient_text" data-lang="fr">CE QUE J'UTILISE</span>
-        <span class="gradient_text" data-lang="en" style="display: none;">MY TOOLKIT</span>
-        <div class="skills-grid stagger-children">
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Scripting, scraping, bots, IA — mon langage principal" data-tooltip-en="Scripting, scraping, bots, AI — my main language">
-                <img src="ressources/skills/python.png" alt="Python">
-                <p>Python</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Plugins Minecraft, projets académiques" data-tooltip-en="Minecraft plugins, academic projects">
-                <img src="ressources/skills/java.png" alt="Java">
-                <p>Java</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Programmation bas niveau, algorithmes" data-tooltip-en="Low-level programming, algorithms">
-                <img src="ressources/skills/c.svg" alt="C">
-                <p>C</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Interfaces web interactives, logique front-end" data-tooltip-en="Interactive web interfaces, front-end logic">
-                <img src="ressources/skills/javascript.png" alt="JavaScript">
-                <p>JavaScript</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Structure et sémantique des pages web" data-tooltip-en="Web page structure and semantics">
-                <img src="ressources/skills/html.webp" alt="HTML5">
-                <p>HTML5</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Design responsive, animations, layouts" data-tooltip-en="Responsive design, animations, layouts">
-                <img src="ressources/skills/css.png" alt="CSS3">
-                <p>CSS3</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="APIs REST et backends web en Python" data-tooltip-en="REST APIs and Python web backends">
-                <img src="ressources/skills/flask.svg" alt="Flask">
-                <p>Flask</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Automatisation web et scraping de données" data-tooltip-en="Web automation and data scraping">
-                <img src="ressources/skills/selenium.svg" alt="Selenium">
-                <p>Selenium</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Versioning et collaboration sur le code" data-tooltip-en="Code versioning and collaboration">
-                <img src="ressources/skills/git.png" alt="Git">
-                <p>Git</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Conteneurisation et déploiement d'apps" data-tooltip-en="App containerization and deployment">
-                <img src="ressources/skills/docker.webp" alt="Docker">
-                <p>Docker</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Automatisation de workflows et intégrations" data-tooltip-en="Workflow automation and integrations">
-                <img src="ressources/skills/n8n.svg" alt="n8n">
-                <p>n8n</p>
-                <span class="skill-tooltip"></span>
-            </div>
-            <div class="skill-card glass-card fade-in-child" data-tooltip-fr="Organisation, documentation et gestion de projets" data-tooltip-en="Organization, documentation and project management">
-                <img src="ressources/skills/notion.png" alt="Notion">
-                <p>Notion</p>
-                <span class="skill-tooltip"></span>
-            </div>
-        </div>
-    </section>
-    <section class="project fade-in-section">
-        <h1 class="project" data-lang="fr">PROJETS</h1>
-        <h1 class="project" data-lang="en" style="display: none;">PROJECTS</h1>
-        <span class="gradient_text" data-lang="fr">DÉMONSTRATION</span>
-        <span class="gradient_text" data-lang="en" style="display: none;">DEMONSTRATION</span>
-        <div class="projects-grid stagger-children">
-            <a href="https://github.com/Zeffut/BetterFasterWhisper" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="App macOS de transcription vocale locale via WhisperKit et CoreML" data-tooltip-en="macOS local voice transcription app using WhisperKit and CoreML">
-                <img src="ressources/superwhisper_logo.jpg" alt="BetterFasterWhisper">
-                <p>BFWhisper</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/JobScraper" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Agrégateur d'offres d'emploi multi-plateformes avec export JSON/CSV" data-tooltip-en="Multi-platform job aggregator with JSON/CSV export">
-                <img src="ressources/linkedin_ico.png" alt="JobScraper">
-                <p>JobScraper</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/Esiee-Paris-Salles" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Webapp pour trouver des salles libres à ESIEE Paris" data-tooltip-en="Webapp to find free rooms at ESIEE Paris">
-                <img src="ressources/esiee_salles.png" alt="Esiee-Paris-Salles">
-                <p>ESIEE Salles</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/ClipGenius" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Génération automatique de clips courts avec IA locale et smart cropping" data-tooltip-en="Automatic short clip generation with local AI and smart cropping">
-                <img src="ressources/tiktok.png" alt="ClipGenius">
-                <p>ClipGenius</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/VintedScraper" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Bot de scraping Vinted avec alertes Telegram et sync Notion" data-tooltip-en="Vinted scraping bot with Telegram alerts and Notion sync">
-                <img src="ressources/vinted.png" alt="VintedScraper">
-                <p>Vinted Bot</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/ChessBot" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Bot d'échecs avec OpenCV et Stockfish" data-tooltip-en="Chess bot using OpenCV and Stockfish">
-                <img src="ressources/chess.png" alt="ChessBot">
-                <p>ChessBot</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/NoteGenius" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="App de prise de notes avec Flask et base de données" data-tooltip-en="Note-taking app with Flask and database">
-                <img src="ressources/skills/flask.svg" alt="NoteGenius">
-                <p>NoteGenius</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/BrawlStar-Bot" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Bot automatisé pour Brawl Stars avec OCR et Telegram" data-tooltip-en="Automated Brawl Stars bot with OCR and Telegram">
-                <img src="ressources/beehappy.png" alt="BrawlStar-Bot">
-                <p>Brawl Bot</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/n8n-nodes-plaud" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Nodes n8n custom pour l'API Plaud" data-tooltip-en="Custom n8n nodes for the Plaud API">
-                <img src="ressources/skills/n8n.svg" alt="n8n-nodes-plaud">
-                <p>n8n Plaud</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/tiktok_ia_generator" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Génération 100% automatique de TikToks à partir de vidéos YouTube" data-tooltip-en="Fully automated TikTok generation from YouTube videos">
-                <img src="ressources/tiktok.png" alt="tiktok_ia_generator">
-                <p>TikTok IA</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a href="https://github.com/Zeffut/UltraFastPregen" class="project-chip glass-card fade-in-child" target="_blank" data-tooltip-fr="Plugin Minecraft Paper de prégénération de monde ultra rapide" data-tooltip-en="Ultra fast Minecraft Paper world pregeneration plugin">
-                <img src="ressources/project_minecraft.svg" alt="UltraFastPregen">
-                <p>FastPregen</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="SaaS Factory — système de création rapide de SaaS avec Claude Code" data-tooltip-en="SaaS Factory — rapid SaaS creation system with Claude Code">
-                <img src="ressources/project_saas.svg" alt="Saas">
-                <p>SaaS Factory</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="Outil d'observation et de monitoring" data-tooltip-en="Observation and monitoring tool">
-                <img src="ressources/project_observer.svg" alt="Observer">
-                <p>Observer</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="Serveur Minecraft SMP personnalisé" data-tooltip-en="Custom Minecraft SMP server">
-                <img src="ressources/project_minecraft.svg" alt="Zeffut-SMP">
-                <p>Zeffut SMP</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="App de prise de notes intelligente" data-tooltip-en="Smart note-taking app">
-                <img src="ressources/project_neuranote.svg" alt="NeuraNote">
-                <p>NeuraNote</p>
-                <span class="project-tooltip"></span>
-            </a>
-            <a class="project-chip glass-card fade-in-child" data-tooltip-fr="Génération d'articles de journalisme assistée par IA" data-tooltip-en="AI-assisted journalism article generation">
-                <img src="ressources/project_journaliste.svg" alt="JournalisteIA">
-                <p>JournalisteIA</p>
-                <span class="project-tooltip"></span>
-            </a>
-        </div>
-        <a href="https://github.com/Zeffut" class="github-cta" target="_blank">
-            <div class="contact_button_2" data-lang="fr">
-                <img src="ressources/github.svg" alt="" class="github-cta-icon"> Mon GitHub
-            </div>
-            <div class="contact_button_2" data-lang="en" style="display: none;">
-                <img src="ressources/github.svg" alt="" class="github-cta-icon"> My GitHub
-            </div>
-        </a>
-    </section>
-    <section class="credits">
-        Designed in  <img src="ressources/figma.png" alt="" class="icon">  Figma & inspired by <a href="https://www.figma.com/@ibrahimmemon" class="link">Ibrahim Memon</a>
-    </section>
-<script src="script.js"></script>
-    <script src="https://tracking.zeffut.fr/api/script.js" data-site-id="27a0bcb26fc4" defer></script>
+
+</main>
+
+<script src="script.js?v=2"></script>
+<script src="https://tracking.zeffut.fr/api/script.js" data-site-id="27a0bcb26fc4" defer></script>
 </body>
 </html>
-
