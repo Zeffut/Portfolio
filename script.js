@@ -4,6 +4,13 @@
 (function () {
     'use strict';
 
+    /* ---------- PostHog tracking helper ---------- */
+    function track(name, props) {
+        if (window.posthog && typeof window.posthog.capture === 'function') {
+            try { window.posthog.capture(name, props || {}); } catch (e) {}
+        }
+    }
+
     /* ---------- i18n ---------- */
     var langFr = document.getElementById('lang-fr');
     var langEn = document.getElementById('lang-en');
@@ -79,8 +86,8 @@
     var stored = 'fr';
     try { stored = localStorage.getItem('lang') || 'fr'; } catch (e) {}
 
-    if (langFr) langFr.addEventListener('click', function () { applyLang('fr'); });
-    if (langEn) langEn.addEventListener('click', function () { applyLang('en'); });
+    if (langFr) langFr.addEventListener('click', function () { applyLang('fr'); track('language_switch', { lang: 'fr' }); });
+    if (langEn) langEn.addEventListener('click', function () { applyLang('en'); track('language_switch', { lang: 'en' }); });
 
     applyLang(stored);
 
@@ -147,6 +154,7 @@
             var target = (id === '#' || id === '#top') ? document.body : document.querySelector(id);
             if (!target) return;
             e.preventDefault();
+            track('nav_click', { target: id });
             var toY = (id === '#' || id === '#top') ? 0 : target.getBoundingClientRect().top + window.scrollY;
             if (prefersReduced) { window.scrollTo({ top: toY, behavior: 'instant' }); }
             else { smoothScrollTo(toY); }
@@ -167,6 +175,7 @@
                     navAnchors.forEach(function (a) {
                         a.classList.toggle('active', a.getAttribute('href') === id);
                     });
+                    track('section_view', { section: entry.target.id });
                 }
             });
         }, { threshold: 0.5 });
@@ -192,6 +201,7 @@
                 filters.forEach(function (b) { b.classList.remove('active'); });
                 btn.classList.add('active');
                 var f = btn.getAttribute('data-filter');
+                track('project_filter', { filter: f });
 
                 if (prefersReduced) { applyFilter(f); return; }
 
@@ -204,4 +214,36 @@
             });
         });
     }
+
+    /* ---------- Clics projets ---------- */
+    document.querySelectorAll('#bento .proj').forEach(function (card) {
+        card.addEventListener('click', function () {
+            var titleEl = card.querySelector('h3');
+            track('project_click', {
+                project: titleEl ? titleEl.textContent.trim() : null,
+                category: card.getAttribute('data-cat'),
+                is_private: card.tagName.toLowerCase() !== 'a',
+                href: card.getAttribute('href') || null
+            });
+        });
+    });
+
+    /* ---------- CTA & liens sortants ---------- */
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () { track('contact_click', { method: 'email' }); });
+    });
+    document.querySelectorAll('a[href*="github.com"]').forEach(function (a) {
+        a.addEventListener('click', function () { track('outbound_click', { destination: 'github', url: a.getAttribute('href') }); });
+    });
+
+    /* ---------- Survols de skills (1x par skill / session de page) ---------- */
+    var hoveredSkills = {};
+    document.querySelectorAll('.chip').forEach(function (chip) {
+        chip.addEventListener('mouseenter', function () {
+            var name = chip.textContent.trim();
+            if (hoveredSkills[name]) return;
+            hoveredSkills[name] = true;
+            track('skill_hover', { skill: name });
+        });
+    });
 })();
