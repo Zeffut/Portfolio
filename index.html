@@ -51,16 +51,12 @@
 (function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('tds-theme');if(t)r.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<!-- Polices servies localement : les deux fichiers du premier rendu sont
+     préchargés, les autres suivent à la demande via unicode-range. -->
+<link rel="preload" href="fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/IBMPlexSans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css?v=2026-08-21">
 
-<script>
-!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister getFeatureFlag isFeatureEnabled onFeatureFlags identify setPersonProperties reset get_distinct_id group set_config opt_in_capturing opt_out_capturing".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-posthog.init('phc_zdMj4p5wo8EvfVApjb2EbfUHJ76zgYGM5wAGz5YJC359',{api_host:'https://eu.i.posthog.com',person_profiles:'identified_only',defaults:'2025-05-24'});
-posthog.register({app:'portfolio'});
-</script>
 </head>
 
 <body>
@@ -118,31 +114,35 @@ posthog.register({app:'portfolio'});
 
   <main id="main">
 
-    <!-- ========================= §01 IDENTITÉ ========================= -->
+    <!-- ========================= §01 IDENTITÉ =========================
+         Aucune révélation au défilement ici : cette section est visible
+         dès le chargement. La masquer en attendant le JavaScript
+         repoussait le Largest Contentful Paint de 3 secondes, pour une
+         animation que personne ne voit. Le tracé du filet suffit. -->
     <section class="section hero" id="identite">
-      <div class="hero-ref reveal">
+      <div class="hero-ref">
         <span class="sec-num">§01 — <span data-en="IDENTITY">IDENTITÉ</span></span>
         <span class="annot">RÉF. TDS-2026-08 · <span data-en="rev. 2">rév. 2</span></span>
       </div>
 
-      <h1 class="reveal">Thomas<br>De&nbsp;Sousa</h1>
+      <h1>Thomas<br>De&nbsp;Sousa</h1>
 
       <div class="rule-draw" id="hero-rule"></div>
 
       <div class="hero-grid">
         <div class="hero-main">
-      <p class="hero-role reveal" data-en="Full-stack developer">Développeur full-stack</p>
+      <p class="hero-role" data-en="Full-stack developer">Développeur full-stack</p>
 
-      <p class="lede reveal" data-en="I design it, I build it, I ship it. Practical tools — local AI, automation, scraping, web — carried from the idea through to production.">
+      <p class="lede" data-en="I design it, I build it, I ship it. Practical tools — local AI, automation, scraping, web — carried from the idea through to production.">
         Je conçois, je code, je déploie. Des outils concrets — IA locale, automatisation, scraping, web — menés de l'idée jusqu'à la mise en production.
       </p>
 
-      <p class="avail reveal">
+      <p class="avail">
         <span class="dot" aria-hidden="true"></span>
         <span data-en="Open to apprenticeships and freelance work">Ouvert à l'alternance et aux missions</span>
       </p>
 
-      <div class="hero-actions reveal">
+      <div class="hero-actions">
         <a class="btn btn-solid" href="#realisations" data-en="View the work">Voir les réalisations</a>
         <a class="btn btn-ghost" href="#contact" data-en="Get in touch">Me contacter</a>
         <!-- CV : déposer cv.pdf à la racine du dépôt, puis décommenter la ligne
@@ -153,7 +153,7 @@ posthog.register({app:'portfolio'});
       </div>
         </div>
 
-        <aside class="spec marks reveal" aria-label="Fiche signalétique">
+        <aside class="spec marks" aria-label="Fiche signalétique">
           <div class="spec-title label" data-en="Record">Fiche signalétique</div>
           <dl>
             <div><dt data-en="LOCATION">LOCALISATION</dt><dd>Chessy, France</dd></div>
@@ -238,7 +238,7 @@ posthog.register({app:'portfolio'});
           <h3>BetterFasterWhisper</h3>
           <p class="sheet-desc" data-en="100 % local voice transcription for macOS">Transcription vocale 100 % locale sur macOS</p>
           <dl class="sheet-fields">
-            <div class="sheet-field"><dt>RÔLE</dt><dd data-en="Design · development · distribution">Conception · développement · distribution</dd></div>
+            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development · distribution">Conception · développement · distribution</dd></div>
             <div class="sheet-field"><dt>STACK</dt><dd class="mono">Swift · WhisperKit · CoreML</dd></div>
             <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
             <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Runs offline, with no server involved">Fonctionne hors-ligne, sans aucun serveur</dd></div>
@@ -254,8 +254,8 @@ posthog.register({app:'portfolio'});
           <h3>ClipGenius</h3>
           <p class="sheet-desc" data-en="Automatic short-clip extraction from long videos">Découpe automatique de clips courts depuis de longues vidéos</p>
           <dl class="sheet-fields">
-            <div class="sheet-field"><dt>RÔLE</dt><dd data-en="Design · development">Conception · développement</dd></div>
-            <div class="sheet-field"><dt>STACK</dt><dd class="mono">Python · FFmpeg · IA locale</dd></div>
+            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development">Conception · développement</dd></div>
+            <div class="sheet-field"><dt>STACK</dt><dd class="mono" data-en="Python · FFmpeg · Local AI">Python · FFmpeg · IA locale</dd></div>
             <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
             <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Cropping and subtitling with no manual step">Recadrage et sous-titrage sans intervention manuelle</dd></div>
           </dl>
@@ -270,7 +270,7 @@ posthog.register({app:'portfolio'});
           <h3>JobScraper</h3>
           <p class="sheet-desc" data-en="Multi-platform job-listing aggregator">Agrégateur d'offres d'emploi multi-plateformes</p>
           <dl class="sheet-fields">
-            <div class="sheet-field"><dt>RÔLE</dt><dd data-en="Design · development">Conception · développement</dd></div>
+            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development">Conception · développement</dd></div>
             <div class="sheet-field"><dt>STACK</dt><dd class="mono">Python · Selenium · BeautifulSoup</dd></div>
             <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
             <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="JSON and CSV export, filtering by criteria">Export JSON et CSV, filtrage par critères</dd></div>
@@ -286,7 +286,7 @@ posthog.register({app:'portfolio'});
           <h3>ESIEE Salles</h3>
           <p class="sheet-desc" data-en="Web app for finding a free room in real time">Webapp de recherche de salle libre en temps réel</p>
           <dl class="sheet-fields">
-            <div class="sheet-field"><dt>RÔLE</dt><dd data-en="Design · development · production">Conception · développement · mise en production</dd></div>
+            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development · production">Conception · développement · mise en production</dd></div>
             <div class="sheet-field"><dt>STACK</dt><dd class="mono">Python · Flask</dd></div>
             <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="In production">En production</span></span></dd></div>
             <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Used by actual students">Utilisée par de vrais étudiants</dd></div>
@@ -302,7 +302,7 @@ posthog.register({app:'portfolio'});
           <h3>n8n-nodes-plaud</h3>
           <p class="sheet-desc" data-en="n8n node package for the Plaud API">Paquet de nodes n8n pour l'API Plaud</p>
           <dl class="sheet-fields">
-            <div class="sheet-field"><dt>RÔLE</dt><dd data-en="Design · development · publication">Conception · développement · publication</dd></div>
+            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development · publication">Conception · développement · publication</dd></div>
             <div class="sheet-field"><dt>STACK</dt><dd class="mono">TypeScript · n8n</dd></div>
             <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
             <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Reusable by the wider n8n community">Réutilisable par la communauté n8n</dd></div>
@@ -310,6 +310,10 @@ posthog.register({app:'portfolio'});
           <div class="sheet-link">github.com/Zeffut/n8n-nodes-plaud</div>
         </a>
 
+        <p class="sheets-empty" id="sheets-empty" hidden
+           data-en="No detailed sheet in this field — see the full index below.">
+          Aucune fiche détaillée dans ce domaine — voir l'index complet ci-dessous.
+        </p>
       </div>
 
       <div class="index-wrap reveal">
@@ -317,7 +321,7 @@ posthog.register({app:'portfolio'});
           <caption class="label" data-en="Full index — 15 projects">Index complet — 15 projets</caption>
           <thead>
             <tr>
-              <th scope="col">Réf.</th>
+              <th scope="col" data-en="Ref.">Réf.</th>
               <th scope="col" data-en="Project">Projet</th>
               <th scope="col" data-en="Domain">Domaine</th>
               <th scope="col">Stack</th>
@@ -325,19 +329,19 @@ posthog.register({app:'portfolio'});
             </tr>
           </thead>
           <tbody>
-            <tr data-cat="ia"><td class="col-ref">P.01</td><td class="col-name"><a href="https://github.com/Zeffut/BetterFasterWhisper" target="_blank" rel="noopener">BetterFasterWhisper</a></td><td class="col-domain">IA</td><td class="col-stack">Swift · CoreML</td><td data-en="Open-source">Open-source</td></tr>
-            <tr data-cat="ia"><td class="col-ref">P.02</td><td class="col-name"><a href="https://github.com/Zeffut/ClipGenius" target="_blank" rel="noopener">ClipGenius</a></td><td class="col-domain">IA</td><td class="col-stack">Python · FFmpeg</td><td data-en="Open-source">Open-source</td></tr>
+            <tr data-cat="ia"><td class="col-ref">P.01</td><td class="col-name"><a href="https://github.com/Zeffut/BetterFasterWhisper" target="_blank" rel="noopener">BetterFasterWhisper</a></td><td class="col-domain" data-en="AI">IA</td><td class="col-stack">Swift · CoreML</td><td data-en="Open-source">Open-source</td></tr>
+            <tr data-cat="ia"><td class="col-ref">P.02</td><td class="col-name"><a href="https://github.com/Zeffut/ClipGenius" target="_blank" rel="noopener">ClipGenius</a></td><td class="col-domain" data-en="AI">IA</td><td class="col-stack">Python · FFmpeg</td><td data-en="Open-source">Open-source</td></tr>
             <tr data-cat="auto"><td class="col-ref">P.03</td><td class="col-name"><a href="https://github.com/Zeffut/JobScraper" target="_blank" rel="noopener">JobScraper</a></td><td class="col-domain" data-en="Automation">Automatisation</td><td class="col-stack">Python · Selenium</td><td data-en="Open-source">Open-source</td></tr>
             <tr data-cat="web"><td class="col-ref">P.04</td><td class="col-name"><a href="https://github.com/Zeffut/Esiee-Paris-Salles" target="_blank" rel="noopener">ESIEE Salles</a></td><td class="col-domain">Web</td><td class="col-stack">Python · Flask</td><td data-en="In production">En production</td></tr>
             <tr data-cat="auto"><td class="col-ref">P.05</td><td class="col-name"><a href="https://github.com/Zeffut/n8n-nodes-plaud" target="_blank" rel="noopener">n8n-nodes-plaud</a></td><td class="col-domain" data-en="Automation">Automatisation</td><td class="col-stack">TypeScript · n8n</td><td data-en="Open-source">Open-source</td></tr>
             <tr data-cat="auto"><td class="col-ref">P.06</td><td class="col-name"><a href="https://github.com/Zeffut/VintedScraper" target="_blank" rel="noopener">VintedScraper</a></td><td class="col-domain" data-en="Automation">Automatisation</td><td class="col-stack">Python · Telegram · Notion</td><td data-en="Open-source">Open-source</td></tr>
-            <tr data-cat="ia"><td class="col-ref">P.07</td><td class="col-name"><a href="https://github.com/Zeffut/ChessBot" target="_blank" rel="noopener">ChessBot</a></td><td class="col-domain">IA</td><td class="col-stack">Python · OpenCV · Stockfish</td><td data-en="Open-source">Open-source</td></tr>
+            <tr data-cat="ia"><td class="col-ref">P.07</td><td class="col-name"><a href="https://github.com/Zeffut/ChessBot" target="_blank" rel="noopener">ChessBot</a></td><td class="col-domain" data-en="AI">IA</td><td class="col-stack">Python · OpenCV · Stockfish</td><td data-en="Open-source">Open-source</td></tr>
             <tr data-cat="auto"><td class="col-ref">P.08</td><td class="col-name"><a href="https://github.com/Zeffut/BrawlStar-Bot" target="_blank" rel="noopener">BrawlStar-Bot</a></td><td class="col-domain" data-en="Automation">Automatisation</td><td class="col-stack">Python · Tesseract</td><td data-en="Open-source">Open-source</td></tr>
-            <tr data-cat="ia"><td class="col-ref">P.09</td><td class="col-name"><a href="https://github.com/Zeffut/tiktok_ia_generator" target="_blank" rel="noopener">TikTok IA Generator</a></td><td class="col-domain">IA</td><td class="col-stack">Python · FFmpeg</td><td data-en="Open-source">Open-source</td></tr>
+            <tr data-cat="ia"><td class="col-ref">P.09</td><td class="col-name"><a href="https://github.com/Zeffut/tiktok_ia_generator" target="_blank" rel="noopener">TikTok IA Generator</a></td><td class="col-domain" data-en="AI">IA</td><td class="col-stack">Python · FFmpeg</td><td data-en="Open-source">Open-source</td></tr>
             <tr data-cat="web"><td class="col-ref">P.10</td><td class="col-name"><a href="https://github.com/Zeffut/NoteGenius" target="_blank" rel="noopener">NoteGenius</a></td><td class="col-domain">Web</td><td class="col-stack">Python · Flask · SQLite</td><td data-en="Open-source">Open-source</td></tr>
             <tr data-cat="auto"><td class="col-ref">P.11</td><td class="col-name">SaaS Factory</td><td class="col-domain" data-en="Automation">Automatisation</td><td class="col-stack">Claude Code</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
-            <tr data-cat="web"><td class="col-ref">P.12</td><td class="col-name">NeuraNote</td><td class="col-domain">Web</td><td class="col-stack">Application · IA</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
-            <tr data-cat="ia"><td class="col-ref">P.13</td><td class="col-name">JournalisteIA</td><td class="col-domain">IA</td><td class="col-stack">IA · NLP</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
+            <tr data-cat="web"><td class="col-ref">P.12</td><td class="col-name">NeuraNote</td><td class="col-domain">Web</td><td class="col-stack" data-en="Application · AI">Application · IA</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
+            <tr data-cat="ia"><td class="col-ref">P.13</td><td class="col-name">JournalisteIA</td><td class="col-domain" data-en="AI">IA</td><td class="col-stack" data-en="AI · NLP">IA · NLP</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
             <tr data-cat="mc"><td class="col-ref">P.14</td><td class="col-name">Observer</td><td class="col-domain">Minecraft</td><td class="col-stack">—</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
             <tr data-cat="mc"><td class="col-ref">P.15</td><td class="col-name">Zeffut SMP</td><td class="col-domain">Minecraft</td><td class="col-stack" data-en="Server administration">Administration serveur</td><td><span class="state state-private"><span class="dot" aria-hidden="true"></span><span data-en="Private">Privé</span></span></td></tr>
           </tbody>
@@ -486,6 +490,26 @@ posthog.register({app:'portfolio'});
     </div>
   </div>
 </footer>
+
+<!-- Analytics — chargé en fin de document pour rester hors du
+     chemin critique du rendu. Le pageview est émis à l'init. -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister getFeatureFlag isFeatureEnabled onFeatureFlags identify setPersonProperties reset get_distinct_id group set_config opt_in_capturing opt_out_capturing".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+/* Modules superflus pour un portfolio, et coûteux en quota : l'offre
+   gratuite n'ouvre qu'un projet, partagé avec les autres apps.
+   Réactivables en repassant une valeur à false/true. */
+posthog.init('phc_zdMj4p5wo8EvfVApjb2EbfUHJ76zgYGM5wAGz5YJC359',{
+  api_host:'https://eu.i.posthog.com',
+  person_profiles:'identified_only',
+  defaults:'2025-05-24',
+  disable_session_recording:true,
+  disable_surveys:true,
+  capture_dead_clicks:false,
+  capture_exceptions:false,
+  capture_performance:false
+});
+posthog.register({app:'portfolio'});
+</script>
 
 <script src="script.js?v=2026-08-21"></script>
 </body>

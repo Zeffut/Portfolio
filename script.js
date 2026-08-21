@@ -231,11 +231,19 @@
     var filterables = Array.prototype.slice.call(
         document.querySelectorAll('.sheet[data-cat], .index-table tbody tr[data-cat]'));
 
+    var sheetsEmpty = document.getElementById('sheets-empty');
+
     function applyFilter(cat) {
+        var visibleSheets = 0;
+
         filterables.forEach(function (el) {
             var show = cat === 'all' || el.getAttribute('data-cat') === cat;
             el.classList.toggle('is-hidden', !show);
+            if (show && el.classList.contains('sheet')) visibleSheets++;
         });
+
+        // Un domaine peut n'avoir aucune fiche détaillée : on le dit.
+        if (sheetsEmpty) sheetsEmpty.hidden = visibleSheets > 0;
     }
 
     filterBtns.forEach(function (btn) {
