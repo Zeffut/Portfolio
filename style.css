@@ -277,11 +277,6 @@ main { min-width: 0; }
     letter-spacing: -.01em;
     white-space: nowrap;
 }
-.ident-ref {
-    font: 400 .6875rem var(--f-mono);
-    color: var(--ink-3);
-    white-space: nowrap;
-}
 
 .nav-main { display: flex; gap: 2px; }
 .nav-main a {
@@ -429,7 +424,16 @@ main { min-width: 0; }
 .synth-text p + p { margin-top: 16px; color: var(--ink-2); }
 .synth-text p:first-child { color: var(--ink); font-size: 1.0625rem; }
 
-.facts { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+/* Hauteurs égalisées : toutes les cartes ne portent pas de cotation,
+   et une case plus basse casserait l'alignement de la grille. */
+.facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+}
 .fact { background: var(--bg); padding: 20px 22px; }
 .fact-num {
     font: 800 clamp(2rem, 4vw, 2.75rem)/1 var(--f-display);
@@ -514,7 +518,6 @@ main { min-width: 0; }
     .nav-main a[aria-current="true"]::after { display: none; }
 
     .menu-btn { display: grid; }
-    .ident-ref { display: none; }
 }
 
 @media (max-width: 900px) {

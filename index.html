@@ -46,15 +46,12 @@
 }
 </script>
 
-<!-- Marque « js » + thème, avant le rendu.
-     « js » conditionne la révélation au défilement : sans JavaScript,
-     rien n'est masqué et la page reste entièrement lisible. -->
+<!-- Pose « js » et le thème avant le rendu -->
 <script>
 (function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('tds-theme');if(t)r.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<!-- Polices servies localement : les deux fichiers du premier rendu sont
-     préchargés, les autres suivent à la demande via unicode-range. -->
+<!-- Polices locales -->
 <link rel="preload" href="fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/IBMPlexSans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css?v=2026-08-21">
@@ -69,7 +66,6 @@
   <div class="hdr-in wrap">
     <a class="ident" href="#identite">
       <span class="ident-name">Thomas De Sousa</span>
-      <span class="ident-ref annot">DOSSIER TDS-2026-08</span>
     </a>
 
     <nav class="nav-main" id="nav-main" aria-label="Sections du dossier">
@@ -101,7 +97,7 @@
 
 <div class="page wrap">
 
-  <!-- Sommaire de marge — visible ≥1200px -->
+  <!-- Sommaire de marge -->
   <aside class="toc" aria-label="Sommaire">
     <div class="toc-title label" data-en="Contents">Sommaire</div>
     <ol>
@@ -116,15 +112,11 @@
 
   <main id="main">
 
-    <!-- ========================= §01 IDENTITÉ =========================
-         Aucune révélation au défilement ici : cette section est visible
-         dès le chargement. La masquer en attendant le JavaScript
-         repoussait le Largest Contentful Paint de 3 secondes, pour une
-         animation que personne ne voit. Le tracé du filet suffit. -->
+    <!-- ========================= §01 IDENTITÉ ========================= -->
     <section class="section hero" id="identite">
       <div class="hero-ref">
         <span class="sec-num">§01 — <span data-en="IDENTITY">IDENTITÉ</span></span>
-        <span class="annot">RÉF. TDS-2026-08 · <span data-en="rev. 2">rév. 2</span></span>
+        <span class="annot" data-en="UPDATED — AUGUST 2026">MISE À JOUR — AOÛT 2026</span>
       </div>
 
       <h1>Thomas<br>De&nbsp;Sousa</h1>
@@ -147,9 +139,7 @@
       <div class="hero-actions">
         <a class="btn btn-solid" href="#realisations" data-en="View the work">Voir les réalisations</a>
         <a class="btn btn-ghost" href="#contact" data-en="Get in touch">Me contacter</a>
-        <!-- CV : déposer cv.pdf à la racine du dépôt, puis décommenter la ligne
-             ci-dessous. Laissé inactif tant que le fichier n'existe pas — un lien
-             mort coûte plus cher qu'un bouton absent.
+        <!-- CV : déposer cv.pdf à la racine, puis décommenter.
         <a class="btn btn-ghost" href="/cv.pdf" download data-en="CV ↓">CV ↓</a>
         -->
       </div>
@@ -182,8 +172,8 @@
           <p data-en="Self-taught full-stack developer, currently a student. I spend my time solving concrete problems: local voice transcription, job-listing aggregation, workflow automation, AI-assisted content generation.">
             Développeur full-stack autodidacte, étudiant. Je passe mon temps à résoudre des problèmes concrets : transcription vocale locale, agrégation d'offres d'emploi, automatisation de workflows, génération de contenu assistée par IA.
           </p>
-          <p data-en="What interests me is taking an idea full circle — shaping the product, writing the code, deploying it, then checking whether it actually serves anyone.">
-            Ce qui m'intéresse, c'est de boucler une idée de bout en bout — penser le produit, écrire le code, le déployer, puis regarder s'il sert vraiment à quelque chose.
+          <p data-en="What interests me is taking an idea full circle: shaping the product, writing the code, deploying it.">
+            Ce qui m'intéresse, c'est de boucler une idée de bout en bout : penser le produit, écrire le code, le déployer.
           </p>
         </div>
 
@@ -206,7 +196,6 @@
           <div class="fact">
             <div class="fact-num">100<span class="accent">%</span></div>
             <div class="fact-label label" data-en="Self-taught">Autodidacte</div>
-            <div class="fact-cote"><span data-en="code learned by shipping">appris en livrant</span></div>
           </div>
         </div>
       </div>
@@ -429,12 +418,12 @@
         <div class="step">
           <div class="step-n">01</div>
           <h3 data-en="Frame">Cadrer</h3>
-          <p data-en="Understand the actual need before writing any code. What is not necessary does not get built.">Comprendre le besoin réel avant d'écrire du code. Ce qui n'est pas nécessaire ne sera pas construit.</p>
+          <p data-en="Understand the actual need, and the constraints, before writing any code.">Comprendre le besoin réel, et les contraintes, avant d'écrire du code.</p>
         </div>
         <div class="step">
           <div class="step-n">02</div>
           <h3 data-en="Prototype">Prototyper</h3>
-          <p data-en="A minimal version that works, fast. It settles the uncertainties that discussion cannot.">Une version minimale qui fonctionne, vite. Elle tranche les incertitudes qu'aucune discussion ne réglera.</p>
+          <p data-en="A minimal working version, built fast, to test the approach on real data.">Une version minimale qui fonctionne, construite vite, pour tester l'approche sur des données réelles.</p>
         </div>
         <div class="step">
           <div class="step-n">03</div>
@@ -444,7 +433,7 @@
         <div class="step">
           <div class="step-n">04</div>
           <h3 data-en="Measure">Mesurer</h3>
-          <p data-en="Analytics and real usage feedback. What is not measured does not improve.">Analytics et retours d'usage réels. Ce qui n'est pas mesuré ne s'améliore pas.</p>
+          <p data-en="Analytics and real usage feedback, to decide what comes next.">Analytics et retours d'usage réels, pour décider de la suite.</p>
         </div>
       </div>
     </section>
@@ -455,8 +444,8 @@
         <div class="reveal">
           <span class="sec-num">§06 — <span data-en="CONTACT">CONTACT</span></span>
           <h2 data-en="Let's build something">Construisons quelque chose</h2>
-          <p class="contact-lede" data-en="An idea, a role, a question — write to me. I answer every message.">
-            Une idée, un poste, une question — écrivez-moi. Je réponds à tous les messages.
+          <p class="contact-lede" data-en="An idea, a role, a question — write to me.">
+            Une idée, un poste, une question — écrivez-moi.
           </p>
           <div class="contact-actions">
             <a class="btn btn-solid btn-plain" href="mailto:tom77ds@gmail.com">
@@ -502,13 +491,9 @@
   </div>
 </footer>
 
-<!-- Analytics — chargé en fin de document pour rester hors du
-     chemin critique du rendu. Le pageview est émis à l'init. -->
+<!-- Analytics -->
 <script>
 !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister getFeatureFlag isFeatureEnabled onFeatureFlags identify setPersonProperties reset get_distinct_id group set_config opt_in_capturing opt_out_capturing".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-/* Modules superflus pour un portfolio, et coûteux en quota : l'offre
-   gratuite n'ouvre qu'un projet, partagé avec les autres apps.
-   Réactivables en repassant une valeur à false/true. */
 posthog.init('phc_zdMj4p5wo8EvfVApjb2EbfUHJ76zgYGM5wAGz5YJC359',{
   api_host:'https://eu.i.posthog.com',
   person_profiles:'identified_only',
