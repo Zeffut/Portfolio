@@ -144,8 +144,9 @@ techniques vérifiables. Chiffres exacts en vigueur : **15 projets, dont 10
 open-source et 5 privés**.
 
 **L'établissement scolaire n'est jamais nommé** — ni contenu, ni métadonnées,
-ni JSON-LD. Le projet « ESIEE Salles » garde son nom propre, qui est celui du
-projet.
+ni JSON-LD, **ni fichier servi depuis le domaine** (un PDF déposé à la racine
+contourne la règle aussi sûrement qu'une ligne de HTML). Le projet
+« ESIEE Salles » garde son nom propre, qui est celui du projet.
 
 ### Analytics
 **PostHog seul.** Rybbit a été retiré : deux traceurs pour la même donnée.
@@ -204,8 +205,13 @@ chargement. Mesures en vigueur (2026-09-08) :
 
 ## Points en attente
 
-- **Bouton CV** : présent mais commenté dans `index.html`. Déposer `cv.pdf` à
-  la racine et décommenter.
+- **Bouton CV** : présent mais commenté dans `index.html`. **Décision de
+  Thomas, 2026-09-08 : ne pas publier le CV** — le laisser commenté. Deux
+  raisons, toutes deux vérifiées sur le fichier fourni : le CV porte son
+  numéro de téléphone personnel, qu'un dépôt public rendrait définitivement
+  indexable et aspirable ; et il nomme l'établissement scolaire, ce que la
+  règle ci-dessus interdit sur ce domaine. Ne pas rouvrir le sujet sans que
+  Thomas le demande, et ne jamais déposer un `cv.pdf` de sa propre initiative.
 - **LinkedIn** : aucun lien, aucune URL connue. À ajouter si Thomas la fournit.
 
 ## Généré
