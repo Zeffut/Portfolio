@@ -374,7 +374,8 @@ main { min-width: 0; }
 /* Une adresse e-mail ne se met pas en capitales : ça nuit à la lecture
    et à la reconnaissance de la chaîne. */
 .btn-plain { text-transform: none; letter-spacing: 0; font-family: var(--f-body); font-weight: 600; }
-.btn-solid:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-solid:hover,
+.repos-cta:hover .btn-solid { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-ghost { color: var(--ink); border-color: var(--rule-strong); }
 .btn-ghost:hover { border-color: var(--ink); }
 
@@ -711,12 +712,41 @@ main { min-width: 0; }
 .index-table .col-ref { font: 500 .6875rem var(--f-mono); color: var(--ink-3); white-space: nowrap; }
 .index-table .col-name { color: var(--ink); font-weight: 600; }
 .index-table .col-name a { transition: color .2s var(--ease); }
+/* Dix lignes mènent à un dépôt, cinq n'ont rien à ouvrir : le chevron dit
+   lesquelles, sinon le lecteur teste au hasard. */
+.index-table .col-name a::after { content: " ↗"; color: var(--accent-text); }
 .index-table .col-name a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
 .index-table .col-stack { font-family: var(--f-mono); font-size: .75rem; }
 .index-table .col-domain { font-family: var(--f-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
 
 /* Ligne masquée par le filtre */
 .is-hidden { display: none; }
+
+/* Rappel de fin de §03 : quinze lignes parcourues, c'est là qu'on veut
+   voir le code — pas la section suivante. */
+.repos-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding: 26px 28px;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg-alt);
+    transition: border-color .2s var(--ease);
+}
+.repos-cta:hover { border-color: var(--accent); }
+.repos-cta-text { min-width: 0; }
+.repos-cta h3 { font-size: 1.125rem; margin: 10px 0 6px; }
+.repos-cta p { font-size: .8125rem; color: var(--ink-2); }
+/* Faux bouton : la carte entière est le lien (pas de lien dans un lien). */
+.repos-cta-btn { pointer-events: none; }
+
+@media (max-width: 560px) {
+    .repos-cta { flex-direction: column; align-items: stretch; }
+    .repos-cta-btn { justify-content: center; }
+}
 
 /* --------------------------------------------------------------------------
    17. §04 COMPÉTENCES — la preuve accompagne l'affirmation
@@ -790,6 +820,9 @@ main { min-width: 0; }
 .door { background: var(--bg); padding: 20px 22px; }
 .door h3 { font-size: .9375rem; margin-bottom: 6px; }
 .door p { font-size: .8125rem; color: var(--ink-2); }
+.door-link { display: block; transition: background .2s var(--ease); }
+.door-link:hover { background: var(--bg-alt); }
+.door-arrow { color: var(--accent-text); }
 
 /* --------------------------------------------------------------------------
    20. PIED DE PAGE
@@ -857,6 +890,8 @@ main { min-width: 0; }
 .spec dl > div { display: grid; gap: 3px; }
 .spec dt { font: 500 .625rem/1 var(--f-mono); letter-spacing: .1em; color: var(--ink-3); }
 .spec dd { font-size: .8125rem; color: var(--ink); }
+.spec-link { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+.spec-link:hover { color: var(--ink); }
 
 @media (max-width: 1000px) {
     .hero-grid { grid-template-columns: 1fr; }

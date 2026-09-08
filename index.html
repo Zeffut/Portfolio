@@ -81,7 +81,7 @@
 <!-- Polices locales -->
 <link rel="preload" href="fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/IBMPlexSans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=2026-09-08">
+<link rel="stylesheet" href="style.css?v=2026-09-09">
 
 </head>
 
@@ -179,7 +179,7 @@
             <div><dt data-en="LOCATION">LOCALISATION</dt><dd>Chessy, France</dd></div>
             <div><dt data-en="STATUS">STATUT</dt><dd data-en="Student">Étudiant</dd></div>
             <div><dt data-en="FIELDS">DOMAINES</dt><dd data-en="AI · Automation · Web">IA · Automatisation · Web</dd></div>
-            <div><dt data-en="REPOS">DÉPÔTS</dt><dd data-en="10 public">10 publics</dd></div>
+            <div><dt data-en="REPOS">DÉPÔTS</dt><dd><a class="spec-link" href="https://github.com/Zeffut" target="_blank" rel="noopener" data-en="10 public ↗">10 publics ↗</a></dd></div>
           </dl>
         </aside>
       </div>
@@ -368,6 +368,20 @@
           </tbody>
         </table>
       </div>
+
+      <a class="repos-cta marks reveal" href="https://github.com/Zeffut" target="_blank" rel="noopener">
+        <div class="repos-cta-text">
+          <span class="sec-num" data-en="THE SOURCE">LA SOURCE</span>
+          <h3 data-en="The ten public repositories">Les dix dépôts publics</h3>
+          <p data-en="Commits, issues, README: the code says what a record sheet cannot.">
+            Commits, issues, README : le code dit ce qu'une fiche ne peut pas dire.
+          </p>
+        </div>
+        <span class="btn btn-solid repos-cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3-.3 6-1.5 6-6.6a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 1.6 5.5 1.9 5.5 1.9a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 4 8.9c0 5 3 6.3 6 6.6a3.4 3.4 0 0 0-1 2.6V22"/></svg>
+          <span data-en="Open GitHub">Ouvrir GitHub</span>
+        </span>
+      </a>
     </section>
 
     <!-- ======================== §04 COMPÉTENCES ======================== -->
@@ -497,10 +511,10 @@
             <h3 data-en="Freelance">Freelance</h3>
             <p data-en="Short engagements: automation, scraping, custom internal tools.">Missions courtes : automatisation, scraping, outils internes sur mesure.</p>
           </div>
-          <div class="door">
-            <h3 data-en="Open-source">Open-source</h3>
+          <a class="door door-link" href="https://github.com/Zeffut" target="_blank" rel="noopener">
+            <h3>Open-source <span class="door-arrow" aria-hidden="true">↗</span></h3>
             <p data-en="Ten public repositories to browse, fork or comment on.">Dix dépôts publics à parcourir, forker ou commenter.</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -536,6 +550,6 @@ posthog.init('phc_zdMj4p5wo8EvfVApjb2EbfUHJ76zgYGM5wAGz5YJC359',{
 posthog.register({app:'portfolio'});
 </script>
 
-<script src="script.js?v=2026-09-08"></script>
+<script src="script.js?v=2026-09-09"></script>
 </body>
 </html>

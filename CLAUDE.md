@@ -26,6 +26,27 @@ est supprimé. Cette règle a écarté, entre autres, blobs floutés, glassmorph
 gradients sur les titres et grilles bento — le vocabulaire par défaut des
 portfolios de développeurs, dont ce site s'écarte volontairement.
 
+### Objectif du site — il arbitre les questions de conversion
+
+> **Le visiteur doit finir sur les dépôts GitHub.**
+
+Le portfolio n'est pas la destination, c'est le chemin. Une fiche projet
+convainc, le code prouve. Toute décision qui ajoute un pas entre le lecteur
+et `github.com/Zeffut` doit se justifier ; toute décision qui en retire un
+est bonne par défaut.
+
+Cinq points d'entrée vers le profil, répartis sur la descente de page :
+la cotation **DÉPÔTS** de la fiche signalétique (§01), le **rappel de fin
+de §03** — placé juste après l'index, là où l'intention est au plus haut —,
+le bouton de §06, la porte « Open-source » de §06, et le pied de page.
+S'y ajoutent les 15 liens vers un dépôt précis (5 fiches + 10 lignes
+d'index). Dans l'index, les dix lignes cliquables portent un chevron `↗` :
+sans lui, le lecteur ne sait pas lesquelles des quinze mènent quelque part.
+
+PostHog mesure déjà tout cela — l'événement `outbound_click` porte
+`destination: 'github'`. C'est le chiffre à regarder pour juger d'une
+modification, pas l'impression esthétique.
+
 ## Fichiers
 
 | Fichier | Rôle |
@@ -191,17 +212,21 @@ site avec ces en-têtes et ouvrir la console — un script inline dont
 l'empreinte ne correspond plus y apparaît en « Refused to execute ».
 
 ### Budgets
-`style.css` < 36 Ko · `script.js` < 16 Ko · `og-image.png` < 150 Ko.
+`style.css` < 38 000 octets · `script.js` < 16 000 octets ·
+`og-image.png` < 150 000 octets. **Seuils en octets** : « Ko » avait deux
+lectures possibles (1 000 ou 1 024), et le CSS s'est retrouvé deux fois
+juste des deux côtés de la limite selon la lecture retenue.
 Le seuil du CSS a d'abord été relevé de 30 à 34 Ko en intégrant les
 `@font-face` locaux, qui remplacent une feuille externe de 11,7 Ko : le total
-transféré diminue malgré un fichier plus gros. Il passe à 36 Ko pour la
-feuille d'impression (§23) et l'utilitaire `.vh` ; celui du JS à 16 Ko pour
-l'internationalisation des `aria-label` et le compte rendu de filtre.
+transféré diminue malgré un fichier plus gros. Il passe ensuite à 38 000 octets pour la
+feuille d'impression (§23), l'utilitaire `.vh` et le rappel de fin de §03 ;
+celui du JS à 16 000 octets pour l'internationalisation des `aria-label` et
+le compte rendu de filtre.
 
 Ces seuils portent sur le fichier brut ; c'est le transféré qui compte au
-chargement. Mesures en vigueur (2026-09-08) :
-`style.css` 34,7 Ko brut / **8,3 Ko gzip** · `script.js` 15,0 Ko brut /
-**4,0 Ko gzip** · `index.html` 38,5 Ko brut / **9,3 Ko gzip**.
+chargement. Mesures en vigueur (2026-09-09) :
+`style.css` 36 189 o brut / **8,6 Ko gzip** · `script.js` 15 203 o brut /
+**4,0 Ko gzip** · `index.html` 39 735 o brut / **9,6 Ko gzip**.
 
 ## Points en attente
 
