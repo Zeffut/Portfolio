@@ -1,0 +1,15 @@
+{
+  "name": "Thomas De Sousa — Développeur full-stack",
+  "short_name": "Thomas De Sousa",
+  "description": "Portfolio de Thomas De Sousa : IA locale, automatisation, scraping, web.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#FAFAF7",
+  "theme_color": "#FAFAF7",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

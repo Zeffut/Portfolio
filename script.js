@@ -23,6 +23,20 @@
     var THEME_KEY = 'tds-theme';
     var themeBtn = document.getElementById('theme-btn');
 
+    /* Étiquettes posées par le script : elles n'ont pas de nœud de texte,
+       donc pas de data-en. Sans ce dictionnaire, la bascule EN laissait
+       « Basculer en thème sombre » aux lecteurs d'écran. */
+    var LABELS = {
+        fr: { themeToDark: 'Basculer en thème sombre', themeToLight: 'Basculer en thème clair',
+              menuOpen: 'Ouvrir le menu', menuClose: 'Fermer le menu',
+              shown: 'projet(s) affiché(s)' },
+        en: { themeToDark: 'Switch to dark theme', themeToLight: 'Switch to light theme',
+              menuOpen: 'Open the menu', menuClose: 'Close the menu',
+              shown: 'project(s) shown' }
+    };
+    var lang = 'fr';
+    function L(key) { return LABELS[lang][key]; }
+
     function currentTheme() {
         var set = root.getAttribute('data-theme');
         if (set) return set;
@@ -34,8 +48,7 @@
         if (themeBtn) {
             var dark = theme === 'dark';
             themeBtn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-            themeBtn.setAttribute('aria-label',
-                dark ? 'Basculer en thème clair' : 'Basculer en thème sombre');
+            themeBtn.setAttribute('aria-label', dark ? L('themeToLight') : L('themeToDark'));
         }
         try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
     }
@@ -67,12 +80,18 @@
         });
     });
 
+    var i18nLabels = [];
+    Array.prototype.forEach.call(document.querySelectorAll('[data-en-label]'), function (el) {
+        i18nLabels.push({ el: el, fr: el.getAttribute('aria-label'), en: el.getAttribute('data-en-label') });
+    });
+
     var titleFr = document.title;
     var titleEn = root.getAttribute('data-i18n-title') || titleFr;
 
-    function applyLang(lang) {
-        var en = lang === 'en';
-        root.lang = lang;
+    function applyLang(next) {
+        var en = next === 'en';
+        lang = next;
+        root.lang = next;
         document.title = en ? titleEn : titleFr;
 
         i18nNodes.forEach(function (n) {
@@ -81,24 +100,30 @@
             else { n.el.innerHTML = val; }
         });
 
-        Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function (b) {
-            b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+        // Les aria-label statiques suivent la même convention que le texte visible.
+        i18nLabels.forEach(function (n) {
+            n.el.setAttribute('aria-label', en ? n.en : n.fr);
         });
 
-        try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+        Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function (b) {
+            b.setAttribute('aria-pressed', b.getAttribute('data-lang') === next ? 'true' : 'false');
+        });
+
+        // Étiquettes posées par le script : elles se relisent dans la langue du moment.
+        applyTheme(currentTheme());
+        if (nav && menuBtn) setMenu(nav.classList.contains('is-open'));
+        announceFilter();
+
+        try { localStorage.setItem(LANG_KEY, next); } catch (e) {}
     }
 
     Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function (btn) {
         btn.addEventListener('click', function () {
-            var lang = btn.getAttribute('data-lang');
-            applyLang(lang);
-            track('language_switch', { lang: lang });
+            var next = btn.getAttribute('data-lang');
+            applyLang(next);
+            track('language_switch', { lang: next });
         });
     });
-
-    var storedLang = 'fr';
-    try { storedLang = localStorage.getItem(LANG_KEY) || 'fr'; } catch (e) {}
-    if (storedLang === 'en') applyLang('en');
 
     /* ---------------------------------------------------------------------
        Menu mobile — clavier et lecteurs d'écran compris
@@ -110,7 +135,7 @@
         if (!nav || !menuBtn) return;
         nav.classList.toggle('is-open', open);
         menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        menuBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        menuBtn.setAttribute('aria-label', open ? L('menuClose') : L('menuOpen'));
     }
 
     if (menuBtn && nav) {
@@ -232,23 +257,40 @@
         document.querySelectorAll('.sheet[data-cat], .index-table tbody tr[data-cat]'));
 
     var sheetsEmpty = document.getElementById('sheets-empty');
+    var filterStatus = document.getElementById('filter-status');
+    // L'index complet porte un projet par ligne : c'est lui qui donne le compte.
+    var indexRows = filterables.filter(function (el) { return el.tagName === 'TR'; });
+    var visibleCount = indexRows.length;
+
+    // Compte rendu vocal, relu dans la langue courante après une bascule.
+    // Muet tant qu'aucun filtre n'a été touché : une région « live »
+    // remplie au chargement se fait annoncer pour rien.
+    var filterTouched = false;
+    function announceFilter() {
+        if (filterStatus && filterTouched) filterStatus.textContent = visibleCount + ' ' + L('shown');
+    }
 
     function applyFilter(cat) {
         var visibleSheets = 0;
+        visibleCount = 0;
 
         filterables.forEach(function (el) {
             var show = cat === 'all' || el.getAttribute('data-cat') === cat;
             el.classList.toggle('is-hidden', !show);
-            if (show && el.classList.contains('sheet')) visibleSheets++;
+            if (!show) return;
+            if (el.tagName === 'TR') visibleCount++;
+            if (el.classList.contains('sheet')) visibleSheets++;
         });
 
         // Un domaine peut n'avoir aucune fiche détaillée : on le dit.
         if (sheetsEmpty) sheetsEmpty.hidden = visibleSheets > 0;
+        announceFilter();
     }
 
     filterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
             var cat = btn.getAttribute('data-filter');
+            filterTouched = true;
             filterBtns.forEach(function (b) {
                 b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
             });
@@ -277,6 +319,17 @@
         });
     });
 
+    /* ---------------------------------------------------------------------
+       Liens sortants — WCAG 3.2.5 : un lien qui change de contexte le dit.
+       Un seul texte masqué, référencé par tous les liens ; il se traduit
+       comme le reste puisqu'il porte un data-en.
+       --------------------------------------------------------------------- */
+    if (document.getElementById('newtab')) {
+        Array.prototype.forEach.call(document.querySelectorAll('a[target="_blank"]'), function (a) {
+            a.setAttribute('aria-describedby', 'newtab');
+        });
+    }
+
     Array.prototype.forEach.call(document.querySelectorAll('a[href^="mailto:"]'), function (a) {
         a.addEventListener('click', function () { track('contact_click', { method: 'email' }); });
     });
@@ -292,4 +345,12 @@
             track('nav_click', { target: a.getAttribute('href') });
         });
     });
+
+    /* ---------------------------------------------------------------------
+       Démarrage — applyLang touche au thème, au menu et au filtre : elle ne
+       peut s'exécuter qu'une fois ces trois modules construits.
+       --------------------------------------------------------------------- */
+    var storedLang = 'fr';
+    try { storedLang = localStorage.getItem(LANG_KEY) || 'fr'; } catch (e) {}
+    applyLang(storedLang === 'en' ? 'en' : 'fr');
 })();

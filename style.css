@@ -127,6 +127,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 table { border-collapse: collapse; width: 100%; }
 ::selection { background: var(--accent-soft); color: var(--ink); }
 
+/* Masqué à l'œil, lu par les lecteurs d'écran : compte rendu de filtre et
+   avertissement « nouvel onglet ». De l'information sans pixel. */
+.vh {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 /* Focus — jamais supprimé, visible dans les deux thèmes */
 :focus-visible {
     outline: 2px solid var(--accent);
@@ -711,7 +722,10 @@ main { min-width: 0; }
    17. §04 COMPÉTENCES — la preuve accompagne l'affirmation
    -------------------------------------------------------------------------- */
 .skills-wrap { overflow-x: auto; border: 1px solid var(--rule); }
-.skills-table { min-width: 640px; font-size: .8125rem; }
+/* Deux colonnes de texte court : plus de min-width, donc plus du défilement
+   horizontal qu'imposait la troisième. Le tableau tient sur un téléphone. */
+.skills-table { font-size: .8125rem; }
+.skills-table .col-skill, .skills-table thead th:first-child { width: 32%; }
 
 .skills-table caption {
     text-align: left;
@@ -739,20 +753,10 @@ main { min-width: 0; }
     letter-spacing: .12em;
 }
 .skills-table .col-skill { color: var(--ink); font-weight: 600; white-space: nowrap; }
-.skills-table .col-proof { font-family: var(--f-mono); font-size: .75rem; color: var(--ink-3); }
+.skills-table .col-proof { font-family: var(--f-mono); font-size: .75rem; color: var(--ink-2); }
 
-/* Niveau : trois crans. S'auto-noter sur dix n'est pas crédible ; sur trois, oui. */
-.level { display: inline-flex; align-items: center; gap: 9px; white-space: nowrap; }
-.level-bars { display: inline-flex; gap: 3px; }
-.level-bars i {
-    width: 12px; height: 4px;
-    background: var(--rule-strong);
-    display: block;
-}
-.level-3 .level-bars i:nth-child(-n+3),
-.level-2 .level-bars i:nth-child(-n+2),
-.level-1 .level-bars i:nth-child(-n+1) { background: var(--accent); }
-.level-name { font: 400 .6875rem var(--f-mono); color: var(--ink-3); }
+/* Plus de jauge de niveau : une note auto-attribuée n'est vérifiable par
+   personne, donc elle ne porte aucune information. Seule reste la preuve. */
 
 /* --------------------------------------------------------------------------
    18. §05 MÉTHODE
@@ -830,6 +834,11 @@ main { min-width: 0; }
 @media (max-width: 560px) {
     .method { grid-template-columns: 1fr; }
     .facts { grid-template-columns: 1fr; }
+    /* Le nom de la compétence peut se replier : le tableau tient alors
+       dans un écran de téléphone, sans défilement horizontal. */
+    .skills-table .col-skill { white-space: normal; }
+    .skills-table .col-skill, .skills-table thead th:first-child { width: 40%; }
+    .skills-table th, .skills-table td { padding: 10px 12px; }
     .sheet-field { grid-template-columns: 60px minmax(0, 1fr); gap: 10px; }
     .contact-actions .btn { flex: 1 1 100%; justify-content: center; }
 }
@@ -868,4 +877,50 @@ main { min-width: 0; }
     color: var(--ink-3);
     font: 400 .875rem var(--f-mono);
     text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   23. IMPRESSION — le dossier se lit aussi sur papier. Sans cette feuille :
+   fond sombre possible, en-tête fixe en travers du texte, liens sans adresse.
+   -------------------------------------------------------------------------- */
+@media print {
+    :root {
+        --bg: #FFF; --bg-alt: #FFF;
+        --ink: #000; --ink-2: #222; --ink-3: #444;
+        --rule: #BBB; --rule-strong: #888;
+        --accent: #000; --accent-text: #000; --accent-soft: transparent;
+        --status: #000; --shadow: transparent;
+        --sec-y: 24px;
+        color-scheme: light;
+    }
+
+    /* Commandes d'interface : rien à imprimer. */
+    .hdr, .toc, .skip, .filters, .footer-links, .sheet-arrow { display: none !important; }
+
+    body { overflow: visible; }
+    .page { display: block; }
+    main { padding-top: 0; }
+
+    /* Rien de caché par une animation qui ne jouera pas. */
+    .js .reveal, .js .stagger > * { opacity: 1 !important; transform: none !important; }
+    .rule-draw { transform: scaleX(1) !important; }
+    .is-hidden { display: revert !important; }
+
+    /* Jamais coupé au mauvais endroit. */
+    .section { break-inside: avoid; page-break-inside: avoid; padding: 0 0 24px; }
+    .sheet, .step, .fact, .door { break-inside: avoid; page-break-inside: avoid; }
+    h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+    h1 { font-size: 32pt; }
+    h2 { font-size: 16pt; }
+
+    /* Le papier n'a pas de survol : la destination s'écrit. */
+    .sheet, .skills-wrap, .index-wrap, .spec { border: 1px solid #BBB; }
+    .skills-wrap, .index-wrap { overflow: visible; }
+    .index-table .col-name a::after,
+    .contact-actions a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #444; }
+
+    /* La page A4 est plus étroite qu'un écran. */
+    .sheets { grid-template-columns: repeat(2, 1fr); }
+    .method { grid-template-columns: repeat(2, 1fr); }
+    .hero-grid, .contact, .synth { grid-template-columns: 1fr; }
 }

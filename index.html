@@ -7,12 +7,15 @@
 
 <meta name="description" data-en="Portfolio of Thomas De Sousa, full-stack developer. Fifteen projects carried from idea to production: local AI, automation, scraping, web." content="Portfolio de Thomas De Sousa, développeur full-stack. Quinze projets menés de l'idée à la production : IA locale, automatisation, scraping, web.">
 <meta name="author" content="Thomas De Sousa">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0C1220" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://zeffut.fr/">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Thomas De Sousa">
@@ -33,16 +36,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Thomas De Sousa",
-  "jobTitle": "Développeur full-stack",
-  "url": "https://zeffut.fr/",
-  "email": "mailto:tom77ds@gmail.com",
-  "sameAs": ["https://github.com/Zeffut"],
-  "knowsAbout": ["Python", "JavaScript", "TypeScript", "Swift", "Flask",
-    "Web scraping", "Automatisation", "Intelligence artificielle locale", "Docker",
-    "Claude Code", "OpenClaw", "Hermes Agent", "Google Antigravity", "Codex CLI",
-    "Cursor", "Model Context Protocol", "Agents autonomes", "Ollama", "n8n"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://zeffut.fr/#site",
+      "url": "https://zeffut.fr/",
+      "name": "Thomas De Sousa — Développeur full-stack",
+      "description": "Portfolio de Thomas De Sousa, développeur full-stack. Quinze projets menés de l'idée à la production : IA locale, automatisation, scraping, web.",
+      "inLanguage": ["fr-FR", "en-US"],
+      "publisher": { "@id": "https://zeffut.fr/#thomas" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://zeffut.fr/#thomas",
+      "name": "Thomas De Sousa",
+      "jobTitle": "Développeur full-stack",
+      "description": "Développeur full-stack autodidacte : IA locale, automatisation, scraping, web.",
+      "url": "https://zeffut.fr/",
+      "image": "https://zeffut.fr/og-image.png",
+      "email": "mailto:tom77ds@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Chessy", "addressCountry": "FR" },
+      "knowsLanguage": ["fr", "en"],
+      "sameAs": ["https://github.com/Zeffut"],
+      "mainEntityOfPage": { "@id": "https://zeffut.fr/#site" },
+      "knowsAbout": ["Python", "JavaScript", "TypeScript", "Swift", "Flask",
+        "Web scraping", "Automatisation", "Intelligence artificielle locale", "Docker",
+        "Claude Code", "OpenClaw", "Hermes Agent", "Google Antigravity", "Codex CLI",
+        "Cursor", "Model Context Protocol", "Agents autonomes", "Ollama", "n8n"]
+    }
+  ]
 }
 </script>
 
@@ -51,14 +73,20 @@
 (function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('tds-theme');if(t)r.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
+<!-- Analytics : la résolution DNS et la poignée TLS commencent tout de suite,
+     le script lui-même reste en fin de body, hors du chemin critique. -->
+<link rel="preconnect" href="https://eu-assets.i.posthog.com" crossorigin>
+<link rel="dns-prefetch" href="https://eu.i.posthog.com">
+
 <!-- Polices locales -->
 <link rel="preload" href="fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/IBMPlexSans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=2026-08-21">
+<link rel="stylesheet" href="style.css?v=2026-09-08">
 
 </head>
 
 <body>
+<span class="vh" id="newtab" data-en="Opens in a new tab">Ouvre un nouvel onglet</span>
 <a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
 
 <!-- ============================ §00 EN-TÊTE ============================ -->
@@ -68,7 +96,7 @@
       <span class="ident-name">Thomas De Sousa</span>
     </a>
 
-    <nav class="nav-main" id="nav-main" aria-label="Sections du dossier">
+    <nav class="nav-main" id="nav-main" aria-label="Sections du dossier" data-en-label="Sections of the record">
       <a href="#identite"     data-en="Identity">Identité</a>
       <a href="#synthese"     data-en="Summary">Synthèse</a>
       <a href="#realisations" data-en="Work">Réalisations</a>
@@ -78,7 +106,7 @@
     </nav>
 
     <div class="hdr-tools">
-      <div class="switch" role="group" aria-label="Langue">
+      <div class="switch" role="group" aria-label="Langue" data-en-label="Language">
         <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
         <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
@@ -98,7 +126,7 @@
 <div class="page wrap">
 
   <!-- Sommaire de marge -->
-  <aside class="toc" aria-label="Sommaire">
+  <aside class="toc" aria-label="Sommaire" data-en-label="Contents">
     <div class="toc-title label" data-en="Contents">Sommaire</div>
     <ol>
       <li><a href="#identite"><span class="toc-n">01</span><span data-en="Identity">Identité</span></a></li>
@@ -116,7 +144,7 @@
     <section class="section hero" id="identite">
       <div class="hero-ref">
         <span class="sec-num">§01 — <span data-en="IDENTITY">IDENTITÉ</span></span>
-        <span class="annot" data-en="UPDATED — AUGUST 2026">MISE À JOUR — AOÛT 2026</span>
+        <span class="annot" data-en="UPDATED — SEPTEMBER 2026">MISE À JOUR — SEPTEMBRE 2026</span>
       </div>
 
       <h1>Thomas<br>De&nbsp;Sousa</h1>
@@ -145,7 +173,7 @@
       </div>
         </div>
 
-        <aside class="spec marks" aria-label="Fiche signalétique">
+        <aside class="spec marks" aria-label="Fiche signalétique" data-en-label="Record">
           <div class="spec-title label" data-en="Record">Fiche signalétique</div>
           <dl>
             <div><dt data-en="LOCATION">LOCALISATION</dt><dd>Chessy, France</dd></div>
@@ -211,13 +239,15 @@
         </p>
       </div>
 
-      <div class="filters reveal" role="group" aria-label="Filtrer par domaine">
+      <div class="filters reveal" role="group" aria-label="Filtrer par domaine" data-en-label="Filter by field">
         <button type="button" data-filter="all"  aria-pressed="true"  data-en="All">Tout</button>
         <button type="button" data-filter="ia"   aria-pressed="false" data-en="AI">IA</button>
         <button type="button" data-filter="auto" aria-pressed="false" data-en="Automation">Automatisation</button>
         <button type="button" data-filter="web"  aria-pressed="false" data-en="Web">Web</button>
         <button type="button" data-filter="mc"   aria-pressed="false" data-en="Minecraft">Minecraft</button>
       </div>
+
+      <p class="vh" id="filter-status" role="status" aria-live="polite"></p>
 
       <div class="sheets">
 
@@ -345,8 +375,8 @@
       <div class="sec-head reveal">
         <span class="sec-num">§04 — <span data-en="SKILLS">COMPÉTENCES</span></span>
         <h2 data-en="What I use, and where">Ce que j'utilise, et où</h2>
-        <p class="sec-sub" data-en="Three levels only — rating yourself out of ten is not credible. The right-hand column ties every claim to a project above.">
-          Trois niveaux seulement — s'auto-noter sur dix n'est pas crédible. La colonne de droite relie chaque affirmation à un projet ci-dessus.
+        <p class="sec-sub" data-en="No self-assigned level: a rating out of five proves nothing. Each skill is tied to the project where it actually served — that is the only evidence worth reading.">
+          Aucun niveau auto-attribué : une note sur cinq ne prouve rien. Chaque compétence est rattachée au projet où elle a réellement servi — c'est la seule preuve qui vaille.
         </p>
       </div>
 
@@ -356,52 +386,51 @@
           <thead>
             <tr>
               <th scope="col" data-en="Skill">Compétence</th>
-              <th scope="col" data-en="Level">Niveau</th>
-              <th scope="col" data-en="Used in">Utilisé dans</th>
+              <th scope="col" data-en="Evidence — where it served">Preuve — où elle a servi</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="grp"><th scope="rowgroup" colspan="3" data-en="LANGUAGES">LANGAGES</th></tr>
-            <tr><td class="col-skill">Python</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">JobScraper · ChessBot · ClipGenius</td></tr>
-            <tr><td class="col-skill">JavaScript</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="This portfolio · web tooling">Ce portfolio · outils web</td></tr>
-            <tr><td class="col-skill">TypeScript</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">n8n-nodes-plaud</td></tr>
-            <tr><td class="col-skill">Swift</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">BetterFasterWhisper</td></tr>
-            <tr><td class="col-skill">Java</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Minecraft projects">Projets Minecraft</td></tr>
-            <tr><td class="col-skill">SQL</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">NoteGenius</td></tr>
-            <tr><td class="col-skill">Bash</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="System automation">Automatisation système</td></tr>
-            <tr><td class="col-skill">C</td><td><span class="level level-1"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Basics">Notions</span></span></td><td class="col-proof" data-en="Algorithmic projects">Projets algorithmiques</td></tr>
+            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="LANGUAGES">LANGAGES</th></tr>
+            <tr><td class="col-skill">Python</td><td class="col-proof">JobScraper · ChessBot · ClipGenius</td></tr>
+            <tr><td class="col-skill">JavaScript</td><td class="col-proof" data-en="This portfolio · web tooling">Ce portfolio · outils web</td></tr>
+            <tr><td class="col-skill">TypeScript</td><td class="col-proof">n8n-nodes-plaud</td></tr>
+            <tr><td class="col-skill">Swift</td><td class="col-proof">BetterFasterWhisper</td></tr>
+            <tr><td class="col-skill">Java</td><td class="col-proof" data-en="Minecraft projects">Projets Minecraft</td></tr>
+            <tr><td class="col-skill">SQL</td><td class="col-proof">NoteGenius</td></tr>
+            <tr><td class="col-skill">Bash</td><td class="col-proof" data-en="System automation">Automatisation système</td></tr>
+            <tr><td class="col-skill">C</td><td class="col-proof" data-en="Algorithmic projects">Projets algorithmiques</td></tr>
 
-            <tr class="grp"><th scope="rowgroup" colspan="3" data-en="BACKEND &amp; DATA">BACKEND &amp; DONNÉES</th></tr>
-            <tr><td class="col-skill">Flask</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">ESIEE Salles · NoteGenius</td></tr>
-            <tr><td class="col-skill">Selenium</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">JobScraper · VintedScraper</td></tr>
-            <tr><td class="col-skill">BeautifulSoup</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">JobScraper</td></tr>
-            <tr><td class="col-skill" data-en="REST APIs">API REST</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">n8n-nodes-plaud · ESIEE Salles</td></tr>
-            <tr><td class="col-skill">SQLite</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">NoteGenius</td></tr>
-            <tr><td class="col-skill">Pandas</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Data processing">Traitement de données</td></tr>
+            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="BACKEND &amp; DATA">BACKEND &amp; DONNÉES</th></tr>
+            <tr><td class="col-skill">Flask</td><td class="col-proof">ESIEE Salles · NoteGenius</td></tr>
+            <tr><td class="col-skill">Selenium</td><td class="col-proof">JobScraper · VintedScraper</td></tr>
+            <tr><td class="col-skill">BeautifulSoup</td><td class="col-proof">JobScraper</td></tr>
+            <tr><td class="col-skill" data-en="REST APIs">API REST</td><td class="col-proof">n8n-nodes-plaud · ESIEE Salles</td></tr>
+            <tr><td class="col-skill">SQLite</td><td class="col-proof">NoteGenius</td></tr>
+            <tr><td class="col-skill">Pandas</td><td class="col-proof" data-en="Data processing">Traitement de données</td></tr>
 
-            <tr class="grp"><th scope="rowgroup" colspan="3" data-en="AI &amp; AUTOMATION">IA &amp; AUTOMATISATION</th></tr>
-            <tr><td class="col-skill">FFmpeg</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">ClipGenius · TikTok IA Generator</td></tr>
-            <tr><td class="col-skill">n8n</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof">n8n-nodes-plaud</td></tr>
-            <tr><td class="col-skill">WhisperKit · CoreML</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">BetterFasterWhisper</td></tr>
-            <tr><td class="col-skill">OpenCV</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">ChessBot</td></tr>
-            <tr><td class="col-skill">OCR · Tesseract</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof">BrawlStar-Bot</td></tr>
-            <tr><td class="col-skill">Ollama</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Local models">Modèles locaux</td></tr>
+            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="AI &amp; AUTOMATION">IA &amp; AUTOMATISATION</th></tr>
+            <tr><td class="col-skill">FFmpeg</td><td class="col-proof">ClipGenius · TikTok IA Generator</td></tr>
+            <tr><td class="col-skill">n8n</td><td class="col-proof">n8n-nodes-plaud</td></tr>
+            <tr><td class="col-skill">WhisperKit · CoreML</td><td class="col-proof">BetterFasterWhisper</td></tr>
+            <tr><td class="col-skill">OpenCV</td><td class="col-proof">ChessBot</td></tr>
+            <tr><td class="col-skill">OCR · Tesseract</td><td class="col-proof">BrawlStar-Bot</td></tr>
+            <tr><td class="col-skill">Ollama</td><td class="col-proof" data-en="Local models">Modèles locaux</td></tr>
 
-            <tr class="grp"><th scope="rowgroup" colspan="3" data-en="AGENTS &amp; AI TOOLING">AGENTS &amp; OUTILLAGE IA</th></tr>
-            <tr><td class="col-skill">Claude Code</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof" data-en="SaaS Factory · this portfolio">SaaS Factory · ce portfolio</td></tr>
-            <tr><td class="col-skill">OpenClaw</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof" data-en="Self-hosted personal agent">Agent personnel auto-hébergé</td></tr>
-            <tr><td class="col-skill">Hermes Agent</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof" data-en="Agents with persistent memory">Agents à mémoire persistante</td></tr>
-            <tr><td class="col-skill">Google Antigravity</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof" data-en="Agentic development">Développement agentique</td></tr>
-            <tr><td class="col-skill">Codex CLI</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Code generation and review">Génération et revue de code</td></tr>
-            <tr><td class="col-skill">Cursor</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Assisted editing">Édition assistée</td></tr>
-            <tr><td class="col-skill">MCP</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Wiring tools into agents">Connexion d'outils aux agents</td></tr>
+            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="AGENTS &amp; AI TOOLING">AGENTS &amp; OUTILLAGE IA</th></tr>
+            <tr><td class="col-skill">Claude Code</td><td class="col-proof" data-en="SaaS Factory · this portfolio">SaaS Factory · ce portfolio</td></tr>
+            <tr><td class="col-skill">OpenClaw</td><td class="col-proof" data-en="Self-hosted personal agent">Agent personnel auto-hébergé</td></tr>
+            <tr><td class="col-skill">Hermes Agent</td><td class="col-proof" data-en="Agents with persistent memory">Agents à mémoire persistante</td></tr>
+            <tr><td class="col-skill">Google Antigravity</td><td class="col-proof" data-en="Agentic development">Développement agentique</td></tr>
+            <tr><td class="col-skill">Codex CLI</td><td class="col-proof" data-en="Code generation and review">Génération et revue de code</td></tr>
+            <tr><td class="col-skill">Cursor</td><td class="col-proof" data-en="Assisted editing">Édition assistée</td></tr>
+            <tr><td class="col-skill">MCP</td><td class="col-proof" data-en="Wiring tools into agents">Connexion d'outils aux agents</td></tr>
 
-            <tr class="grp"><th scope="rowgroup" colspan="3" data-en="WEB &amp; TOOLING">WEB &amp; OUTILS</th></tr>
-            <tr><td class="col-skill">HTML · CSS</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof" data-en="This portfolio · ESIEE Salles">Ce portfolio · ESIEE Salles</td></tr>
-            <tr><td class="col-skill">Git · GitHub</td><td><span class="level level-3"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Fluent">Courant</span></span></td><td class="col-proof" data-en="15 versioned projects">15 projets versionnés</td></tr>
-            <tr><td class="col-skill">Docker</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Service deployment">Déploiement de services</td></tr>
-            <tr><td class="col-skill">Linux</td><td><span class="level level-2"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Working">Opérationnel</span></span></td><td class="col-proof" data-en="Server administration">Administration serveur</td></tr>
-            <tr><td class="col-skill">Figma</td><td><span class="level level-1"><span class="level-bars"><i></i><i></i><i></i></span><span class="level-name" data-en="Basics">Notions</span></span></td><td class="col-proof" data-en="Interface mockups">Maquettage d'interfaces</td></tr>
+            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="WEB &amp; TOOLING">WEB &amp; OUTILS</th></tr>
+            <tr><td class="col-skill">HTML · CSS</td><td class="col-proof" data-en="This portfolio · ESIEE Salles">Ce portfolio · ESIEE Salles</td></tr>
+            <tr><td class="col-skill">Git · GitHub</td><td class="col-proof" data-en="15 versioned projects">15 projets versionnés</td></tr>
+            <tr><td class="col-skill">Docker</td><td class="col-proof" data-en="Service deployment">Déploiement de services</td></tr>
+            <tr><td class="col-skill">Linux</td><td class="col-proof" data-en="Server administration">Administration serveur</td></tr>
+            <tr><td class="col-skill">Figma</td><td class="col-proof" data-en="Interface mockups">Maquettage d'interfaces</td></tr>
           </tbody>
         </table>
       </div>
@@ -507,6 +536,6 @@ posthog.init('phc_zdMj4p5wo8EvfVApjb2EbfUHJ76zgYGM5wAGz5YJC359',{
 posthog.register({app:'portfolio'});
 </script>
 
-<script src="script.js?v=2026-08-21"></script>
+<script src="script.js?v=2026-09-08"></script>
 </body>
 </html>
