@@ -39,9 +39,10 @@ Cinq points d'entrée vers le profil, répartis sur la descente de page :
 la cotation **DÉPÔTS** de la fiche signalétique (§01), le **rappel de fin
 de §03** — placé juste après l'index, là où l'intention est au plus haut —,
 le bouton de §06, la porte « Open-source » de §06, et le pied de page.
-S'y ajoutent les 15 liens vers un dépôt précis (5 fiches + 10 lignes
-d'index). Dans l'index, les dix lignes cliquables portent un chevron `↗` :
-sans lui, le lecteur ne sait pas lesquelles des quinze mènent quelque part.
+S'y ajoutent les 32 liens vers un dépôt précis (5 fiches + 27 entrées
+d'index). Dans l'index, les 27 entrées cliquables portent un chevron `↗` et
+les 14 privées un `•` : sans ce marquage, le lecteur ne sait pas lesquelles
+des 41 mènent quelque part.
 
 PostHog mesure déjà tout cela — l'événement `outbound_click` porte
 `destination: 'github'`. C'est le chiffre à regarder pour juger d'une
@@ -124,6 +125,17 @@ modifiant l'un de ces fichiers, mettre les deux à la date du jour. Ne jamais
 revenir à deux compteurs séparés — ils s'étaient désynchronisés (`?v=2` contre
 `?v=3`).
 
+### Index des réalisations (§03) — en colonnes, jamais en lignes
+Quarante et un projets empilés en tableau faisaient **1 250 px** : la section
+écrasait la page. L'index est une **grille `auto-fill`** (3 colonnes ≥ 1200 px,
+2 à partir de 768, 1 sur téléphone) qui tient la même liste en **560 px**. Ne
+pas revenir à une ligne par projet.
+
+Chaque entrée porte sa référence `P.nn`, son nom et sa techno. Un dépôt public
+est un lien terminé par `↗` ; un projet privé est un `<span>` terminé par `•`
+et grisé — la différence se voit **avant** le clic. Le filtre agit sur les
+`li[data-cat]` et sur les fiches détaillées simultanément.
+
 ### Compétences (§04) — aucune auto-notation
 Les jauges de niveau ont été **retirées**. Une note qu'on s'attribue soi-même
 n'est vérifiable par personne : elle ne porte donc aucune information, et la
@@ -161,8 +173,19 @@ partage, qui n'en portent pas, restent à un jour de cache.
 ### Contenu — règle de véracité
 **Aucun chiffre inventé** : ni étoiles GitHub, ni utilisateurs, ni
 téléchargements. Le champ `PREUVE` des fiches n'énonce que des propriétés
-techniques vérifiables. Chiffres exacts en vigueur : **15 projets, dont 10
-open-source et 5 privés**.
+techniques vérifiables. Chiffres exacts en vigueur : **41 projets, dont 27
+publics et 14 privés**, répartis en **5 domaines** (IA 7 · Automatisation 6 ·
+Web 5 · Outils 5 · Minecraft 18).
+
+Ces 41 viennent des **47 dépôts** de `user:Zeffut` (API GitHub, 2026-09-09),
+moins les **5 archivés** (Jarvis, auto-stun-slam, screencap, UltraFastPregen,
+MinecraftPotato) et `desktop-tutorial`, artefact du tutoriel GitHub Desktop.
+**Décisions de Thomas, 2026-09-09** : les dépôts privés sont tous nommés — le
+site en montrait déjà cinq, le principe était posé ; les archivés sont exclus.
+Le chiffre doit être **recompté à la source** avant d'être modifié, jamais
+estimé — cinq endroits l'affichent (méta description, `og`/`twitter`, fiche
+signalétique §01, cotations §02, titre et index §03, preuve « Git » §04,
+rappel de fin de §03, porte « Open-source » §06).
 
 **L'établissement scolaire n'est jamais nommé** — ni contenu, ni métadonnées,
 ni JSON-LD, **ni fichier servi depuis le domaine** (un PDF déposé à la racine
@@ -193,7 +216,7 @@ npx lighthouse http://localhost:8017/ --view \
   --only-categories=performance,accessibility,best-practices,seo
 ```
 
-**Référence à ne pas régresser** (revérifiée le 2026-09-08) :
+**Référence à ne pas régresser** (revérifiée le 2026-09-09) :
 Performance **98** · Accessibilité **100** · Bonnes pratiques **100** · SEO **100**.
 
 Si le CDN de PostHog est injoignable (réseau restreint, bloqueur), la requête
@@ -224,9 +247,8 @@ celui du JS à 16 000 octets pour l'internationalisation des `aria-label` et
 le compte rendu de filtre.
 
 Ces seuils portent sur le fichier brut ; c'est le transféré qui compte au
-chargement. Mesures en vigueur (2026-09-09) :
-`style.css` 36 189 o brut / **8,6 Ko gzip** · `script.js` 15 203 o brut /
-**4,0 Ko gzip** · `index.html` 39 735 o brut / **9,6 Ko gzip**.
+chargement. Mesures en vigueur (2026-09-09, index à 41 projets) :
+`style.css` 36 757 o · `script.js` 15 356 o · `index.html` 43 314 o.
 
 ## Points en attente
 

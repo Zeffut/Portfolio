@@ -254,12 +254,12 @@
        --------------------------------------------------------------------- */
     var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
     var filterables = Array.prototype.slice.call(
-        document.querySelectorAll('.sheet[data-cat], .index-table tbody tr[data-cat]'));
+        document.querySelectorAll('.sheet[data-cat], .index-grid li[data-cat]'));
 
     var sheetsEmpty = document.getElementById('sheets-empty');
     var filterStatus = document.getElementById('filter-status');
-    // L'index complet porte un projet par ligne : c'est lui qui donne le compte.
-    var indexRows = filterables.filter(function (el) { return el.tagName === 'TR'; });
+    // L'index complet porte un projet par entrée : c'est lui qui donne le compte.
+    var indexRows = filterables.filter(function (el) { return el.tagName === 'LI'; });
     var visibleCount = indexRows.length;
 
     // Compte rendu vocal, relu dans la langue courante après une bascule.
@@ -278,7 +278,7 @@
             var show = cat === 'all' || el.getAttribute('data-cat') === cat;
             el.classList.toggle('is-hidden', !show);
             if (!show) return;
-            if (el.tagName === 'TR') visibleCount++;
+            if (el.tagName === 'LI') visibleCount++;
             if (el.classList.contains('sheet')) visibleSheets++;
         });
 
@@ -313,9 +313,14 @@
         });
     });
 
-    Array.prototype.forEach.call(document.querySelectorAll('.index-table .col-name a'), function (a) {
+    Array.prototype.forEach.call(document.querySelectorAll('.index-grid a'), function (a) {
         a.addEventListener('click', function () {
-            track('project_click', { project: a.textContent.trim(), source: 'index' });
+            var n = a.querySelector('.ix-name');
+            track('project_click', {
+                project: n ? n.textContent.trim() : null,
+                category: a.parentNode.getAttribute('data-cat'),
+                source: 'index'
+            });
         });
     });
 

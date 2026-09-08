@@ -678,46 +678,64 @@ main { min-width: 0; }
 .sheet:hover .sheet-link { color: var(--accent-text); }
 
 /* --------------------------------------------------------------------------
-   16. INDEX DES RÉALISATIONS — le tableau est le format documentaire
+   16. INDEX DES RÉALISATIONS — quarante et un projets.
+   Une ligne par projet empilait 1 150 px de tableau : illisible, et la
+   section écrasait le reste de la page. Le même contenu en colonnes tient
+   en un tiers de la hauteur, et le regard balaie au lieu de dérouler.
    -------------------------------------------------------------------------- */
-.index-wrap { overflow-x: auto; border: 1px solid var(--rule); }
+.index-wrap { border: 1px solid var(--rule); }
 
-.index-table { min-width: 660px; font-size: .8125rem; }
-.index-table caption {
-    text-align: left;
+.index-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
     padding: 14px 18px;
     border-bottom: 1px solid var(--rule);
     background: var(--bg-alt);
 }
-.index-table th {
-    text-align: left;
-    padding: 11px 18px;
-    font: 500 .6875rem var(--f-mono);
-    letter-spacing: .09em;
-    text-transform: uppercase;
+.index-legend { color: var(--ink-3); }
+
+.index-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    gap: 0;
+    padding: 8px;
+}
+.index-grid li { min-width: 0; }
+
+/* Un dépôt ouvrable est un lien, un projet privé n'en est pas un : la
+   différence doit se voir avant le clic, pas après. */
+.index-grid a, .index-grid .ix-priv {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 10px;
+    font-size: .8125rem;
+    transition: background .15s var(--ease), color .15s var(--ease);
+}
+.index-grid a:hover { background: var(--bg-alt); color: var(--accent-text); }
+.index-grid a::after { content: "↗"; color: var(--accent-text); font-size: .75rem; }
+.index-grid .ix-priv { color: var(--ink-3); }
+.index-grid .ix-priv::after {
+    content: "•";
     color: var(--ink-3);
-    border-bottom: 1px solid var(--rule);
+    font-size: .75rem;
+}
+
+.ix-ref  { font: 500 .6875rem var(--f-mono); color: var(--ink-3); flex-shrink: 0; }
+.ix-name { font-weight: 600; color: inherit; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.index-grid a .ix-name { color: var(--ink); }
+.index-grid a:hover .ix-name { color: var(--accent-text); }
+.ix-tech {
+    margin-left: auto;
+    font: 400 .6875rem var(--f-mono);
+    color: var(--ink-3);
+    flex-shrink: 0;
     white-space: nowrap;
 }
-.index-table td {
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--rule);
-    color: var(--ink-2);
-    vertical-align: baseline;
-}
-.index-table tbody tr:last-child td { border-bottom: 0; }
-.index-table tbody tr { transition: background .18s var(--ease); }
-.index-table tbody tr:hover { background: var(--bg-alt); }
-
-.index-table .col-ref { font: 500 .6875rem var(--f-mono); color: var(--ink-3); white-space: nowrap; }
-.index-table .col-name { color: var(--ink); font-weight: 600; }
-.index-table .col-name a { transition: color .2s var(--ease); }
-/* Dix lignes mènent à un dépôt, cinq n'ont rien à ouvrir : le chevron dit
-   lesquelles, sinon le lecteur teste au hasard. */
-.index-table .col-name a::after { content: " ↗"; color: var(--accent-text); }
-.index-table .col-name a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
-.index-table .col-stack { font-family: var(--f-mono); font-size: .75rem; }
-.index-table .col-domain { font-family: var(--f-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
 
 /* Ligne masquée par le filtre */
 .is-hidden { display: none; }
@@ -948,11 +966,17 @@ main { min-width: 0; }
     h1 { font-size: 32pt; }
     h2 { font-size: 16pt; }
 
-    /* Le papier n'a pas de survol : la destination s'écrit. */
+    /* Le papier n'a pas de survol : la destination s'écrit. Mais déplier
+       27 adresses dans l'index les rendrait toutes illisibles ; elles se
+       déduisent du nom, et le rappel de fin de §03 porte l'adresse du profil. */
     .sheet, .skills-wrap, .index-wrap, .spec { border: 1px solid #BBB; }
-    .skills-wrap, .index-wrap { overflow: visible; }
-    .index-table .col-name a::after,
+    .skills-wrap { overflow: visible; }
+    .index-grid { grid-template-columns: repeat(2, 1fr); }
+    .index-grid a::after { content: ""; }
+    .index-grid .ix-priv::after { content: " (privé)"; font-size: 8pt; }
+    .repos-cta::after,
     .contact-actions a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #444; }
+    .repos-cta-btn { display: none; }
 
     /* La page A4 est plus étroite qu'un écran. */
     .sheets { grid-template-columns: repeat(2, 1fr); }
