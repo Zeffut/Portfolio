@@ -1,560 +1,190 @@
 <!DOCTYPE html>
-<html lang="fr" data-i18n-title="Thomas De Sousa — Full-stack developer">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thomas De Sousa — Développeur full-stack</title>
-
-<meta name="description" data-en="Portfolio of Thomas De Sousa, full-stack developer. Forty-one projects carried from idea to production: local AI, automation, scraping, web." content="Portfolio de Thomas De Sousa, développeur full-stack. Quarante et un projets menés de l'idée à la production : IA locale, automatisation, scraping, web.">
+<title>Thomas De Sousa — Des trucs que j'ai faits</title>
+<meta name="description" content="Thomas De Sousa, développeur. 27 projets open-source : IA locale, automatisation, outils, mods Minecraft. Tout est sur GitHub.">
 <meta name="author" content="Thomas De Sousa">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0C1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://zeffut.fr/">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Thomas De Sousa">
-<meta property="og:title" content="Thomas De Sousa — Développeur full-stack">
-<meta property="og:description" content="Quarante et un projets menés de l'idée à la production : IA locale, automatisation, scraping, web.">
+<meta property="og:title" content="Thomas De Sousa — Des trucs que j'ai faits">
+<meta property="og:description" content="Thomas De Sousa, développeur. 27 projets open-source : IA locale, automatisation, outils, mods Minecraft. Tout est sur GitHub.">
 <meta property="og:url" content="https://zeffut.fr/">
 <meta property="og:image" content="https://zeffut.fr/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Thomas De Sousa — développeur full-stack">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Thomas De Sousa — Développeur full-stack">
-<meta name="twitter:description" content="Quarante et un projets menés de l'idée à la production : IA locale, automatisation, scraping, web.">
-<meta name="twitter:image" content="https://zeffut.fr/og-image.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://zeffut.fr/#site",
-      "url": "https://zeffut.fr/",
-      "name": "Thomas De Sousa — Développeur full-stack",
-      "description": "Portfolio de Thomas De Sousa, développeur full-stack. Quarante et un projets menés de l'idée à la production : IA locale, automatisation, scraping, web.",
-      "inLanguage": ["fr-FR", "en-US"],
-      "publisher": { "@id": "https://zeffut.fr/#thomas" }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://zeffut.fr/#thomas",
-      "name": "Thomas De Sousa",
-      "jobTitle": "Développeur full-stack",
-      "description": "Développeur full-stack autodidacte : IA locale, automatisation, scraping, web.",
-      "url": "https://zeffut.fr/",
-      "image": "https://zeffut.fr/og-image.png",
-      "email": "mailto:tom77ds@gmail.com",
-      "address": { "@type": "PostalAddress", "addressLocality": "Chessy", "addressCountry": "FR" },
-      "knowsLanguage": ["fr", "en"],
-      "sameAs": ["https://github.com/Zeffut"],
-      "mainEntityOfPage": { "@id": "https://zeffut.fr/#site" },
-      "knowsAbout": ["Python", "JavaScript", "TypeScript", "Swift", "Java", "Rust", "Go", "C++", "Flask",
-        "Web scraping", "Automatisation", "Intelligence artificielle locale", "Docker",
-        "Claude Code", "OpenClaw", "Hermes Agent", "Google Antigravity", "Codex CLI",
-        "Cursor", "Model Context Protocol", "Agents autonomes", "Ollama", "n8n"]
-    }
-  ]
-}
-</script>
-
-<!-- Pose « js » et le thème avant le rendu -->
-<script>
-(function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('tds-theme');if(t)r.setAttribute('data-theme',t);}catch(e){}})();
-</script>
-
-<!-- Analytics : la résolution DNS et la poignée TLS commencent tout de suite,
-     le script lui-même reste en fin de body, hors du chemin critique. -->
 <link rel="preconnect" href="https://eu-assets.i.posthog.com" crossorigin>
 <link rel="dns-prefetch" href="https://eu.i.posthog.com">
-
-<!-- Polices locales -->
-<link rel="preload" href="fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/IBMPlexSans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=2026-09-10">
-
+<link rel="stylesheet" href="style.css?v=2026-10-27">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Thomas De Sousa","url":"https://zeffut.fr/","sameAs":["https://github.com/Zeffut"],"jobTitle":"Développeur"}</script>
 </head>
-
 <body>
-<span class="vh" id="newtab" data-en="Opens in a new tab">Ouvre un nouvel onglet</span>
-<a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
-
-<!-- ============================ §00 EN-TÊTE ============================ -->
-<header class="hdr" id="hdr">
-  <div class="hdr-in wrap">
-    <a class="ident" href="#identite">
-      <span class="ident-name">Thomas De Sousa</span>
-    </a>
-
-    <nav class="nav-main" id="nav-main" aria-label="Sections du dossier" data-en-label="Sections of the record">
-      <a href="#identite"     data-en="Identity">Identité</a>
-      <a href="#synthese"     data-en="Summary">Synthèse</a>
-      <a href="#realisations" data-en="Work">Réalisations</a>
-      <a href="#competences"  data-en="Skills">Compétences</a>
-      <a href="#methode"      data-en="Method">Méthode</a>
-      <a href="#contact"      data-en="Contact">Contact</a>
-    </nav>
-
-    <div class="hdr-tools">
-      <div class="switch" role="group" aria-label="Langue" data-en-label="Language">
-        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-
-      <button type="button" class="icon-btn" id="theme-btn" aria-pressed="false" aria-label="Basculer en thème sombre">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13.2A8.5 8.5 0 1 1 10.8 3a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
-      </button>
-
-      <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-main" aria-label="Ouvrir le menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-  </div>
+<header class="hero">
+  <h1>Des trucs que j'ai faits <span aria-hidden="true">🛠️</span></h1>
+  <p class="sub">Je suis Thomas. Voici 27 projets open-source, du plus utile au plus inutile. Clique sur un, le code est dessous.</p>
+  <a class="profile" href="https://github.com/Zeffut" target="_blank" rel="noopener">Voir tous mes dépôts sur GitHub ↗</a>
 </header>
-
-<div class="page wrap">
-
-  <!-- Sommaire de marge -->
-  <aside class="toc" aria-label="Sommaire" data-en-label="Contents">
-    <div class="toc-title label" data-en="Contents">Sommaire</div>
-    <ol>
-      <li><a href="#identite"><span class="toc-n">01</span><span data-en="Identity">Identité</span></a></li>
-      <li><a href="#synthese"><span class="toc-n">02</span><span data-en="Summary">Synthèse</span></a></li>
-      <li><a href="#realisations"><span class="toc-n">03</span><span data-en="Work">Réalisations</span></a></li>
-      <li><a href="#competences"><span class="toc-n">04</span><span data-en="Skills">Compétences</span></a></li>
-      <li><a href="#methode"><span class="toc-n">05</span><span data-en="Method">Méthode</span></a></li>
-      <li><a href="#contact"><span class="toc-n">06</span><span data-en="Contact">Contact</span></a></li>
-    </ol>
-  </aside>
-
-  <main id="main">
-
-    <!-- ========================= §01 IDENTITÉ ========================= -->
-    <section class="section hero" id="identite">
-      <div class="hero-ref">
-        <span class="sec-num">§01 — <span data-en="IDENTITY">IDENTITÉ</span></span>
-        <span class="annot" data-en="UPDATED — SEPTEMBER 2026">MISE À JOUR — SEPTEMBRE 2026</span>
-      </div>
-
-      <h1>Thomas<br>De&nbsp;Sousa</h1>
-
-      <div class="rule-draw" id="hero-rule"></div>
-
-      <div class="hero-grid">
-        <div class="hero-main">
-      <p class="hero-role" data-en="Full-stack developer">Développeur full-stack</p>
-
-      <p class="lede" data-en="I design it, I build it, I ship it. Practical tools — local AI, automation, scraping, web — carried from the idea through to production.">
-        Je conçois, je code, je déploie. Des outils concrets — IA locale, automatisation, scraping, web — menés de l'idée jusqu'à la mise en production.
-      </p>
-
-      <p class="avail">
-        <span class="dot" aria-hidden="true"></span>
-        <span data-en="Open to apprenticeships and freelance work">Ouvert à l'alternance et aux missions</span>
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#realisations" data-en="View the work">Voir les réalisations</a>
-        <a class="btn btn-ghost" href="#contact" data-en="Get in touch">Me contacter</a>
-        <!-- CV : déposer cv.pdf à la racine, puis décommenter.
-        <a class="btn btn-ghost" href="/cv.pdf" download data-en="CV ↓">CV ↓</a>
-        -->
-      </div>
-        </div>
-
-        <aside class="spec marks" aria-label="Fiche signalétique" data-en-label="Record">
-          <div class="spec-title label" data-en="Record">Fiche signalétique</div>
-          <dl>
-            <div><dt data-en="LOCATION">LOCALISATION</dt><dd>Chessy, France</dd></div>
-            <div><dt data-en="STATUS">STATUT</dt><dd data-en="Student">Étudiant</dd></div>
-            <div><dt data-en="FIELDS">DOMAINES</dt><dd data-en="AI · Automation · Web">IA · Automatisation · Web</dd></div>
-            <div><dt data-en="REPOS">DÉPÔTS</dt><dd><a class="spec-link" href="https://github.com/Zeffut" target="_blank" rel="noopener" data-en="27 public ↗">27 publics ↗</a></dd></div>
-          </dl>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ========================= §02 SYNTHÈSE ========================= -->
-    <section class="section" id="synthese">
-      <div class="sec-head reveal">
-        <span class="sec-num">§02 — <span data-en="SUMMARY">SYNTHÈSE</span></span>
-        <h2 data-en="What I do, in short">Ce que je fais, en bref</h2>
-      </div>
-
-      <div class="synth">
-        <div class="synth-text reveal">
-          <p data-en="I build tools that actually work, from the first line through to production.">
-            Je construis des outils qui fonctionnent vraiment, de la première ligne jusqu'à la mise en production.
-          </p>
-          <p data-en="Self-taught full-stack developer, currently a student. I spend my time solving concrete problems: local voice transcription, job-listing aggregation, workflow automation, AI-assisted content generation.">
-            Développeur full-stack autodidacte, étudiant. Je passe mon temps à résoudre des problèmes concrets : transcription vocale locale, agrégation d'offres d'emploi, automatisation de workflows, génération de contenu assistée par IA.
-          </p>
-          <p data-en="What interests me is taking an idea full circle: shaping the product, writing the code, deploying it.">
-            Ce qui m'intéresse, c'est de boucler une idée de bout en bout : penser le produit, écrire le code, le déployer.
-          </p>
-        </div>
-
-        <div class="facts stagger marks">
-          <div class="fact">
-            <div class="fact-num">41</div>
-            <div class="fact-label label" data-en="Projects built">Projets construits</div>
-            <div class="fact-cote"><span data-en="incl. 14 private">dont 14 privés</span></div>
-          </div>
-          <div class="fact">
-            <div class="fact-num">27</div>
-            <div class="fact-label label" data-en="Open-source">Open-source</div>
-            <div class="fact-cote"><span data-en="public on GitHub">publics sur GitHub</span></div>
-          </div>
-          <div class="fact">
-            <div class="fact-num">5</div>
-            <div class="fact-label label" data-en="Domains">Domaines</div>
-            <div class="fact-cote"><span data-en="AI · automation · web · tools · Minecraft">IA · auto · web · outils · MC</span></div>
-          </div>
-          <div class="fact">
-            <div class="fact-num">100<span class="accent">%</span></div>
-            <div class="fact-label label" data-en="Self-taught">Autodidacte</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= §03 RÉALISATIONS ======================= -->
-    <section class="section" id="realisations">
-      <div class="sec-head reveal">
-        <span class="sec-num">§03 — <span data-en="WORK">RÉALISATIONS</span></span>
-        <h2 data-en="Forty-one projects, five detailed">Quarante et un projets, cinq détaillés</h2>
-        <p class="sec-sub" data-en="Every sheet carries the same fields, so they can be compared at a glance. The full index follows.">
-          Chaque fiche porte les mêmes champs, ce qui permet de les comparer d'un coup d'œil. L'index complet suit.
-        </p>
-      </div>
-
-      <div class="filters reveal" role="group" aria-label="Filtrer par domaine" data-en-label="Filter by field">
-        <button type="button" data-filter="all"  aria-pressed="true"  data-en="All">Tout</button>
-        <button type="button" data-filter="ia"   aria-pressed="false" data-en="AI">IA</button>
-        <button type="button" data-filter="auto" aria-pressed="false" data-en="Automation">Automatisation</button>
-        <button type="button" data-filter="web"  aria-pressed="false" data-en="Web">Web</button>
-        <button type="button" data-filter="outils" aria-pressed="false" data-en="Tools">Outils</button>
-        <button type="button" data-filter="mc"   aria-pressed="false" data-en="Minecraft">Minecraft</button>
-      </div>
-
-      <p class="vh" id="filter-status" role="status" aria-live="polite"></p>
-
-      <div class="sheets">
-
-        <a class="sheet marks reveal" data-cat="ia" href="https://github.com/Zeffut/BetterFasterWhisper" target="_blank" rel="noopener">
-          <div class="sheet-top">
-            <span class="sheet-ref">P.01</span>
-            <span class="sheet-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg></span>
-          </div>
-          <h3>BetterFasterWhisper</h3>
-          <p class="sheet-desc" data-en="100 % local voice transcription for macOS">Transcription vocale 100 % locale sur macOS</p>
-          <dl class="sheet-fields">
-            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development · distribution">Conception · développement · distribution</dd></div>
-            <div class="sheet-field"><dt>STACK</dt><dd class="mono">Swift · WhisperKit · CoreML</dd></div>
-            <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
-            <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Runs offline, with no server involved">Fonctionne hors-ligne, sans aucun serveur</dd></div>
-          </dl>
-          <div class="sheet-link">github.com/Zeffut/BetterFasterWhisper</div>
-        </a>
-
-        <a class="sheet marks reveal" data-cat="ia" href="https://github.com/Zeffut/ClipGenius" target="_blank" rel="noopener">
-          <div class="sheet-top">
-            <span class="sheet-ref">P.02</span>
-            <span class="sheet-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg></span>
-          </div>
-          <h3>ClipGenius</h3>
-          <p class="sheet-desc" data-en="Automatic short-clip extraction from long videos">Découpe automatique de clips courts depuis de longues vidéos</p>
-          <dl class="sheet-fields">
-            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development">Conception · développement</dd></div>
-            <div class="sheet-field"><dt>STACK</dt><dd class="mono" data-en="Python · FFmpeg · Local AI">Python · FFmpeg · IA locale</dd></div>
-            <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
-            <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Cropping and subtitling with no manual step">Recadrage et sous-titrage sans intervention manuelle</dd></div>
-          </dl>
-          <div class="sheet-link">github.com/Zeffut/ClipGenius</div>
-        </a>
-
-        <a class="sheet marks reveal" data-cat="auto" href="https://github.com/Zeffut/JobScraper" target="_blank" rel="noopener">
-          <div class="sheet-top">
-            <span class="sheet-ref">P.03</span>
-            <span class="sheet-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg></span>
-          </div>
-          <h3>JobScraper</h3>
-          <p class="sheet-desc" data-en="Multi-platform job-listing aggregator">Agrégateur d'offres d'emploi multi-plateformes</p>
-          <dl class="sheet-fields">
-            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development">Conception · développement</dd></div>
-            <div class="sheet-field"><dt>STACK</dt><dd class="mono">Python · Selenium · BeautifulSoup</dd></div>
-            <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
-            <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="JSON and CSV export, filtering by criteria">Export JSON et CSV, filtrage par critères</dd></div>
-          </dl>
-          <div class="sheet-link">github.com/Zeffut/JobScraper</div>
-        </a>
-
-        <a class="sheet marks reveal" data-cat="web" href="https://github.com/Zeffut/Esiee-Paris-Salles" target="_blank" rel="noopener">
-          <div class="sheet-top">
-            <span class="sheet-ref">P.04</span>
-            <span class="sheet-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg></span>
-          </div>
-          <h3>ESIEE Salles</h3>
-          <p class="sheet-desc" data-en="Web app for finding a free room in real time">Webapp de recherche de salle libre en temps réel</p>
-          <dl class="sheet-fields">
-            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development · production">Conception · développement · mise en production</dd></div>
-            <div class="sheet-field"><dt>STACK</dt><dd class="mono">Python · Flask</dd></div>
-            <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="In production">En production</span></span></dd></div>
-            <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Used by actual students">Utilisée par de vrais étudiants</dd></div>
-          </dl>
-          <div class="sheet-link">github.com/Zeffut/Esiee-Paris-Salles</div>
-        </a>
-
-        <a class="sheet marks reveal" data-cat="auto" href="https://github.com/Zeffut/n8n-nodes-plaud" target="_blank" rel="noopener">
-          <div class="sheet-top">
-            <span class="sheet-ref">P.05</span>
-            <span class="sheet-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg></span>
-          </div>
-          <h3>n8n-nodes-plaud</h3>
-          <p class="sheet-desc" data-en="n8n node package for the Plaud API">Paquet de nodes n8n pour l'API Plaud</p>
-          <dl class="sheet-fields">
-            <div class="sheet-field"><dt data-en="ROLE">RÔLE</dt><dd data-en="Design · development · publication">Conception · développement · publication</dd></div>
-            <div class="sheet-field"><dt>STACK</dt><dd class="mono">TypeScript · n8n</dd></div>
-            <div class="sheet-field"><dt data-en="STATE">ÉTAT</dt><dd><span class="state"><span class="dot" aria-hidden="true"></span><span data-en="Published — open-source">Publié — open-source</span></span></dd></div>
-            <div class="sheet-field"><dt data-en="PROOF">PREUVE</dt><dd data-en="Reusable by the wider n8n community">Réutilisable par la communauté n8n</dd></div>
-          </dl>
-          <div class="sheet-link">github.com/Zeffut/n8n-nodes-plaud</div>
-        </a>
-
-        <p class="sheets-empty" id="sheets-empty" hidden
-           data-en="No detailed sheet in this field — see the full index below.">
-          Aucune fiche détaillée dans ce domaine — voir l'index complet ci-dessous.
-        </p>
-      </div>
-
-      <div class="index-wrap reveal">
-        <div class="index-head">
-          <span class="label" data-en="Full index — 41 projects">Index complet — 41 projets</span>
-          <span class="index-legend annot" data-en="27 public · 14 private">27 publics · 14 privés</span>
-        </div>
-        <ul class="index-grid">
-          <li data-cat="ia"><a href="https://github.com/Zeffut/BetterFasterWhisper" target="_blank" rel="noopener"><span class="ix-ref">P.01</span><span class="ix-name">BetterFasterWhisper</span><span class="ix-tech">Swift</span></a></li>
-          <li data-cat="ia"><a href="https://github.com/Zeffut/ClipGenius" target="_blank" rel="noopener"><span class="ix-ref">P.02</span><span class="ix-name">ClipGenius</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="auto"><a href="https://github.com/Zeffut/JobScraper" target="_blank" rel="noopener"><span class="ix-ref">P.03</span><span class="ix-name">JobScraper</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="web"><a href="https://github.com/Zeffut/Esiee-Paris-Salles" target="_blank" rel="noopener"><span class="ix-ref">P.04</span><span class="ix-name">ESIEE Salles</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="auto"><a href="https://github.com/Zeffut/n8n-nodes-plaud" target="_blank" rel="noopener"><span class="ix-ref">P.05</span><span class="ix-name">n8n-nodes-plaud</span><span class="ix-tech">TypeScript</span></a></li>
-          <li data-cat="ia"><a href="https://github.com/Zeffut/tiktok_ia_generator" target="_blank" rel="noopener"><span class="ix-ref">P.06</span><span class="ix-name">TikTok IA Generator</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="ia"><a href="https://github.com/Zeffut/ChessBot" target="_blank" rel="noopener"><span class="ix-ref">P.07</span><span class="ix-name">ChessBot</span><span class="ix-tech">C++</span></a></li>
-          <li data-cat="ia"><span class="ix-priv"><span class="ix-ref">P.08</span><span class="ix-name">Atlas</span><span class="ix-tech">Go</span></span></li>
-          <li data-cat="ia"><span class="ix-priv"><span class="ix-ref">P.09</span><span class="ix-name">JournalisteIA</span><span class="ix-tech">Python</span></span></li>
-          <li data-cat="ia"><span class="ix-priv"><span class="ix-ref">P.10</span><span class="ix-name">NeuraNote</span><span class="ix-tech">Python</span></span></li>
-          <li data-cat="auto"><a href="https://github.com/Zeffut/VintedScraper" target="_blank" rel="noopener"><span class="ix-ref">P.11</span><span class="ix-name">VintedScraper</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="auto"><a href="https://github.com/Zeffut/BrawlStar-Bot" target="_blank" rel="noopener"><span class="ix-ref">P.12</span><span class="ix-name">BrawlStar-Bot</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="auto"><span class="ix-priv"><span class="ix-ref">P.13</span><span class="ix-name">SaaS Factory</span><span class="ix-tech">Claude Code</span></span></li>
-          <li data-cat="auto"><span class="ix-priv"><span class="ix-ref">P.14</span><span class="ix-name">Google-Drive-Backup</span><span class="ix-tech">Python</span></span></li>
-          <li data-cat="web"><a href="https://github.com/Zeffut/Portfolio" target="_blank" rel="noopener"><span class="ix-ref">P.15</span><span class="ix-name">Portfolio</span><span class="ix-tech">HTML · CSS · JS</span></a></li>
-          <li data-cat="web"><a href="https://github.com/Zeffut/NoteGenius" target="_blank" rel="noopener"><span class="ix-ref">P.16</span><span class="ix-name">NoteGenius</span><span class="ix-tech">Python</span></a></li>
-          <li data-cat="web"><a href="https://github.com/Zeffut/Zeffut" target="_blank" rel="noopener"><span class="ix-ref">P.17</span><span class="ix-name">Zeffut</span><span class="ix-tech">JavaScript</span></a></li>
-          <li data-cat="web"><span class="ix-priv"><span class="ix-ref">P.18</span><span class="ix-name">CSV_analyser</span><span class="ix-tech">JavaScript</span></span></li>
-          <li data-cat="outils"><a href="https://github.com/Zeffut/Valt" target="_blank" rel="noopener"><span class="ix-ref">P.19</span><span class="ix-name">Valt</span><span class="ix-tech">Swift</span></a></li>
-          <li data-cat="outils"><a href="https://github.com/Zeffut/ClaudeUsage" target="_blank" rel="noopener"><span class="ix-ref">P.20</span><span class="ix-name">ClaudeUsage</span><span class="ix-tech">Swift</span></a></li>
-          <li data-cat="outils"><a href="https://github.com/Zeffut/YoutubeAutoTheme" target="_blank" rel="noopener"><span class="ix-ref">P.21</span><span class="ix-name">YoutubeAutoTheme</span><span class="ix-tech">JavaScript</span></a></li>
-          <li data-cat="outils"><span class="ix-priv"><span class="ix-ref">P.22</span><span class="ix-name">plume</span><span class="ix-tech">TypeScript</span></span></li>
-          <li data-cat="outils"><span class="ix-priv"><span class="ix-ref">P.23</span><span class="ix-name">Relais</span><span class="ix-tech">TypeScript</span></span></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/Foton" target="_blank" rel="noopener"><span class="ix-ref">P.24</span><span class="ix-name">Foton</span><span class="ix-tech">Rust</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/FlashbackServer" target="_blank" rel="noopener"><span class="ix-ref">P.25</span><span class="ix-name">FlashbackServer</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/FlashbackTurbo" target="_blank" rel="noopener"><span class="ix-ref">P.26</span><span class="ix-name">FlashbackTurbo</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/MultiView" target="_blank" rel="noopener"><span class="ix-ref">P.27</span><span class="ix-name">MultiView</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/flashbacksettings" target="_blank" rel="noopener"><span class="ix-ref">P.28</span><span class="ix-name">flashbacksettings</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/ModChecker" target="_blank" rel="noopener"><span class="ix-ref">P.29</span><span class="ix-name">ModChecker</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/farplayers" target="_blank" rel="noopener"><span class="ix-ref">P.30</span><span class="ix-name">farplayers</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/SwordHitbox" target="_blank" rel="noopener"><span class="ix-ref">P.31</span><span class="ix-name">SwordHitbox</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/StructuresRemover" target="_blank" rel="noopener"><span class="ix-ref">P.32</span><span class="ix-name">StructuresRemover</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/AnonymousPotion" target="_blank" rel="noopener"><span class="ix-ref">P.33</span><span class="ix-name">AnonymousPotion</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/minecraft-wrapped" target="_blank" rel="noopener"><span class="ix-ref">P.34</span><span class="ix-name">minecraft-wrapped</span><span class="ix-tech">Java</span></a></li>
-          <li data-cat="mc"><a href="https://github.com/Zeffut/ZeffutSMP-ResourcePack" target="_blank" rel="noopener"><span class="ix-ref">P.35</span><span class="ix-name">ZeffutSMP-ResourcePack</span><span class="ix-tech">—</span></a></li>
-          <li data-cat="mc"><span class="ix-priv"><span class="ix-ref">P.36</span><span class="ix-name">Observer</span><span class="ix-tech">Java</span></span></li>
-          <li data-cat="mc"><span class="ix-priv"><span class="ix-ref">P.37</span><span class="ix-name">Zeffut SMP</span><span class="ix-tech">Java</span></span></li>
-          <li data-cat="mc"><span class="ix-priv"><span class="ix-ref">P.38</span><span class="ix-name">zelda-civ</span><span class="ix-tech">Java</span></span></li>
-          <li data-cat="mc"><span class="ix-priv"><span class="ix-ref">P.39</span><span class="ix-name">mortels-vs-immortels-civ</span><span class="ix-tech">Java</span></span></li>
-          <li data-cat="mc"><span class="ix-priv"><span class="ix-ref">P.40</span><span class="ix-name">autoupdate</span><span class="ix-tech">Java</span></span></li>
-          <li data-cat="mc"><span class="ix-priv"><span class="ix-ref">P.41</span><span class="ix-name">mc-auto-update</span><span class="ix-tech">Python</span></span></li>
-        </ul>
-      </div>
-
-      <a class="repos-cta marks reveal" href="https://github.com/Zeffut" target="_blank" rel="noopener">
-        <div class="repos-cta-text">
-          <span class="sec-num" data-en="THE SOURCE">LA SOURCE</span>
-          <h3 data-en="The 27 public repositories">Les 27 dépôts publics</h3>
-          <p data-en="Commits, issues, README: the code says what a record sheet cannot.">
-            Commits, issues, README : le code dit ce qu'une fiche ne peut pas dire.
-          </p>
-        </div>
-        <span class="btn btn-solid repos-cta-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3-.3 6-1.5 6-6.6a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 1.6 5.5 1.9 5.5 1.9a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 4 8.9c0 5 3 6.3 6 6.6a3.4 3.4 0 0 0-1 2.6V22"/></svg>
-          <span data-en="Open GitHub">Ouvrir GitHub</span>
-        </span>
-      </a>
-    </section>
-
-    <!-- ======================== §04 COMPÉTENCES ======================== -->
-    <section class="section" id="competences">
-      <div class="sec-head reveal">
-        <span class="sec-num">§04 — <span data-en="SKILLS">COMPÉTENCES</span></span>
-        <h2 data-en="What I use, and where">Ce que j'utilise, et où</h2>
-        <p class="sec-sub" data-en="No self-assigned level: a rating out of five proves nothing. Each skill is tied to the project where it actually served — that is the only evidence worth reading.">
-          Aucun niveau auto-attribué : une note sur cinq ne prouve rien. Chaque compétence est rattachée au projet où elle a réellement servi — c'est la seule preuve qui vaille.
-        </p>
-      </div>
-
-      <div class="skills-wrap reveal">
-        <table class="skills-table">
-          <caption class="label" data-en="Skills matrix">Matrice de compétences</caption>
-          <thead>
-            <tr>
-              <th scope="col" data-en="Skill">Compétence</th>
-              <th scope="col" data-en="Evidence — where it served">Preuve — où elle a servi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="LANGUAGES">LANGAGES</th></tr>
-            <tr><td class="col-skill">Python</td><td class="col-proof">JobScraper · ChessBot · ClipGenius</td></tr>
-            <tr><td class="col-skill">JavaScript</td><td class="col-proof" data-en="This portfolio · web tooling">Ce portfolio · outils web</td></tr>
-            <tr><td class="col-skill">TypeScript</td><td class="col-proof">n8n-nodes-plaud</td></tr>
-            <tr><td class="col-skill">Swift</td><td class="col-proof">BetterFasterWhisper</td></tr>
-            <tr><td class="col-skill">Java</td><td class="col-proof" data-en="Minecraft projects">Projets Minecraft</td></tr>
-            <tr><td class="col-skill">SQL</td><td class="col-proof">NoteGenius</td></tr>
-            <tr><td class="col-skill">Bash</td><td class="col-proof" data-en="System automation">Automatisation système</td></tr>
-            <tr><td class="col-skill">C</td><td class="col-proof" data-en="Algorithmic projects">Projets algorithmiques</td></tr>
-
-            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="BACKEND &amp; DATA">BACKEND &amp; DONNÉES</th></tr>
-            <tr><td class="col-skill">Flask</td><td class="col-proof">ESIEE Salles · NoteGenius</td></tr>
-            <tr><td class="col-skill">Selenium</td><td class="col-proof">JobScraper · VintedScraper</td></tr>
-            <tr><td class="col-skill">BeautifulSoup</td><td class="col-proof">JobScraper</td></tr>
-            <tr><td class="col-skill" data-en="REST APIs">API REST</td><td class="col-proof">n8n-nodes-plaud · ESIEE Salles</td></tr>
-            <tr><td class="col-skill">SQLite</td><td class="col-proof">NoteGenius</td></tr>
-            <tr><td class="col-skill">Pandas</td><td class="col-proof" data-en="Data processing">Traitement de données</td></tr>
-
-            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="AI &amp; AUTOMATION">IA &amp; AUTOMATISATION</th></tr>
-            <tr><td class="col-skill">FFmpeg</td><td class="col-proof">ClipGenius · TikTok IA Generator</td></tr>
-            <tr><td class="col-skill">n8n</td><td class="col-proof">n8n-nodes-plaud</td></tr>
-            <tr><td class="col-skill">WhisperKit · CoreML</td><td class="col-proof">BetterFasterWhisper</td></tr>
-            <tr><td class="col-skill">OpenCV</td><td class="col-proof">ChessBot</td></tr>
-            <tr><td class="col-skill">OCR · Tesseract</td><td class="col-proof">BrawlStar-Bot</td></tr>
-            <tr><td class="col-skill">Ollama</td><td class="col-proof" data-en="Local models">Modèles locaux</td></tr>
-
-            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="AGENTS &amp; AI TOOLING">AGENTS &amp; OUTILLAGE IA</th></tr>
-            <tr><td class="col-skill">Claude Code</td><td class="col-proof" data-en="SaaS Factory · this portfolio">SaaS Factory · ce portfolio</td></tr>
-            <tr><td class="col-skill">OpenClaw</td><td class="col-proof" data-en="Self-hosted personal agent">Agent personnel auto-hébergé</td></tr>
-            <tr><td class="col-skill">Hermes Agent</td><td class="col-proof" data-en="Agents with persistent memory">Agents à mémoire persistante</td></tr>
-            <tr><td class="col-skill">Google Antigravity</td><td class="col-proof" data-en="Agentic development">Développement agentique</td></tr>
-            <tr><td class="col-skill">Codex CLI</td><td class="col-proof" data-en="Code generation and review">Génération et revue de code</td></tr>
-            <tr><td class="col-skill">Cursor</td><td class="col-proof" data-en="Assisted editing">Édition assistée</td></tr>
-            <tr><td class="col-skill">MCP</td><td class="col-proof" data-en="Wiring tools into agents">Connexion d'outils aux agents</td></tr>
-
-            <tr class="grp"><th scope="rowgroup" colspan="2" data-en="WEB &amp; TOOLING">WEB &amp; OUTILS</th></tr>
-            <tr><td class="col-skill">HTML · CSS</td><td class="col-proof" data-en="This portfolio · ESIEE Salles">Ce portfolio · ESIEE Salles</td></tr>
-            <tr><td class="col-skill">Git · GitHub</td><td class="col-proof" data-en="41 versioned projects">41 projets versionnés</td></tr>
-            <tr><td class="col-skill">Docker</td><td class="col-proof" data-en="Service deployment">Déploiement de services</td></tr>
-            <tr><td class="col-skill">Linux</td><td class="col-proof" data-en="Server administration">Administration serveur</td></tr>
-            <tr><td class="col-skill">Figma</td><td class="col-proof" data-en="Interface mockups">Maquettage d'interfaces</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ========================== §05 MÉTHODE ========================== -->
-    <section class="section" id="methode">
-      <div class="sec-head reveal">
-        <span class="sec-num">§05 — <span data-en="METHOD">MÉTHODE</span></span>
-        <h2 data-en="How a project gets shipped">Comment un projet arrive en production</h2>
-      </div>
-
-      <div class="method stagger marks">
-        <div class="step">
-          <div class="step-n">01</div>
-          <h3 data-en="Frame">Cadrer</h3>
-          <p data-en="Understand the actual need, and the constraints, before writing any code.">Comprendre le besoin réel, et les contraintes, avant d'écrire du code.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">02</div>
-          <h3 data-en="Prototype">Prototyper</h3>
-          <p data-en="A minimal working version, built fast, to test the approach on real data.">Une version minimale qui fonctionne, construite vite, pour tester l'approche sur des données réelles.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">03</div>
-          <h3 data-en="Ship">Livrer</h3>
-          <p data-en="Production deployment, documentation, and a public repository whenever that is possible.">Mise en production, documentation, et dépôt public chaque fois que c'est possible.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">04</div>
-          <h3 data-en="Measure">Mesurer</h3>
-          <p data-en="Analytics and real usage feedback, to decide what comes next.">Analytics et retours d'usage réels, pour décider de la suite.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================== §06 CONTACT ========================== -->
-    <section class="section" id="contact">
-      <div class="contact">
-        <div class="reveal">
-          <span class="sec-num">§06 — <span data-en="CONTACT">CONTACT</span></span>
-          <h2 data-en="Let's build something">Construisons quelque chose</h2>
-          <p class="contact-lede" data-en="An idea, a role, a question — write to me.">
-            Une idée, un poste, une question — écrivez-moi.
-          </p>
-          <div class="contact-actions">
-            <a class="btn btn-solid btn-plain" href="mailto:tom77ds@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
-              tom77ds@gmail.com
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/Zeffut" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3-.3 6-1.5 6-6.6a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 1.6 5.5 1.9 5.5 1.9a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 4 8.9c0 5 3 6.3 6 6.6a3.4 3.4 0 0 0-1 2.6V22"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="doors stagger marks">
-          <div class="door">
-            <h3 data-en="Recruitment">Recrutement</h3>
-            <p data-en="Apprenticeship or internship in development — open to opportunities.">Alternance ou stage en développement — ouvert aux opportunités.</p>
-          </div>
-          <div class="door">
-            <h3 data-en="Freelance">Freelance</h3>
-            <p data-en="Short engagements: automation, scraping, custom internal tools.">Missions courtes : automatisation, scraping, outils internes sur mesure.</p>
-          </div>
-          <a class="door door-link" href="https://github.com/Zeffut" target="_blank" rel="noopener">
-            <h3>Open-source <span class="door-arrow" aria-hidden="true">↗</span></h3>
-            <p data-en="27 public repositories to browse, fork or comment on.">Vingt-sept dépôts publics à parcourir, forker ou commenter.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<footer class="footer">
-  <div class="footer-in wrap">
-    <span class="annot">© 2026 Thomas De Sousa · <span data-en="designed &amp; built from scratch">conçu &amp; développé from scratch</span></span>
-    <div class="footer-links">
-      <a href="#identite" data-en="Back to top">Haut de page</a>
-      <a href="#realisations" data-en="Work">Réalisations</a>
-      <a href="mailto:tom77ds@gmail.com">Email</a>
-      <a href="/privacy.html" data-en="Privacy">Confidentialité</a>
-      <a href="/unsubscribe.html" data-en="Unsubscribe">Désinscription</a>
-      <a href="https://github.com/Zeffut" target="_blank" rel="noopener">GitHub</a>
-    </div>
+<main>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Chercher un projet…" aria-label="Chercher un projet" autocomplete="off">
+    <div class="chips" role="group" aria-label="Filtrer par domaine"><button class="chip" type="button" data-f="all" aria-pressed="true">Tout</button><button class="chip" type="button" data-f="ia" aria-pressed="false">IA</button><button class="chip" type="button" data-f="auto" aria-pressed="false">Automatisation</button><button class="chip" type="button" data-f="web" aria-pressed="false">Web</button><button class="chip" type="button" data-f="outils" aria-pressed="false">Outils</button><button class="chip" type="button" data-f="mc" aria-pressed="false">Minecraft</button></div>
   </div>
+  <p id="count" class="count" role="status" aria-live="polite">27 projets</p>
+  <div class="grid" id="grid">
+    <a class="card" data-cat="ia" data-c="c1" href="https://github.com/Zeffut/BetterFasterWhisper" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🎙️</span>
+      <span class="body"><span class="name">BetterFasterWhisper</span><span class="desc">Transcription vocale 100 % locale sur macOS, hors-ligne, sans aucun serveur.</span>
+      <span class="meta"><span class="tag">Swift</span><span class="url">github.com/Zeffut/BetterFasterWhisper</span></span></span>
+    </a>
+    <a class="card" data-cat="ia" data-c="c2" href="https://github.com/Zeffut/ClipGenius" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🎬</span>
+      <span class="body"><span class="name">ClipGenius</span><span class="desc">Découpe automatique de clips courts depuis de longues vidéos.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/ClipGenius</span></span></span>
+    </a>
+    <a class="card" data-cat="auto" data-c="c3" href="https://github.com/Zeffut/JobScraper" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🔎</span>
+      <span class="body"><span class="name">JobScraper</span><span class="desc">Agrégateur d&#x27;offres d&#x27;emploi multi-plateformes.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/JobScraper</span></span></span>
+    </a>
+    <a class="card" data-cat="web" data-c="c4" href="https://github.com/Zeffut/Esiee-Paris-Salles" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🚪</span>
+      <span class="body"><span class="name">ESIEE Salles</span><span class="desc">Webapp de recherche de salle libre en temps réel.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/Esiee-Paris-Salles</span></span></span>
+    </a>
+    <a class="card" data-cat="auto" data-c="c5" href="https://github.com/Zeffut/n8n-nodes-plaud" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🔌</span>
+      <span class="body"><span class="name">n8n-nodes-plaud</span><span class="desc">Paquet de nodes n8n pour l&#x27;API Plaud.</span>
+      <span class="meta"><span class="tag">TypeScript</span><span class="url">github.com/Zeffut/n8n-nodes-plaud</span></span></span>
+    </a>
+    <a class="card" data-cat="ia" data-c="c6" href="https://github.com/Zeffut/tiktok_ia_generator" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">📱</span>
+      <span class="body"><span class="name">TikTok IA Generator</span><span class="desc">Génération de vidéos TikTok assistée par IA.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/tiktok_ia_generator</span></span></span>
+    </a>
+    <a class="card" data-cat="ia" data-c="c7" href="https://github.com/Zeffut/ChessBot" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">♟️</span>
+      <span class="body"><span class="name">ChessBot</span><span class="desc">Un bot d&#x27;échecs écrit en C++.</span>
+      <span class="meta"><span class="tag">C++</span><span class="url">github.com/Zeffut/ChessBot</span></span></span>
+    </a>
+    <a class="card" data-cat="auto" data-c="c8" href="https://github.com/Zeffut/VintedScraper" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">👕</span>
+      <span class="body"><span class="name">VintedScraper</span><span class="desc">Scraper d&#x27;annonces Vinted.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/VintedScraper</span></span></span>
+    </a>
+    <a class="card" data-cat="auto" data-c="c9" href="https://github.com/Zeffut/BrawlStar-Bot" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🤖</span>
+      <span class="body"><span class="name">BrawlStar-Bot</span><span class="desc">Bot d&#x27;automatisation pour Brawl Stars.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/BrawlStar-Bot</span></span></span>
+    </a>
+    <a class="card" data-cat="web" data-c="c10" href="https://github.com/Zeffut/Portfolio" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🧑‍💻</span>
+      <span class="body"><span class="name">Portfolio</span><span class="desc">Ce site : une page statique, zéro dépendance, zéro build.</span>
+      <span class="meta"><span class="tag">HTML · CSS · JS</span><span class="url">github.com/Zeffut/Portfolio</span></span></span>
+    </a>
+    <a class="card" data-cat="web" data-c="c11" href="https://github.com/Zeffut/NoteGenius" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">📝</span>
+      <span class="body"><span class="name">NoteGenius</span><span class="desc">Prise de notes assistée par IA.</span>
+      <span class="meta"><span class="tag">Python</span><span class="url">github.com/Zeffut/NoteGenius</span></span></span>
+    </a>
+    <a class="card" data-cat="web" data-c="c12" href="https://github.com/Zeffut/Zeffut" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">👋</span>
+      <span class="body"><span class="name">Zeffut</span><span class="desc">Le profil GitHub de Zeffut.</span>
+      <span class="meta"><span class="tag">JavaScript</span><span class="url">github.com/Zeffut/Zeffut</span></span></span>
+    </a>
+    <a class="card" data-cat="outils" data-c="c1" href="https://github.com/Zeffut/Valt" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🔐</span>
+      <span class="body"><span class="name">Valt</span><span class="desc">Une app macOS écrite en Swift.</span>
+      <span class="meta"><span class="tag">Swift</span><span class="url">github.com/Zeffut/Valt</span></span></span>
+    </a>
+    <a class="card" data-cat="outils" data-c="c2" href="https://github.com/Zeffut/ClaudeUsage" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">📊</span>
+      <span class="body"><span class="name">ClaudeUsage</span><span class="desc">Suivi de l&#x27;usage de Claude depuis la barre de menus macOS.</span>
+      <span class="meta"><span class="tag">Swift</span><span class="url">github.com/Zeffut/ClaudeUsage</span></span></span>
+    </a>
+    <a class="card" data-cat="outils" data-c="c3" href="https://github.com/Zeffut/YoutubeAutoTheme" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🎨</span>
+      <span class="body"><span class="name">YoutubeAutoTheme</span><span class="desc">Extension qui adapte le thème de YouTube.</span>
+      <span class="meta"><span class="tag">JavaScript</span><span class="url">github.com/Zeffut/YoutubeAutoTheme</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c4" href="https://github.com/Zeffut/Foton" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">⚡</span>
+      <span class="body"><span class="name">Foton</span><span class="desc">Un projet Minecraft écrit en Rust.</span>
+      <span class="meta"><span class="tag">Rust</span><span class="url">github.com/Zeffut/Foton</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c5" href="https://github.com/Zeffut/FlashbackServer" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">⏪</span>
+      <span class="body"><span class="name">FlashbackServer</span><span class="desc">Serveur pour le mod Flashback de Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/FlashbackServer</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c6" href="https://github.com/Zeffut/FlashbackTurbo" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🚀</span>
+      <span class="body"><span class="name">FlashbackTurbo</span><span class="desc">Accélère l&#x27;export de replays Flashback.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/FlashbackTurbo</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c7" href="https://github.com/Zeffut/MultiView" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🪟</span>
+      <span class="body"><span class="name">MultiView</span><span class="desc">Plusieurs vues de jeu simultanées dans Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/MultiView</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c8" href="https://github.com/Zeffut/flashbacksettings" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">⚙️</span>
+      <span class="body"><span class="name">flashbacksettings</span><span class="desc">Réglages additionnels pour Flashback.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/flashbacksettings</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c9" href="https://github.com/Zeffut/ModChecker" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">✅</span>
+      <span class="body"><span class="name">ModChecker</span><span class="desc">Vérifie les mods installés côté Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/ModChecker</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c10" href="https://github.com/Zeffut/farplayers" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🔭</span>
+      <span class="body"><span class="name">farplayers</span><span class="desc">Affiche les joueurs lointains dans Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/farplayers</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c11" href="https://github.com/Zeffut/SwordHitbox" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🗡️</span>
+      <span class="body"><span class="name">SwordHitbox</span><span class="desc">Hitbox d&#x27;épée Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/SwordHitbox</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c12" href="https://github.com/Zeffut/StructuresRemover" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🏚️</span>
+      <span class="body"><span class="name">StructuresRemover</span><span class="desc">Retire des structures générées dans Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/StructuresRemover</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c1" href="https://github.com/Zeffut/AnonymousPotion" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🧪</span>
+      <span class="body"><span class="name">AnonymousPotion</span><span class="desc">Potions anonymes pour Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/AnonymousPotion</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c2" href="https://github.com/Zeffut/minecraft-wrapped" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🎁</span>
+      <span class="body"><span class="name">minecraft-wrapped</span><span class="desc">Un « Wrapped » de ta vie Minecraft.</span>
+      <span class="meta"><span class="tag">Java</span><span class="url">github.com/Zeffut/minecraft-wrapped</span></span></span>
+    </a>
+    <a class="card" data-cat="mc" data-c="c3" href="https://github.com/Zeffut/ZeffutSMP-ResourcePack" target="_blank" rel="noopener">
+      <span class="thumb" aria-hidden="true">🧱</span>
+      <span class="body"><span class="name">ZeffutSMP-ResourcePack</span><span class="desc">Resource pack du serveur Zeffut SMP.</span>
+      <span class="meta"><span class="tag">Resource pack</span><span class="url">github.com/Zeffut/ZeffutSMP-ResourcePack</span></span></span>
+    </a>
+  </div>
+  <p id="empty" class="empty" hidden>Rien de ce nom-là. Essaie autre chose.</p>
+</main>
+<footer>
+  <p>Et il y a quelques projets privés que tu ne verras pas. <a href="https://github.com/Zeffut" target="_blank" rel="noopener">github.com/Zeffut ↗</a></p>
+  <p class="small"><a href="privacy.html">Confidentialité</a></p>
 </footer>
-
 <!-- Analytics -->
 <script>
 !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister getFeatureFlag isFeatureEnabled onFeatureFlags identify setPersonProperties reset get_distinct_id group set_config opt_in_capturing opt_out_capturing".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -570,7 +200,6 @@ posthog.init('phc_zdMj4p5wo8EvfVApjb2EbfUHJ76zgYGM5wAGz5YJC359',{
 });
 posthog.register({app:'portfolio'});
 </script>
-
-<script src="script.js?v=2026-09-10"></script>
+<script src="script.js?v=2026-10-27"></script>
 </body>
 </html>
